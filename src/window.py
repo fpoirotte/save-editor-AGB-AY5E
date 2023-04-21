@@ -136,6 +136,7 @@ class ApplicationWindow(Gtk.ApplicationWindow):
     def update_cards_stats(self):
         stats = self.save.get_cards_stats()
         stats["unique_pct"] = stats["unique"] * 100 / stats["unique_max"]
+        stats["trunk_max"] = MAX_TRUNK_CARDS
         stats["trunk_pct"] = stats["trunk"] * 100 / MAX_TRUNK_CARDS
         stats["main_pct"] = stats["main"] * 100 / stats["main_max"]
         stats["extra_pct"] = stats["extra"] * 100 / stats["extra_max"]
@@ -143,8 +144,8 @@ class ApplicationWindow(Gtk.ApplicationWindow):
         self.stats_cards_total.set_text("{total}".format(**stats))
         self.stats_cards_unique.set_text("{unique}/{unique_max}".format(**stats))
         self.stats_cards_unique_pct.set_text("({unique_pct:.2f}%)".format(**stats))
-        self.stats_cards_trunk.set_text("{trunk}".format(**stats))
-        self.stats_cards_trunk_pct.set_text("{trunk}".format(**stats))
+        self.stats_cards_trunk.set_text("{trunk}/{trunk_max}".format(**stats))
+        self.stats_cards_trunk_pct.set_text("({trunk_pct:.2f}%)".format(**stats))
         self.stats_cards_main.set_text("{main}/{main_max}".format(**stats))
         self.stats_cards_main_pct.set_text("({main_pct:.2f}%)".format(**stats))
         self.stats_cards_extra.set_text("{extra}/{extra_max}".format(**stats))
