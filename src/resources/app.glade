@@ -954,6 +954,7 @@ qualification:</property>
                         <property name="sort-column-id">2</property>
                         <child>
                           <object class="GtkCellRendererText">
+                            <property name="xalign">0.5</property>
                             <property name="alignment">right</property>
                             <property name="width-chars">1</property>
                             <property name="max-width-chars">1</property>
