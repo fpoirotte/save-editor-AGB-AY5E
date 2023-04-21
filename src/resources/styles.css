@@ -1,0 +1,18 @@
+.deck_black {
+    color: white;
+    background-color: rgb(36,31,49);
+    background: rgb(36,31,49);
+}
+
+.deck_red {
+    color: white;
+    background-color: rgb(165,29,45);
+    background: rgb(165,29,45);
+}
+
+.deck_green {
+    color: white;
+    background-color: rgb(38,162,105);
+    background: rgb(38,162,105);
+}
+
