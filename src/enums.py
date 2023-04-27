@@ -46,6 +46,7 @@ class Attribute(Enum):
     LIGHT = "LIGHT"
     WATER = "WATER"
     WIND = "WIND"
+    DIVINE = "DIVINE"
 
 
 class Type(Enum):
@@ -97,8 +98,14 @@ class Limit(ZeroBasedIntStringEnum):
 class NextNationalChampionshipRound(ZeroBasedIntStringEnum):
     ROUND_1 = auto()
     ROUND_2 = auto()
-    SEMIFINALS = auto()
+    SEMI_FINAL = auto()
     FINAL = auto()
+
+
+class NotebookPage(ZeroBasedIntStringEnum):
+    GENERAL = auto()
+    CARDS = auto()
+    DUELISTS = auto()
 
 
 class CardColumn(ZeroBasedIntStringEnum):
@@ -125,4 +132,16 @@ class DeckColor(IntEnum):
     BLACK = auto()
     RED = auto()
     GREEN = auto()
+
+
+class Event(Enum):
+    WEEKLY_YUGIOH           = "Weekly Yu-Gi-Oh!"
+    YUGIOH_MAGAZINE         = "Yu-Gi-Oh! Magazine"
+    WEEKEND_DUEL            = "Weekend Duel"
+    GRANDPA_QUALIFIERS      = "Grandpa Cup - Qualifiers"
+    GRANDPA_FINAL           = "Grandpa Cup - Final (if qualified)"
+    NATIONALS_ROUND_1       = "National Championship - 1st Round"
+    NATIONALS_ROUND_2       = "National Championship - 2nd Round (if qualified)"
+    NATIONALS_SEMI_FINAL    = "National Championship - Semi Final (if qualified)"
+    NATIONALS_FINAL         = "National Championship - Final (if qualified)"
 

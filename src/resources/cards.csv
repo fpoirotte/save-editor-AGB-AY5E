@@ -1,817 +1,817 @@
 "ID","Name","CardType","MonsterType","Attribute","Type","Level","ATK","DEF","Password","Limit"
-1,"7 Colored Fish","Monster","Normal","WATER","Fish",4,1800,800,23771716,3
-2,"7 Completed","Magic",,,,,,,86198326,3
-3,"Acid Crawler","Monster","Normal","EARTH","Insect",3,900,700,77568553,3
-4,"Acid Trap Hole","Trap",,,,,,,41356845,3
+1,"7 Colored Fish","Monster","Normal","WATER","Fish",4,1800,800,"23771716",3
+2,"7 Completed","Magic",,,,,,,"86198326",3
+3,"Acid Crawler","Monster","Normal","EARTH","Insect",3,900,700,"77568553",3
+4,"Acid Trap Hole","Trap",,,,,,,"41356845",3
 5,"Air Eater","Monster","Normal","WIND","Fiend",6,2100,1600,"08353769",3
-6,"Air Marmot of Nefariousness","Monster","Normal","EARTH","Beast",2,400,600,75889523,3
-7,"Akakieisu","Monster","Normal","DARK","Spellcaster",3,1000,800,38035986,3
-8,"Akihiron","Monster","Normal","WATER","Aqua",5,1700,1400,36904469,3
-9,"Alligator's Sword","Monster","Normal","EARTH","Beast",4,1500,1200,64428736,3
+6,"Air Marmot of Nefariousness","Monster","Normal","EARTH","Beast",2,400,600,"75889523",3
+7,"Akakieisu","Monster","Normal","DARK","Spellcaster",3,1000,800,"38035986",3
+8,"Akihiron","Monster","Normal","WATER","Aqua",5,1700,1400,"36904469",3
+9,"Alligator's Sword","Monster","Normal","EARTH","Beast",4,1500,1200,"64428736",3
 10,"Alligator's Sword Dragon","Monster","Fusion","WIND","Dragon",5,1700,1500,"03366982",3
-11,"Alpha The Magnet Warrior","Monster","Normal","EARTH","Rock",4,1400,1700,99785935,3
-12,"Amazon of the Seas","Monster","Normal","WATER","Fish",4,1300,1400,17968114,3
-13,"Ameba","Monster","Effect","WATER","Aqua",1,300,350,95174353,3
-14,"Amphibious Bugroth","Monster","Fusion","WATER","Aqua",5,1850,1300,40173854,3
-15,"Ancient Brain","Monster","Normal","DARK","Fiend",3,1000,700,42431843,3
-16,"Ancient Elf","Monster","Normal","LIGHT","Spellcaster",4,1450,1200,93221206,3
-17,"Ancient Jar","Monster","Normal","EARTH","Rock",1,400,200,81492226,3
-18,"Ancient Lizard Warrior","Monster","Normal","EARTH","Reptile",4,1400,1100,43230671,3
-19,"Ancient One of the Deep Forest","Monster","Normal","EARTH","Beast",6,1800,1900,14015067,3
-20,"Ancient Telescope","Magic",,,,,,,17092736,3
-21,"Ancient Tool","Monster","Normal","DARK","Machine",5,1700,1400,49587396,3
-22,"Ansatsu","Monster","Normal","EARTH","Warrior",5,1700,1200,48365709,3
-23,"Anthrosaurus","Monster","Normal","EARTH","Dinosaur",3,1000,850,89904598,3
-24,"Anti Raigeki","Trap",,,,,,,42364257,3
-25,"Anti-Magic Fragrance","Trap",,,,,,,58921041,3
-26,"Appropriate","Trap",,,,,,,48539234,3
-27,"Aqua Chorus","Trap",,,,,,,95132338,3
-28,"Aqua Dragon","Monster","Fusion","WATER","Sea Serpent",6,2250,1900,86164529,3
-29,"Aqua Madoor","Monster","Normal","WATER","Spellcaster",4,1200,2000,85639257,3
-30,"Arlownay","Monster","Normal","EARTH","Plant",3,800,1000,14708569,3
-31,"Arma Knight","Monster","Normal","WATER","Aqua",4,1000,1200,36151751,3
-32,"Armaill","Monster","Normal","EARTH","Warrior",3,700,1300,53153481,3
+11,"Alpha The Magnet Warrior","Monster","Normal","EARTH","Rock",4,1400,1700,"99785935",3
+12,"Amazon of the Seas","Monster","Normal","WATER","Fish",4,1300,1400,"17968114",3
+13,"Ameba","Monster","Effect","WATER","Aqua",1,300,350,"95174353",3
+14,"Amphibious Bugroth","Monster","Fusion","WATER","Aqua",5,1850,1300,"40173854",3
+15,"Ancient Brain","Monster","Normal","DARK","Fiend",3,1000,700,"42431843",3
+16,"Ancient Elf","Monster","Normal","LIGHT","Spellcaster",4,1450,1200,"93221206",3
+17,"Ancient Jar","Monster","Normal","EARTH","Rock",1,400,200,"81492226",3
+18,"Ancient Lizard Warrior","Monster","Normal","EARTH","Reptile",4,1400,1100,"43230671",3
+19,"Ancient One of the Deep Forest","Monster","Normal","EARTH","Beast",6,1800,1900,"14015067",3
+20,"Ancient Telescope","Magic",,,,,,,"17092736",3
+21,"Ancient Tool","Monster","Normal","DARK","Machine",5,1700,1400,"49587396",3
+22,"Ansatsu","Monster","Normal","EARTH","Warrior",5,1700,1200,"48365709",3
+23,"Anthrosaurus","Monster","Normal","EARTH","Dinosaur",3,1000,850,"89904598",3
+24,"Anti Raigeki","Trap",,,,,,,"42364257",3
+25,"Anti-Magic Fragrance","Trap",,,,,,,"58921041",3
+26,"Appropriate","Trap",,,,,,,"48539234",3
+27,"Aqua Chorus","Trap",,,,,,,"95132338",3
+28,"Aqua Dragon","Monster","Fusion","WATER","Sea Serpent",6,2250,1900,"86164529",3
+29,"Aqua Madoor","Monster","Normal","WATER","Spellcaster",4,1200,2000,"85639257",3
+30,"Arlownay","Monster","Normal","EARTH","Plant",3,800,1000,"14708569",3
+31,"Arma Knight","Monster","Normal","WATER","Aqua",4,1000,1200,"36151751",3
+32,"Armaill","Monster","Normal","EARTH","Warrior",3,700,1300,"53153481",3
 33,"Armed Ninja","Monster","Effect","EARTH","Warrior",1,300,300,"09076207",3
-34,"Armored Glass","Trap",,,,,,,36868108,3
-35,"Armored Lizard","Monster","Normal","EARTH","Reptile",4,1500,1200,15480588,3
-36,"Armored Rat","Monster","Normal","EARTH","Beast",3,950,1100,16246527,3
-37,"Armored Starfish","Monster","Normal","WATER","Aqua",4,850,1400,17535588,3
-38,"Armored Zombie","Monster","Normal","DARK","Zombie",3,1500,0,20277860,3
-39,"Axe of Despair","Magic",,,,,,,40619825,3
-40,"Axe Raider","Monster","Normal","EARTH","Warrior",4,1700,1150,48305365,3
-41,"B. Dragon Jungle King","Monster","Normal","EARTH","Dragon",6,2100,1800,89832901,3
+34,"Armored Glass","Trap",,,,,,,"36868108",3
+35,"Armored Lizard","Monster","Normal","EARTH","Reptile",4,1500,1200,"15480588",3
+36,"Armored Rat","Monster","Normal","EARTH","Beast",3,950,1100,"16246527",3
+37,"Armored Starfish","Monster","Normal","WATER","Aqua",4,850,1400,"17535588",3
+38,"Armored Zombie","Monster","Normal","DARK","Zombie",3,1500,0,"20277860",3
+39,"Axe of Despair","Magic",,,,,,,"40619825",3
+40,"Axe Raider","Monster","Normal","EARTH","Warrior",4,1700,1150,"48305365",3
+41,"B. Dragon Jungle King","Monster","Normal","EARTH","Dragon",6,2100,1800,"89832901",3
 42,"B. Skull Dragon","Monster","Fusion","DARK","Dragon",9,3200,2500,,3
-43,"Baby Dragon","Monster","Normal","WIND","Dragon",3,1200,700,88819587,3
-44,"Backup Soldier","Trap",,,,,,,36280194,2
-45,"Banisher of the Light","Monster","Effect","LIGHT","Fairy",3,100,2000,61528025,3
-46,"Barox","Monster","Fusion","DARK","Fiend",5,1380,1530,6840573,3
-47,"Barrel Dragon","Monster","Effect","DARK","Machine",7,2600,2200,81480460,3
-48,"Barrel Lily","Monster","Normal","EARTH","Plant",3,1100,600,67841515,3
-49,"Barrel Rock","Monster","Normal","EARTH","Rock",4,1000,1300,10476868,3
-50,"Basic Insect","Monster","Normal","EARTH","Insect",2,500,700,89091579,3
-51,"Battle Ox","Monster","Normal","EARTH","Beast-Warrior",4,1700,1000,5053103,3
-52,"Battle Steer","Monster","Normal","EARTH","Beast-Warrior",5,1800,1300,18246479,3
-53,"Battle Warrior","Monster","Normal","EARTH","Warrior",3,700,1000,55550921,3
-54,"Bean Soldier","Monster","Normal","EARTH","Plant",4,1400,1300,84990171,3
-55,"Beast Fangs","Magic",,,,,,,46009906,3
-56,"Beastking of the Swamps","Monster","Effect","WATER","Aqua",4,1000,1100,99426834,3
+43,"Baby Dragon","Monster","Normal","WIND","Dragon",3,1200,700,"88819587",3
+44,"Backup Soldier","Trap",,,,,,,"36280194",2
+45,"Banisher of the Light","Monster","Effect","LIGHT","Fairy",3,100,2000,"61528025",3
+46,"Barox","Monster","Fusion","DARK","Fiend",5,1380,1530,"06840573",3
+47,"Barrel Dragon","Monster","Effect","DARK","Machine",7,2600,2200,"81480460",3
+48,"Barrel Lily","Monster","Normal","EARTH","Plant",3,1100,600,"67841515",3
+49,"Barrel Rock","Monster","Normal","EARTH","Rock",4,1000,1300,"10476868",3
+50,"Basic Insect","Monster","Normal","EARTH","Insect",2,500,700,"89091579",3
+51,"Battle Ox","Monster","Normal","EARTH","Beast-Warrior",4,1700,1000,"05053103",3
+52,"Battle Steer","Monster","Normal","EARTH","Beast-Warrior",5,1800,1300,"18246479",3
+53,"Battle Warrior","Monster","Normal","EARTH","Warrior",3,700,1000,"55550921",3
+54,"Bean Soldier","Monster","Normal","EARTH","Plant",4,1400,1300,"84990171",3
+55,"Beast Fangs","Magic",,,,,,,"46009906",3
+56,"Beastking of the Swamps","Monster","Effect","WATER","Aqua",4,1000,1100,"99426834",3
 57,"Beastly Mirror Ritual","Magic",,,,,,,,3
-58,"Beautiful Headhuntress","Monster","Normal","EARTH","Warrior",4,1600,800,16899564,3
-59,"Beaver Warrior","Monster","Normal","EARTH","Beast-Warrior",4,1200,1500,32452818,3
-60,"Behegon","Monster","Normal","WATER","Aqua",4,1350,1000,94022093,3
-61,"Bell of Destruction","Trap",,,,,,,83555666,2
-62,"Beta The Magnet Warrior","Monster","Normal","EARTH","Rock",4,1700,1600,39256679,3
-63,"Bickuribox","Monster","Fusion","DARK","Fiend",7,2300,2000,25655502,3
-64,"Big Eye","Monster","Effect","DARK","Fiend",4,1200,1000,16768387,3
-65,"Big Insect","Monster","Normal","EARTH","Insect",4,1200,1500,53606874,3
-66,"Big Shield Gardna","Monster","Effect","EARTH","Warrior",4,100,2600,65240384,3
-67,"Binding Chain","Monster","Normal","LIGHT","Fairy",3,1000,1100,8058240,3
-68,"Bio Plant","Monster","Normal","DARK","Fiend",3,600,1300,7670542,3
-69,"Black Illusion Ritual","Magic",,,,,,,41426869,3
+58,"Beautiful Headhuntress","Monster","Normal","EARTH","Warrior",4,1600,800,"16899564",3
+59,"Beaver Warrior","Monster","Normal","EARTH","Beast-Warrior",4,1200,1500,"32452818",3
+60,"Behegon","Monster","Normal","WATER","Aqua",4,1350,1000,"94022093",3
+61,"Bell of Destruction","Trap",,,,,,,"83555666",2
+62,"Beta The Magnet Warrior","Monster","Normal","EARTH","Rock",4,1700,1600,"39256679",3
+63,"Bickuribox","Monster","Fusion","DARK","Fiend",7,2300,2000,"25655502",3
+64,"Big Eye","Monster","Effect","DARK","Fiend",4,1200,1000,"16768387",3
+65,"Big Insect","Monster","Normal","EARTH","Insect",4,1200,1500,"53606874",3
+66,"Big Shield Gardna","Monster","Effect","EARTH","Warrior",4,100,2600,"65240384",3
+67,"Binding Chain","Monster","Normal","LIGHT","Fairy",3,1000,1100,"08058240",3
+68,"Bio Plant","Monster","Normal","DARK","Fiend",3,600,1300,"07670542",3
+69,"Black Illusion Ritual","Magic",,,,,,,"41426869",3
 70,"Black Luster Ritual","Magic",,,,,,,,3
 71,"Black Luster Soldier","Monster","Ritual","EARTH","Warrior",8,3000,2500,,3
-72,"Black Pendant","Magic",,,,,,,65169794,3
-73,"Blackland Fire Dragon","Monster","Normal","DARK","Dragon",4,1500,800,87564352,3
-74,"Bladefly","Monster","Effect","WIND","Insect",2,600,700,28470714,3
-75,"Blast Juggler","Monster","Effect","FIRE","Machine",3,800,900,70138455,3
-76,"Blast Sphere","Monster","Effect","DARK","Machine",4,1400,1400,26302522,3
-77,"Block Attack","Magic",,,,,,,25880422,3
-78,"Blue Medicine","Magic",,,,,,,20871001,3
-79,"Blue-Eyed Silver Zombie","Monster","Normal","DARK","Zombie",3,900,700,35282433,3
-80,"Blue-Eyes Toon Dragon","Monster","Effect","LIGHT","Dragon",8,3000,2500,53183600,3
+72,"Black Pendant","Magic",,,,,,,"65169794",3
+73,"Blackland Fire Dragon","Monster","Normal","DARK","Dragon",4,1500,800,"87564352",3
+74,"Bladefly","Monster","Effect","WIND","Insect",2,600,700,"28470714",3
+75,"Blast Juggler","Monster","Effect","FIRE","Machine",3,800,900,"70138455",3
+76,"Blast Sphere","Monster","Effect","DARK","Machine",4,1400,1400,"26302522",3
+77,"Block Attack","Magic",,,,,,,"25880422",3
+78,"Blue Medicine","Magic",,,,,,,"20871001",3
+79,"Blue-Eyed Silver Zombie","Monster","Normal","DARK","Zombie",3,900,700,"35282433",3
+80,"Blue-Eyes Toon Dragon","Monster","Effect","LIGHT","Dragon",8,3000,2500,"53183600",3
 81,"Blue-Eyes Ultimate Dragon","Monster","Fusion","LIGHT","Dragon",12,4500,3800,,3
-82,"Blue-Eyes White Dragon","Monster","Normal","LIGHT","Dragon",8,3000,2500,89631139,3
-83,"Blue-Eyes White Dragon (alternate artwork)","Monster","Normal","LIGHT","Dragon",8,3000,2500,80906030,3
-84,"Blue-Winged Crown","Monster","Normal","WIND","Winged Beast",4,1600,1200,41396436,3
-85,"Boar Soldier","Monster","Effect","EARTH","Beast-Warrior",4,2000,500,21340051,3
-86,"Bolt Escargot","Monster","Normal","WATER","Thunder",5,1400,1500,12146024,3
-87,"Book of Secret Arts","Magic",,,,,,,91595718,3
-88,"Bottom Dweller","Monster","Normal","WATER","Fish",5,1650,1700,81386177,3
-89,"Bracchio-raidus","Monster","Fusion","WATER","Dinosaur",6,2200,2000,16507828,3
-90,"Breath of Light","Magic",,,,,,,20101223,3
-91,"Bright Castle","Magic",,,,,,,82878489,3
-92,"Burglar","Monster","Normal","EARTH","Beast",3,850,800,6297941,3
-93,"Burning Spear","Magic",,,,,,,18937875,3
-94,"Buster Blader","Monster","Effect","EARTH","Warrior",7,2600,2300,78193831,3
-95,"Call of the Dark","Trap",,,,,,,78637313,3
-96,"Call of the Grave","Trap",,,,,,,16970158,3
-97,"Call Of The Haunted","Trap",,,,,,,97077563,1
-98,"Candle of Fate","Monster","Normal","DARK","Fiend",2,600,600,47695416,3
-99,"Cannon Soldier","Monster","Effect","DARK","Machine",4,1400,1300,11384280,3
-100,"Castle of Dark Illusions","Monster","Effect","DARK","Fiend",4,920,1930,62121,3
-101,"Castle Walls","Trap",,,,,,,44209392,3
-102,"Catapult Turtle","Monster","Effect","WATER","Aqua",5,1000,2000,95727991,3
-103,"Ceasefire","Trap",,,,,,,36468556,1
-104,"Celtic Guardian","Monster","Normal","EARTH","Warrior",4,1400,1200,91152256,3
-105,"Celtic Guardian (alternate artwork)","Monster","Normal","EARTH","Warrior",4,1400,1200,90101050,3
-106,"Ceremonial Bell","Monster","Effect","LIGHT","Spellcaster",3,0,1850,20228463,3
-107,"Chain Destruction","Trap",,,,,,,1248895,3
-108,"Chain Energy","Magic",,,,,,,79323590,3
+82,"Blue-Eyes White Dragon","Monster","Normal","LIGHT","Dragon",8,3000,2500,"89631139",3
+83,"Blue-Eyes White Dragon (alternate artwork)","Monster","Normal","LIGHT","Dragon",8,3000,2500,"80906030",3
+84,"Blue-Winged Crown","Monster","Normal","WIND","Winged Beast",4,1600,1200,"41396436",3
+85,"Boar Soldier","Monster","Effect","EARTH","Beast-Warrior",4,2000,500,"21340051",3
+86,"Bolt Escargot","Monster","Normal","WATER","Thunder",5,1400,1500,"12146024",3
+87,"Book of Secret Arts","Magic",,,,,,,"91595718",3
+88,"Bottom Dweller","Monster","Normal","WATER","Fish",5,1650,1700,"81386177",3
+89,"Bracchio-raidus","Monster","Fusion","WATER","Dinosaur",6,2200,2000,"16507828",3
+90,"Breath of Light","Magic",,,,,,,"20101223",3
+91,"Bright Castle","Magic",,,,,,,"82878489",3
+92,"Burglar","Monster","Normal","EARTH","Beast",3,850,800,"06297941",3
+93,"Burning Spear","Magic",,,,,,,"18937875",3
+94,"Buster Blader","Monster","Effect","EARTH","Warrior",7,2600,2300,"78193831",3
+95,"Call of the Dark","Trap",,,,,,,"78637313",3
+96,"Call of the Grave","Trap",,,,,,,"16970158",3
+97,"Call Of The Haunted","Trap",,,,,,,"97077563",1
+98,"Candle of Fate","Monster","Normal","DARK","Fiend",2,600,600,"47695416",3
+99,"Cannon Soldier","Monster","Effect","DARK","Machine",4,1400,1300,"11384280",3
+100,"Castle of Dark Illusions","Monster","Effect","DARK","Fiend",4,920,1930,"00062121",3
+101,"Castle Walls","Trap",,,,,,,"44209392",3
+102,"Catapult Turtle","Monster","Effect","WATER","Aqua",5,1000,2000,"95727991",3
+103,"Ceasefire","Trap",,,,,,,"36468556",1
+104,"Celtic Guardian","Monster","Normal","EARTH","Warrior",4,1400,1200,"91152256",3
+105,"Celtic Guardian (alternate artwork)","Monster","Normal","EARTH","Warrior",4,1400,1200,"90101050",3
+106,"Ceremonial Bell","Monster","Effect","LIGHT","Spellcaster",3,0,1850,"20228463",3
+107,"Chain Destruction","Trap",,,,,,,"01248895",3
+108,"Chain Energy","Magic",,,,,,,"79323590",3
 109,"Chakra","Monster","Ritual","DARK","Fiend",7,2450,2000,,3
-110,"Change of Heart","Magic",,,,,,,4031928,1
-111,"Charubin the Fire Knight","Monster","Fusion","FIRE","Pyro",3,1100,800,37421579,3
-112,"Chorus of Sanctuary","Magic",,,,,,,81380218,3
-113,"Claw Reacher","Monster","Normal","DARK","Fiend",3,1000,800,41218256,3
-114,"Clown Zombie","Monster","Normal","DARK","Zombie",2,1350,0,92667214,3
-115,"Cockroach Knight","Monster","Effect","EARTH","Insect",3,800,900,33413638,3
+110,"Change of Heart","Magic",,,,,,,"04031928",1
+111,"Charubin the Fire Knight","Monster","Fusion","FIRE","Pyro",3,1100,800,"37421579",3
+112,"Chorus of Sanctuary","Magic",,,,,,,"81380218",3
+113,"Claw Reacher","Monster","Normal","DARK","Fiend",3,1000,800,"41218256",3
+114,"Clown Zombie","Monster","Normal","DARK","Zombie",2,1350,0,"92667214",3
+115,"Cockroach Knight","Monster","Effect","EARTH","Insect",3,800,900,"33413638",3
 116,"Cocoon of Evolution","Monster","Effect","EARTH","Insect",3,0,2000,,3
 117,"Commencement Dance","Magic",,,,,,,,3
-118,"Confiscation","Magic",,,,,,,17375316,1
+118,"Confiscation","Magic",,,,,,,"17375316",1
 119,"Cosmo Queen","Monster","Normal","DARK","Spellcaster",8,2900,2450,,3
 120,"Crab Turtle","Monster","Ritual","WATER","Aqua",8,2550,2500,,3
-121,"Crass Clown","Monster","Effect","DARK","Fiend",4,1350,1400,93889755,3
-122,"Crawling Dragon","Monster","Normal","EARTH","Dragon",5,1600,1400,67494157,3
-123,"Crawling Dragon #2","Monster","Normal","EARTH","Dinosaur",4,1600,1200,38289717,3
-124,"Crazy Fish","Monster","Normal","WATER","Fish",4,1600,1200,53713014,3
-125,"Crimson Sunbird","Monster","Fusion","FIRE","Winged Beast",6,2300,1800,46696593,3
-126,"Crow Goblin","Monster","Normal","WIND","Winged Beast",5,1850,1600,77998771,3
-127,"Crush Card","Trap",,,,,,,57728570,3
-128,"Curse of Dragon","Monster","Normal","DARK","Dragon",5,2000,1500,28279543,3
-129,"Curse of Fiend","Magic",,,,,,,12470447,3
-130,"Curtain of the Dark Ones","Monster","Normal","DARK","Spellcaster",2,600,500,22026707,3
-131,"Cyber Commander","Monster","Normal","DARK","Machine",2,750,700,6400512,3
-132,"Cyber Falcon","Monster","Normal","WIND","Machine",4,1400,1200,30655537,3
-133,"Cyber Jar","Monster","Effect","DARK","Rock",3,900,900,34124316,1
-134,"Cyber Saurus","Monster","Fusion","EARTH","Machine",5,1800,1400,89112729,3
-135,"Cyber Shield","Magic",,,,,,,63224564,3
-136,"Cyber Soldier","Monster","Normal","DARK","Machine",5,1500,1700,44865098,3
-137,"Cyber-Stein","Monster","Effect","DARK","Machine",2,700,500,69015963,3
-138,"Cyber-Tech Alligator","Monster","Normal","WIND","Machine",5,2500,1600,48766543,3
-139,"D. Human","Monster","Normal","EARTH","Warrior",4,1300,1100,81057959,3
-140,"Dancing Elf","Monster","Normal","WIND","Fairy",1,300,200,59983499,3
-141,"Dark Artist","Monster","Effect","DARK","Fiend",3,600,1400,72520073,3
-142,"Dark Assailant","Monster","Normal","DARK","Zombie",4,1200,1200,41949033,3
-143,"Dark Chimera","Monster","Normal","DARK","Fiend",5,1610,1460,32344688,3
-144,"Dark Elf","Monster","Effect","DARK","Spellcaster",4,2000,800,21417692,3
-145,"Dark Energy","Magic",,,,,,,4614116,3
-146,"Dark Gray","Monster","Normal","EARTH","Beast",3,800,900,9159938,3
-147,"Dark Hole","Magic",,,,,,,53129443,1
-148,"Dark King of the Abyss","Monster","Normal","DARK","Fiend",3,1200,800,53375573,3
+121,"Crass Clown","Monster","Effect","DARK","Fiend",4,1350,1400,"93889755",3
+122,"Crawling Dragon","Monster","Normal","EARTH","Dragon",5,1600,1400,"67494157",3
+123,"Crawling Dragon #2","Monster","Normal","EARTH","Dinosaur",4,1600,1200,"38289717",3
+124,"Crazy Fish","Monster","Normal","WATER","Fish",4,1600,1200,"53713014",3
+125,"Crimson Sunbird","Monster","Fusion","FIRE","Winged Beast",6,2300,1800,"46696593",3
+126,"Crow Goblin","Monster","Normal","WIND","Winged Beast",5,1850,1600,"77998771",3
+127,"Crush Card","Trap",,,,,,,"57728570",3
+128,"Curse of Dragon","Monster","Normal","DARK","Dragon",5,2000,1500,"28279543",3
+129,"Curse of Fiend","Magic",,,,,,,"12470447",3
+130,"Curtain of the Dark Ones","Monster","Normal","DARK","Spellcaster",2,600,500,"22026707",3
+131,"Cyber Commander","Monster","Normal","DARK","Machine",2,750,700,"06400512",3
+132,"Cyber Falcon","Monster","Normal","WIND","Machine",4,1400,1200,"30655537",3
+133,"Cyber Jar","Monster","Effect","DARK","Rock",3,900,900,"34124316",1
+134,"Cyber Saurus","Monster","Fusion","EARTH","Machine",5,1800,1400,"89112729",3
+135,"Cyber Shield","Magic",,,,,,,"63224564",3
+136,"Cyber Soldier","Monster","Normal","DARK","Machine",5,1500,1700,"44865098",3
+137,"Cyber-Stein","Monster","Effect","DARK","Machine",2,700,500,"69015963",3
+138,"Cyber-Tech Alligator","Monster","Normal","WIND","Machine",5,2500,1600,"48766543",3
+139,"D. Human","Monster","Normal","EARTH","Warrior",4,1300,1100,"81057959",3
+140,"Dancing Elf","Monster","Normal","WIND","Fairy",1,300,200,"59983499",3
+141,"Dark Artist","Monster","Effect","DARK","Fiend",3,600,1400,"72520073",3
+142,"Dark Assailant","Monster","Normal","DARK","Zombie",4,1200,1200,"41949033",3
+143,"Dark Chimera","Monster","Normal","DARK","Fiend",5,1610,1460,"32344688",3
+144,"Dark Elf","Monster","Effect","DARK","Spellcaster",4,2000,800,"21417692",3
+145,"Dark Energy","Magic",,,,,,,"04614116",3
+146,"Dark Gray","Monster","Normal","EARTH","Beast",3,800,900,"09159938",3
+147,"Dark Hole","Magic",,,,,,,"53129443",1
+148,"Dark King of the Abyss","Monster","Normal","DARK","Fiend",3,1200,800,"53375573",3
 149,"Dark Magic Ritual","Magic",,,,,,,,3
-150,"Dark Magician","Monster","Normal","DARK","Spellcaster",7,2500,2100,46986414,3
-151,"Dark Magician (alternate artwork)","Monster","Normal","DARK","Spellcaster",7,2500,2100,40609080,3
+150,"Dark Magician","Monster","Normal","DARK","Spellcaster",7,2500,2100,"46986414",3
+151,"Dark Magician (alternate artwork)","Monster","Normal","DARK","Spellcaster",7,2500,2100,"40609080",3
 152,"Dark Magician Girl","Monster","Effect","DARK","Spellcaster",6,2000,1700,,3
-153,"Dark Rabbit","Monster","Normal","DARK","Beast",4,1100,1500,99261403,3
-154,"Dark Sage","Monster","Effect","DARK","Spellcaster",9,2800,3200,92377303,3
-155,"Dark Shade","Monster","Normal","WIND","Fiend",3,1000,1000,40196604,3
-156,"Dark Witch","Monster","Normal","LIGHT","Fairy",5,1800,1700,35565537,3
-157,"Dark Zebra","Monster","Effect","EARTH","Beast",4,1800,400,59784896,3
-158,"Dark-Eyes Illusionist","Monster","Effect","DARK","Spellcaster",2,0,1400,38247752,3
-159,"Darkfire Dragon","Monster","Fusion","DARK","Dragon",4,1500,1250,17881964,3
-160,"Darkfire Soldier #1","Monster","Normal","FIRE","Pyro",4,1700,1150,5388481,3
-161,"Darkfire Soldier #2","Monster","Normal","FIRE","Pyro",4,1700,1100,78861134,3
-162,"Darkness Approaches","Magic",,,,,,,80168720,3
-163,"Dark-Piercing Light","Magic",,,,,,,45895206,3
-164,"Darkworld Thorns","Monster","Normal","EARTH","Plant",3,1200,900,43500484,3
-165,"Deepsea Shark","Monster","Fusion","WATER","Fish",5,1900,1600,28593363,3
-166,"Delinquent Duo","Magic",,,,,,,44763025,2
-167,"De-Spell","Magic",,,,,,,19159413,3
-168,"Destroyer Golem","Monster","Normal","EARTH","Rock",4,1500,1000,73481154,3
+153,"Dark Rabbit","Monster","Normal","DARK","Beast",4,1100,1500,"99261403",3
+154,"Dark Sage","Monster","Effect","DARK","Spellcaster",9,2800,3200,"92377303",3
+155,"Dark Shade","Monster","Normal","WIND","Fiend",3,1000,1000,"40196604",3
+156,"Dark Witch","Monster","Normal","LIGHT","Fairy",5,1800,1700,"35565537",3
+157,"Dark Zebra","Monster","Effect","EARTH","Beast",4,1800,400,"59784896",3
+158,"Dark-Eyes Illusionist","Monster","Effect","DARK","Spellcaster",2,0,1400,"38247752",3
+159,"Darkfire Dragon","Monster","Fusion","DARK","Dragon",4,1500,1250,"17881964",3
+160,"Darkfire Soldier #1","Monster","Normal","FIRE","Pyro",4,1700,1150,"05388481",3
+161,"Darkfire Soldier #2","Monster","Normal","FIRE","Pyro",4,1700,1100,"78861134",3
+162,"Darkness Approaches","Magic",,,,,,,"80168720",3
+163,"Dark-Piercing Light","Magic",,,,,,,"45895206",3
+164,"Darkworld Thorns","Monster","Normal","EARTH","Plant",3,1200,900,"43500484",3
+165,"Deepsea Shark","Monster","Fusion","WATER","Fish",5,1900,1600,"28593363",3
+166,"Delinquent Duo","Magic",,,,,,,"44763025",2
+167,"De-Spell","Magic",,,,,,,"19159413",3
+168,"Destroyer Golem","Monster","Normal","EARTH","Rock",4,1500,1000,"73481154",3
 169,"Dian Keto the Cure Master","Magic",,,,,,,,3
-170,"Dice Armadillo","Monster","Normal","EARTH","Machine",5,1650,1800,69893315,3
-171,"Dimensional Warrior","Monster","Effect","EARTH","Warrior",4,1200,1000,37043180,3
-172,"Disk Magician","Monster","Normal","DARK","Machine",4,1350,1000,76446915,3
-173,"Dissolverock","Monster","Normal","EARTH","Rock",3,900,1000,40826495,3
-174,"DNA Surgery","Trap",,,,,,,74701381,3
-175,"Dokuroizo the Grim Reaper","Monster","Normal","DARK","Zombie",3,900,1200,25882881,3
+170,"Dice Armadillo","Monster","Normal","EARTH","Machine",5,1650,1800,"69893315",3
+171,"Dimensional Warrior","Monster","Effect","EARTH","Warrior",4,1200,1000,"37043180",3
+172,"Disk Magician","Monster","Normal","DARK","Machine",4,1350,1000,"76446915",3
+173,"Dissolverock","Monster","Normal","EARTH","Rock",3,900,1000,"40826495",3
+174,"DNA Surgery","Trap",,,,,,,"74701381",3
+175,"Dokuroizo the Grim Reaper","Monster","Normal","DARK","Zombie",3,900,1200,"25882881",3
 176,"Dokurorider","Monster","Ritual","DARK","Zombie",6,1900,1850,,3
-177,"Doma The Angel of Silence","Monster","Normal","DARK","Fairy",5,1600,1400,16972957,3
-178,"Doron","Monster","Normal","EARTH","Warrior",2,900,500,756652,3
-179,"Dorover","Monster","Normal","WATER","Aqua",3,900,800,24194033,3
-180,"Dragon Capture Jar","Trap",,,,,,,50045299,3
-181,"Dragon Piper","Monster","Effect","FIRE","Pyro",3,200,1800,55763552,3
-182,"Dragon Seeker","Monster","Effect","DARK","Fiend",6,2000,2100,28563545,3
-183,"Dragon Treasure","Magic",,,,,,,1435851,3
-184,"Dragon Zombie","Monster","Normal","DARK","Zombie",3,1600,0,66672569,3
-185,"Dragoness the Wicked Knight","Monster","Fusion","WIND","Warrior",3,1200,900,70681994,3
-186,"Dream Clown","Monster","Effect","EARTH","Warrior",3,1200,900,13215230,3
-187,"Driving Snow","Trap",,,,,,,473469,3
-188,"Drooling Lizard","Monster","Normal","EARTH","Reptile",3,900,800,16353197,3
-189,"Dryad","Monster","Normal","EARTH","Spellcaster",4,1200,1400,84916669,3
-190,"Dunames Dark Witch","Monster","Normal","LIGHT","Fairy",4,1800,1050,12493482,3
-191,"Dungeon Worm","Monster","Normal","EARTH","Insect",5,1800,1500,51228280,3
-192,"Dust Tornado","Trap",,,,,,,60082869,3
-193,"Earthshaker","Trap",,,,,,,60866277,3
-194,"Eatgaboon","Trap",,,,,,,42578427,3
-195,"Eldeen","Monster","Normal","LIGHT","Spellcaster",3,950,1000,6367785,3
-196,"Electric Lizard","Monster","Effect","EARTH","Thunder",3,850,800,55875323,3
-197,"Electric Snake","Monster","Effect","LIGHT","Thunder",3,800,900,11324436,3
-198,"Electro-Whip","Magic",,,,,,,37820550,3
-199,"Elegant Egotist","Magic",,,,,,,90219263,3
-200,"Elf's Light","Magic",,,,,,,39897277,3
-201,"Empress Judge","Monster","Fusion","EARTH","Warrior",6,2100,1700,15237615,3
-202,"Enchanted Javelin","Trap",,,,,,,96355986,3
-203,"Enchanting Mermaid","Monster","Normal","WATER","Fish",3,1200,900,75376965,3
-204,"Eradicating Aerosol","Magic",,,,,,,94716515,3
-205,"Eternal Draught","Magic",,,,,,,56606928,3
-206,"Eternal Rest","Magic",,,,,,,95051344,3
-207,"Exchange","Magic",,,,,,,5556668,3
-208,"Exile of the Wicked","Magic",,,,,,,26725158,3
-209,"Exodia the Forbidden One","Monster","Effect","DARK","Spellcaster",3,1000,1000,33396948,1
-210,"Eyearmor","Monster","Normal","EARTH","Warrior",2,600,500,64511793,3
-211,"Fairy Dragon","Monster","Normal","WIND","Dragon",4,1100,1200,20315854,3
-212,"Fairy's Hand Mirror","Trap",,,,,,,17653779,3
-213,"Fairywitch","Monster","Normal","DARK","Spellcaster",3,800,1000,37160778,3
-214,"Faith Bird","Monster","Normal","WIND","Winged Beast",4,1500,1100,75582395,3
-215,"Fake Trap","Trap",,,,,,,3027001,3
-216,"Feral Imp","Monster","Normal","DARK","Fiend",4,1300,1400,41392891,3
-217,"Fiend Kraken","Monster","Normal","WATER","Aqua",4,1200,1400,77456781,3
-218,"Fiend Reflection #1","Monster","Normal","WIND","Winged Beast",4,1300,1400,68870276,3
-219,"Fiend Reflection #2","Monster","Normal","LIGHT","Winged Beast",4,1100,1400,2863439,3
-220,"Fiend Sword","Monster","Normal","DARK","Warrior",4,1400,800,22855882,3
-221,"Fiend's Hand","Monster","Normal","DARK","Zombie",2,600,600,52800428,3
+177,"Doma The Angel of Silence","Monster","Normal","DARK","Fairy",5,1600,1400,"16972957",3
+178,"Doron","Monster","Normal","EARTH","Warrior",2,900,500,"00756652",3
+179,"Dorover","Monster","Normal","WATER","Aqua",3,900,800,"24194033",3
+180,"Dragon Capture Jar","Trap",,,,,,,"50045299",3
+181,"Dragon Piper","Monster","Effect","FIRE","Pyro",3,200,1800,"55763552",3
+182,"Dragon Seeker","Monster","Effect","DARK","Fiend",6,2000,2100,"28563545",3
+183,"Dragon Treasure","Magic",,,,,,,"01435851",3
+184,"Dragon Zombie","Monster","Normal","DARK","Zombie",3,1600,0,"66672569",3
+185,"Dragoness the Wicked Knight","Monster","Fusion","WIND","Warrior",3,1200,900,"70681994",3
+186,"Dream Clown","Monster","Effect","EARTH","Warrior",3,1200,900,"13215230",3
+187,"Driving Snow","Trap",,,,,,,"00473469",3
+188,"Drooling Lizard","Monster","Normal","EARTH","Reptile",3,900,800,"16353197",3
+189,"Dryad","Monster","Normal","EARTH","Spellcaster",4,1200,1400,"84916669",3
+190,"Dunames Dark Witch","Monster","Normal","LIGHT","Fairy",4,1800,1050,"12493482",3
+191,"Dungeon Worm","Monster","Normal","EARTH","Insect",5,1800,1500,"51228280",3
+192,"Dust Tornado","Trap",,,,,,,"60082869",3
+193,"Earthshaker","Trap",,,,,,,"60866277",3
+194,"Eatgaboon","Trap",,,,,,,"42578427",3
+195,"Eldeen","Monster","Normal","LIGHT","Spellcaster",3,950,1000,"06367785",3
+196,"Electric Lizard","Monster","Effect","EARTH","Thunder",3,850,800,"55875323",3
+197,"Electric Snake","Monster","Effect","LIGHT","Thunder",3,800,900,"11324436",3
+198,"Electro-Whip","Magic",,,,,,,"37820550",3
+199,"Elegant Egotist","Magic",,,,,,,"90219263",3
+200,"Elf's Light","Magic",,,,,,,"39897277",3
+201,"Empress Judge","Monster","Fusion","EARTH","Warrior",6,2100,1700,"15237615",3
+202,"Enchanted Javelin","Trap",,,,,,,"96355986",3
+203,"Enchanting Mermaid","Monster","Normal","WATER","Fish",3,1200,900,"75376965",3
+204,"Eradicating Aerosol","Magic",,,,,,,"94716515",3
+205,"Eternal Draught","Magic",,,,,,,"56606928",3
+206,"Eternal Rest","Magic",,,,,,,"95051344",3
+207,"Exchange","Magic",,,,,,,"05556668",3
+208,"Exile of the Wicked","Magic",,,,,,,"26725158",3
+209,"Exodia the Forbidden One","Monster","Effect","DARK","Spellcaster",3,1000,1000,"33396948",1
+210,"Eyearmor","Monster","Normal","EARTH","Warrior",2,600,500,"64511793",3
+211,"Fairy Dragon","Monster","Normal","WIND","Dragon",4,1100,1200,"20315854",3
+212,"Fairy's Hand Mirror","Trap",,,,,,,"17653779",3
+213,"Fairywitch","Monster","Normal","DARK","Spellcaster",3,800,1000,"37160778",3
+214,"Faith Bird","Monster","Normal","WIND","Winged Beast",4,1500,1100,"75582395",3
+215,"Fake Trap","Trap",,,,,,,"03027001",3
+216,"Feral Imp","Monster","Normal","DARK","Fiend",4,1300,1400,"41392891",3
+217,"Fiend Kraken","Monster","Normal","WATER","Aqua",4,1200,1400,"77456781",3
+218,"Fiend Reflection #1","Monster","Normal","WIND","Winged Beast",4,1300,1400,"68870276",3
+219,"Fiend Reflection #2","Monster","Normal","LIGHT","Winged Beast",4,1100,1400,"02863439",3
+220,"Fiend Sword","Monster","Normal","DARK","Warrior",4,1400,800,"22855882",3
+221,"Fiend's Hand","Monster","Normal","DARK","Zombie",2,600,600,"52800428",3
 222,"Fiend's Mirror","Monster","Ritual","DARK","Fiend",6,2100,1800,,3
-223,"Final Destiny","Magic",,,,,,,18591904,3
-224,"Final Flame","Magic",,,,,,,73134081,3
-225,"Fire Kraken","Monster","Normal","FIRE","Aqua",4,1600,1500,46534755,3
-226,"Fire Reaper","Monster","Normal","DARK","Zombie",2,700,500,53581214,3
-227,"Firegrass","Monster","Normal","EARTH","Plant",2,700,600,53293545,3
+223,"Final Destiny","Magic",,,,,,,"18591904",3
+224,"Final Flame","Magic",,,,,,,"73134081",3
+225,"Fire Kraken","Monster","Normal","FIRE","Aqua",4,1600,1500,"46534755",3
+226,"Fire Reaper","Monster","Normal","DARK","Zombie",2,700,500,"53581214",3
+227,"Firegrass","Monster","Normal","EARTH","Plant",2,700,600,"53293545",3
 228,"Firewing Pegasus","Monster","Normal","FIRE","Beast",6,2250,1800,,3
-229,"Fireyarou","Monster","Normal","FIRE","Pyro",4,1300,1000,71407486,3
-230,"Fissure","Magic",,,,,,,66788016,3
-231,"Flame Cerebrus","Monster","Normal","FIRE","Pyro",6,2100,1800,60862676,3
-232,"Flame Champion","Monster","Normal","FIRE","Pyro",5,1900,1300,42599677,3
-233,"Flame Ghost","Monster","Fusion","DARK","Zombie",3,1000,800,58528964,3
-234,"Flame Manipulator","Monster","Normal","FIRE","Spellcaster",3,900,1000,34460851,3
-235,"Flame Swordsman","Monster","Fusion","FIRE","Warrior",5,1800,1600,45231177,3
-236,"Flame Swordsman (alternate artwork)","Monster","Fusion","FIRE","Warrior",5,1800,1600,40502030,3
-237,"Flame Viper","Monster","Normal","EARTH","Pyro",2,400,450,2830619,3
-238,"Flash Assailant","Monster","Effect","DARK","Fiend",4,2000,2000,96890582,3
-239,"Flower Wolf","Monster","Fusion","EARTH","Beast",5,1800,1400,95952802,3
-240,"Flying Kamakiri #1","Monster","Effect","WIND","Insect",4,1400,900,84834865,3
-241,"Flying Kamakiri #2","Monster","Normal","WIND","Insect",4,1500,800,3134241,3
-242,"Follow Wind","Magic",,,,,,,98252586,3
-243,"Forced Requisition","Trap",,,,,,,74923978,3
-244,"Forest","Magic",,,,,,,87430998,3
+229,"Fireyarou","Monster","Normal","FIRE","Pyro",4,1300,1000,"71407486",3
+230,"Fissure","Magic",,,,,,,"66788016",3
+231,"Flame Cerebrus","Monster","Normal","FIRE","Pyro",6,2100,1800,"60862676",3
+232,"Flame Champion","Monster","Normal","FIRE","Pyro",5,1900,1300,"42599677",3
+233,"Flame Ghost","Monster","Fusion","DARK","Zombie",3,1000,800,"58528964",3
+234,"Flame Manipulator","Monster","Normal","FIRE","Spellcaster",3,900,1000,"34460851",3
+235,"Flame Swordsman","Monster","Fusion","FIRE","Warrior",5,1800,1600,"45231177",3
+236,"Flame Swordsman (alternate artwork)","Monster","Fusion","FIRE","Warrior",5,1800,1600,"40502030",3
+237,"Flame Viper","Monster","Normal","EARTH","Pyro",2,400,450,"02830619",3
+238,"Flash Assailant","Monster","Effect","DARK","Fiend",4,2000,2000,"96890582",3
+239,"Flower Wolf","Monster","Fusion","EARTH","Beast",5,1800,1400,"95952802",3
+240,"Flying Kamakiri #1","Monster","Effect","WIND","Insect",4,1400,900,"84834865",3
+241,"Flying Kamakiri #2","Monster","Normal","WIND","Insect",4,1500,800,"03134241",3
+242,"Follow Wind","Magic",,,,,,,"98252586",3
+243,"Forced Requisition","Trap",,,,,,,"74923978",3
+244,"Forest","Magic",,,,,,,"87430998",3
 245,"Fortress Whale","Monster","Ritual","WATER","Fish",7,2350,2150,,3
 246,"Fortress Whale's Oath","Magic",,,,,,,,3
-247,"Frenzied Panda","Monster","Normal","EARTH","Beast",4,1200,1000,98818516,3
-248,"Fusion Sage","Magic",,,,,,,26902560,3
-249,"Fusionist","Monster","Fusion","EARTH","Beast",3,900,700,1641882,3
-250,"Gaia Power","Magic",,,,,,,56594520,3
-251,"Gaia the Dragon Champion","Monster","Fusion","WIND","Dragon",7,2600,2100,66889139,3
-252,"Gaia The Fierce Knight","Monster","Normal","EARTH","Warrior",7,2300,2100,6368038,3
-253,"Gaia The Fierce Knight (alternate artwork)","Monster","Normal","EARTH","Warrior",7,2300,2100,603060,3
-254,"Gale Dogra","Monster","Effect","EARTH","Insect",2,650,600,16229315,3
-255,"Gamma The Magnet Warrior","Monster","Normal","EARTH","Rock",4,1500,1800,11549357,3
-256,"Ganigumo","Monster","Normal","EARTH","Insect",2,600,800,34536276,3
-257,"Garma Sword","Monster","Ritual","DARK","Warrior",7,2550,2150,90844184,3
-258,"Garma Sword Oath","Magic",,,,,,,78577570,3
-259,"Garnecia Elefantis","Monster","Normal","EARTH","Beast-Warrior",7,2400,2000,49888191,3
-260,"Garoozis","Monster","Normal","FIRE","Beast-Warrior",5,1800,1500,14977074,3
-261,"Garvas","Monster","Normal","EARTH","Beast",6,2000,1700,69780745,3
+247,"Frenzied Panda","Monster","Normal","EARTH","Beast",4,1200,1000,"98818516",3
+248,"Fusion Sage","Magic",,,,,,,"26902560",3
+249,"Fusionist","Monster","Fusion","EARTH","Beast",3,900,700,"01641882",3
+250,"Gaia Power","Magic",,,,,,,"56594520",3
+251,"Gaia the Dragon Champion","Monster","Fusion","WIND","Dragon",7,2600,2100,"66889139",3
+252,"Gaia The Fierce Knight","Monster","Normal","EARTH","Warrior",7,2300,2100,"06368038",3
+253,"Gaia The Fierce Knight (alternate artwork)","Monster","Normal","EARTH","Warrior",7,2300,2100,"00603060",3
+254,"Gale Dogra","Monster","Effect","EARTH","Insect",2,650,600,"16229315",3
+255,"Gamma The Magnet Warrior","Monster","Normal","EARTH","Rock",4,1500,1800,"11549357",3
+256,"Ganigumo","Monster","Normal","EARTH","Insect",2,600,800,"34536276",3
+257,"Garma Sword","Monster","Ritual","DARK","Warrior",7,2550,2150,"90844184",3
+258,"Garma Sword Oath","Magic",,,,,,,"78577570",3
+259,"Garnecia Elefantis","Monster","Normal","EARTH","Beast-Warrior",7,2400,2000,"49888191",3
+260,"Garoozis","Monster","Normal","FIRE","Beast-Warrior",5,1800,1500,"14977074",3
+261,"Garvas","Monster","Normal","EARTH","Beast",6,2000,1700,"69780745",3
 262,"Gate Guardian","Monster","Effect","DARK","Warrior",11,3750,3400,,3
-263,"Gatekeeper","Monster","Normal","DARK","Machine",5,1500,1800,19737320,3
-264,"Gazelle the King of Mythical Beasts","Monster","Normal","EARTH","Beast",4,1500,1200,5818798,3
-265,"Gemini Elf","Monster","Normal","EARTH","Spellcaster",4,1900,900,69140098,3
-266,"Genin","Monster","Normal","LIGHT","Spellcaster",3,600,900,49370026,3
-267,"Germ Infection","Magic",,,,,,,24668830,3
-268,"Ghoul with an Appetite","Monster","Normal","DARK","Zombie",4,1600,1200,95265975,3
-269,"Giant Flea","Monster","Normal","EARTH","Insect",4,1500,1200,41762634,3
-270,"Giant Germ","Monster","Effect","DARK","Fiend",2,1000,100,95178994,3
-271,"Giant Mech-Soldier","Monster","Normal","EARTH","Machine",6,1750,1900,72299832,3
-272,"Giant Rat","Monster","Effect","EARTH","Beast",4,1400,1450,97017120,3
-273,"Giant Red Seasnake","Monster","Normal","WATER","Aqua",4,1800,800,58831685,3
-274,"Giant Scorpion of the Tundra","Monster","Normal","EARTH","Insect",3,1100,1000,41403766,3
-275,"Giant Soldier of Stone","Monster","Normal","EARTH","Rock",3,1300,2000,13039848,3
-276,"Giant Trunade","Magic",,,,,,,42703248,3
-277,"Giant Turtle Who Feeds on Flames","Monster","Normal","WATER","Aqua",5,1400,1800,96981563,3
-278,"Gift of The Mystical Elf","Trap",,,,,,,98299011,3
-279,"Giganto","Monster","Normal","DARK","Machine",5,1700,1800,33621868,3
-280,"Giga-tech Wolf","Monster","Normal","FIRE","Machine",4,1200,1400,8471389,3
-281,"Giltia the D. Knight","Monster","Fusion","LIGHT","Warrior",5,1850,1500,51828629,3
-282,"Goblin Fan","Trap",,,,,,,4149689,3
-283,"Goblin's Secret Remedy","Magic",,,,,,,11868825,3
-284,"Goddess of Whim","Monster","Effect","LIGHT","Fairy",3,950,700,67959180,3
-285,"Goddess with the Third Eye","Monster","Effect","LIGHT","Fairy",4,1200,1000,53493204,3
-286,"Gokibore","Monster","Normal","EARTH","Insect",4,1200,1400,15367030,3
-287,"Graceful Charity","Magic",,,,,,,79571449,2
-288,"Graceful Dice","Magic",,,,,,,74137509,3
-289,"Grappler","Monster","Normal","WATER","Reptile",4,1300,1200,2906250,3
-290,"Gravedigger Ghoul","Magic",,,,,,,82542267,3
-291,"Gravekeeper's Servant","Magic",,,,,,,16762927,3
-292,"Graverobber","Trap",,,,,,,61705417,3
-293,"Graveyard and the Hand of Invitation","Monster","Normal","DARK","Zombie",3,700,900,27094595,3
-294,"Great Bill","Monster","Normal","EARTH","Beast",4,1250,1300,55691901,3
-295,"Great Mammoth of Goldfine","Monster","Fusion","DARK","Zombie",6,2200,1800,54622031,3
+263,"Gatekeeper","Monster","Normal","DARK","Machine",5,1500,1800,"19737320",3
+264,"Gazelle the King of Mythical Beasts","Monster","Normal","EARTH","Beast",4,1500,1200,"05818798",3
+265,"Gemini Elf","Monster","Normal","EARTH","Spellcaster",4,1900,900,"69140098",3
+266,"Genin","Monster","Normal","LIGHT","Spellcaster",3,600,900,"49370026",3
+267,"Germ Infection","Magic",,,,,,,"24668830",3
+268,"Ghoul with an Appetite","Monster","Normal","DARK","Zombie",4,1600,1200,"95265975",3
+269,"Giant Flea","Monster","Normal","EARTH","Insect",4,1500,1200,"41762634",3
+270,"Giant Germ","Monster","Effect","DARK","Fiend",2,1000,100,"95178994",3
+271,"Giant Mech-Soldier","Monster","Normal","EARTH","Machine",6,1750,1900,"72299832",3
+272,"Giant Rat","Monster","Effect","EARTH","Beast",4,1400,1450,"97017120",3
+273,"Giant Red Seasnake","Monster","Normal","WATER","Aqua",4,1800,800,"58831685",3
+274,"Giant Scorpion of the Tundra","Monster","Normal","EARTH","Insect",3,1100,1000,"41403766",3
+275,"Giant Soldier of Stone","Monster","Normal","EARTH","Rock",3,1300,2000,"13039848",3
+276,"Giant Trunade","Magic",,,,,,,"42703248",3
+277,"Giant Turtle Who Feeds on Flames","Monster","Normal","WATER","Aqua",5,1400,1800,"96981563",3
+278,"Gift of The Mystical Elf","Trap",,,,,,,"98299011",3
+279,"Giganto","Monster","Normal","DARK","Machine",5,1700,1800,"33621868",3
+280,"Giga-tech Wolf","Monster","Normal","FIRE","Machine",4,1200,1400,"08471389",3
+281,"Giltia the D. Knight","Monster","Fusion","LIGHT","Warrior",5,1850,1500,"51828629",3
+282,"Goblin Fan","Trap",,,,,,,"04149689",3
+283,"Goblin's Secret Remedy","Magic",,,,,,,"11868825",3
+284,"Goddess of Whim","Monster","Effect","LIGHT","Fairy",3,950,700,"67959180",3
+285,"Goddess with the Third Eye","Monster","Effect","LIGHT","Fairy",4,1200,1000,"53493204",3
+286,"Gokibore","Monster","Normal","EARTH","Insect",4,1200,1400,"15367030",3
+287,"Graceful Charity","Magic",,,,,,,"79571449",2
+288,"Graceful Dice","Magic",,,,,,,"74137509",3
+289,"Grappler","Monster","Normal","WATER","Reptile",4,1300,1200,"02906250",3
+290,"Gravedigger Ghoul","Magic",,,,,,,"82542267",3
+291,"Gravekeeper's Servant","Magic",,,,,,,"16762927",3
+292,"Graverobber","Trap",,,,,,,"61705417",3
+293,"Graveyard and the Hand of Invitation","Monster","Normal","DARK","Zombie",3,700,900,"27094595",3
+294,"Great Bill","Monster","Normal","EARTH","Beast",4,1250,1300,"55691901",3
+295,"Great Mammoth of Goldfine","Monster","Fusion","DARK","Zombie",6,2200,1800,"54622031",3
 296,"Great Moth","Monster","Effect","EARTH","Insect",8,2600,2500,,3
-297,"Great White","Monster","Normal","WATER","Fish",4,1600,800,13429800,3
-298,"Green Phantom King","Monster","Normal","EARTH","Plant",3,500,1600,22910685,3
-299,"Greenkappa","Monster","Effect","DARK","Warrior",3,650,900,61831093,3
-300,"Griffore","Monster","Normal","EARTH","Beast",4,1200,1500,53829412,3
-301,"Griggle","Monster","Effect","EARTH","Plant",1,350,300,95744531,3
-302,"Ground Attacker Bugroth","Monster","Normal","EARTH","Machine",4,1500,1000,58314394,3
-303,"Gruesome Goo","Monster","Normal","WATER","Aqua",3,1300,700,65623423,3
-304,"Gryphon Wing","Trap",,,,,,,55608151,3
-305,"Guardian of the Labyrinth","Monster","Normal","EARTH","Warrior",4,1000,1200,89272878,3
-306,"Guardian of the Sea","Monster","Normal","WATER","Aqua",4,1300,1000,85448931,3
-307,"Guardian of the Throne Room","Monster","Normal","LIGHT","Machine",4,1650,1600,47879985,3
-308,"Gust","Trap",,,,,,,73079365,3
-309,"Gust Fan","Magic",,,,,,,55321970,3
-310,"Gyakutenno Megami","Monster","Normal","LIGHT","Fairy",6,1800,2000,31122090,3
+297,"Great White","Monster","Normal","WATER","Fish",4,1600,800,"13429800",3
+298,"Green Phantom King","Monster","Normal","EARTH","Plant",3,500,1600,"22910685",3
+299,"Greenkappa","Monster","Effect","DARK","Warrior",3,650,900,"61831093",3
+300,"Griffore","Monster","Normal","EARTH","Beast",4,1200,1500,"53829412",3
+301,"Griggle","Monster","Effect","EARTH","Plant",1,350,300,"95744531",3
+302,"Ground Attacker Bugroth","Monster","Normal","EARTH","Machine",4,1500,1000,"58314394",3
+303,"Gruesome Goo","Monster","Normal","WATER","Aqua",3,1300,700,"65623423",3
+304,"Gryphon Wing","Trap",,,,,,,"55608151",3
+305,"Guardian of the Labyrinth","Monster","Normal","EARTH","Warrior",4,1000,1200,"89272878",3
+306,"Guardian of the Sea","Monster","Normal","WATER","Aqua",4,1300,1000,"85448931",3
+307,"Guardian of the Throne Room","Monster","Normal","LIGHT","Machine",4,1650,1600,"47879985",3
+308,"Gust","Trap",,,,,,,"73079365",3
+309,"Gust Fan","Magic",,,,,,,"55321970",3
+310,"Gyakutenno Megami","Monster","Normal","LIGHT","Fairy",6,1800,2000,"31122090",3
 311,"Hamburger Recipe","Magic",,,,,,,,3
-312,"Hane-Hane","Monster","Effect","EARTH","Beast",2,450,500,7089711,3
-313,"Haniwa","Monster","Normal","EARTH","Rock",2,500,500,84285623,3
-314,"Happy Lover","Monster","Normal","LIGHT","Fairy",2,800,500,99030164,3
-315,"Hard Armor","Monster","Normal","EARTH","Warrior",3,300,1200,20060230,3
-316,"Harpie Lady","Monster","Normal","WIND","Winged Beast",4,1300,1400,76812113,3
-317,"Harpie Lady Sisters","Monster","Effect","WIND","Winged Beast",6,1950,2100,12206212,3
-318,"Harpie's Brother","Monster","Normal","WIND","Winged Beast",4,1800,600,30532390,3
-319,"Harpie's Feather Duster","Magic",,,,,,,18144506,1
-320,"Harpie's Pet Dragon","Monster","Effect","WIND","Dragon",7,2000,2500,52040216,3
-321,"Heavy Storm","Magic",,,,,,,19613556,2
-322,"Hercules Beetle","Monster","Normal","EARTH","Insect",5,1500,2000,52584282,3
-323,"Hero of the East","Monster","Normal","EARTH","Warrior",3,1100,1000,89987208,3
-324,"Hibikime","Monster","Normal","EARTH","Warrior",4,1450,1000,64501875,3
-325,"High Tide Gyojin","Monster","Normal","WATER","Aqua",4,1650,1300,54579801,3
-326,"Hinotama","Magic",,,,,,,46130346,3
-327,"Hinotama Soul","Monster","Normal","FIRE","Pyro",2,600,500,96851799,3
-328,"Hiro's Shadow Scout","Monster","Effect","DARK","Fiend",2,650,500,81863068,3
-329,"Hitodenchak","Monster","Normal","WATER","Aqua",2,600,700,46718686,3
-330,"Hitotsu-Me Giant","Monster","Normal","EARTH","Beast-Warrior",4,1200,1000,76184692,3
-331,"Holograh","Monster","Normal","EARTH","Machine",3,1100,700,10859908,3
-332,"Horn Imp","Monster","Normal","DARK","Fiend",4,1300,1000,69669405,3
-333,"Horn of Heaven","Trap",,,,,,,98069388,3
-334,"Horn of Light","Magic",,,,,,,38552107,3
-335,"Horn of the Unicorn","Magic",,,,,,,64047146,3
-336,"Hoshiningen","Monster","Effect","LIGHT","Fairy",2,500,700,67629977,3
-337,"Hourglass of Courage","Monster","Effect","LIGHT","Fairy",4,1100,1200,43530283,3
-338,"Hourglass of Life","Monster","Normal","LIGHT","Fairy",2,700,600,8783685,3
-339,"House of Adhesive Tape","Trap",,,,,,,15083728,3
+312,"Hane-Hane","Monster","Effect","EARTH","Beast",2,450,500,"07089711",3
+313,"Haniwa","Monster","Normal","EARTH","Rock",2,500,500,"84285623",3
+314,"Happy Lover","Monster","Normal","LIGHT","Fairy",2,800,500,"99030164",3
+315,"Hard Armor","Monster","Normal","EARTH","Warrior",3,300,1200,"20060230",3
+316,"Harpie Lady","Monster","Normal","WIND","Winged Beast",4,1300,1400,"76812113",3
+317,"Harpie Lady Sisters","Monster","Effect","WIND","Winged Beast",6,1950,2100,"12206212",3
+318,"Harpie's Brother","Monster","Normal","WIND","Winged Beast",4,1800,600,"30532390",3
+319,"Harpie's Feather Duster","Magic",,,,,,,"18144506",1
+320,"Harpie's Pet Dragon","Monster","Effect","WIND","Dragon",7,2000,2500,"52040216",3
+321,"Heavy Storm","Magic",,,,,,,"19613556",2
+322,"Hercules Beetle","Monster","Normal","EARTH","Insect",5,1500,2000,"52584282",3
+323,"Hero of the East","Monster","Normal","EARTH","Warrior",3,1100,1000,"89987208",3
+324,"Hibikime","Monster","Normal","EARTH","Warrior",4,1450,1000,"64501875",3
+325,"High Tide Gyojin","Monster","Normal","WATER","Aqua",4,1650,1300,"54579801",3
+326,"Hinotama","Magic",,,,,,,"46130346",3
+327,"Hinotama Soul","Monster","Normal","FIRE","Pyro",2,600,500,"96851799",3
+328,"Hiro's Shadow Scout","Monster","Effect","DARK","Fiend",2,650,500,"81863068",3
+329,"Hitodenchak","Monster","Normal","WATER","Aqua",2,600,700,"46718686",3
+330,"Hitotsu-Me Giant","Monster","Normal","EARTH","Beast-Warrior",4,1200,1000,"76184692",3
+331,"Holograh","Monster","Normal","EARTH","Machine",3,1100,700,"10859908",3
+332,"Horn Imp","Monster","Normal","DARK","Fiend",4,1300,1000,"69669405",3
+333,"Horn of Heaven","Trap",,,,,,,"98069388",3
+334,"Horn of Light","Magic",,,,,,,"38552107",3
+335,"Horn of the Unicorn","Magic",,,,,,,"64047146",3
+336,"Hoshiningen","Monster","Effect","LIGHT","Fairy",2,500,700,"67629977",3
+337,"Hourglass of Courage","Monster","Effect","LIGHT","Fairy",4,1100,1200,"43530283",3
+338,"Hourglass of Life","Monster","Normal","LIGHT","Fairy",2,700,600,"08783685",3
+339,"House of Adhesive Tape","Trap",,,,,,,"15083728",3
 340,"Hungry Burger","Monster","Ritual","DARK","Warrior",6,2000,1850,,3
-341,"Hunter Spider","Monster","Normal","EARTH","Insect",5,1600,1400,80141480,3
-342,"Hyo","Monster","Normal","WATER","Warrior",3,800,1200,38982356,3
-343,"Hyosube","Monster","Normal","WATER","Aqua",4,1500,900,2118022,3
-344,"Hyozanryu","Monster","Normal","LIGHT","Dragon",7,2100,2800,62397231,3
-345,"Ice Water","Monster","Normal","WATER","Aqua",3,1150,900,20848593,3
-346,"Ill Witch","Monster","Normal","LIGHT","Spellcaster",5,1600,1500,81686058,3
-347,"Illusionist Faceless Mage","Monster","Normal","DARK","Spellcaster",5,1200,2200,28546905,3
-348,"Imperial Order","Trap",,,,,,,61740673,1
-349,"Insect Armor with Laser Cannon","Magic",,,,,,,3492538,3
-350,"Insect Queen","Monster","Effect","EARTH","Insect",7,2200,2400,91512835,3
-351,"Insect Soldiers of the Sky","Monster","Effect","WIND","Insect",3,1000,800,7019529,3
-352,"Inspection","Magic",,,,,,,16227556,3
-353,"Invader from Another Dimension","Monster","Normal","DARK","Fiend",4,950,1400,28450915,3
-354,"Invader of the Throne","Monster","Effect","EARTH","Warrior",4,1350,1700,3056267,3
-355,"Invigoration","Magic",,,,,,,98374133,3
+341,"Hunter Spider","Monster","Normal","EARTH","Insect",5,1600,1400,"80141480",3
+342,"Hyo","Monster","Normal","WATER","Warrior",3,800,1200,"38982356",3
+343,"Hyosube","Monster","Normal","WATER","Aqua",4,1500,900,"02118022",3
+344,"Hyozanryu","Monster","Normal","LIGHT","Dragon",7,2100,2800,"62397231",3
+345,"Ice Water","Monster","Normal","WATER","Aqua",3,1150,900,"20848593",3
+346,"Ill Witch","Monster","Normal","LIGHT","Spellcaster",5,1600,1500,"81686058",3
+347,"Illusionist Faceless Mage","Monster","Normal","DARK","Spellcaster",5,1200,2200,"28546905",3
+348,"Imperial Order","Trap",,,,,,,"61740673",1
+349,"Insect Armor with Laser Cannon","Magic",,,,,,,"03492538",3
+350,"Insect Queen","Monster","Effect","EARTH","Insect",7,2200,2400,"91512835",3
+351,"Insect Soldiers of the Sky","Monster","Effect","WIND","Insect",3,1000,800,"07019529",3
+352,"Inspection","Magic",,,,,,,"16227556",3
+353,"Invader from Another Dimension","Monster","Normal","DARK","Fiend",4,950,1400,"28450915",3
+354,"Invader of the Throne","Monster","Effect","EARTH","Warrior",4,1350,1700,"03056267",3
+355,"Invigoration","Magic",,,,,,,"98374133",3
 356,"Javelin Beetle","Monster","Ritual","EARTH","Insect",8,2450,2550,,3
 357,"Javelin Beetle Pact","Magic",,,,,,,,3
-358,"Jellyfish","Monster","Normal","WATER","Aqua",4,1200,1500,14851496,3
-359,"Jigen Bakudan","Monster","Effect","FIRE","Pyro",2,200,1000,90020065,3
-360,"Jinzo","Monster","Effect","DARK","Machine",6,2400,1500,77585513,1
-361,"Jinzo #7","Monster","Effect","DARK","Machine",2,500,400,32809211,3
-362,"Jirai Gumo","Monster","Effect","EARTH","Insect",4,2200,100,94773007,3
-363,"Judge Man","Monster","Normal","EARTH","Warrior",6,2200,1500,30113682,3
-364,"Just Desserts","Trap",,,,,,,24068492,3
-365,"Kagemusha of the Blue Flame","Monster","Normal","EARTH","Warrior",2,800,400,15401633,3
-366,"Kageningen","Monster","Normal","DARK","Warrior",2,800,600,80600490,3
-367,"Kairyu-Shin","Monster","Normal","WATER","Sea Serpent",5,1800,1500,76634149,3
-368,"Kaiser Dragon","Monster","Fusion","LIGHT","Dragon",7,2300,2000,94566432,3
-369,"Kamakiriman","Monster","Normal","EARTH","Insect",4,1150,1400,68928540,3
-370,"Kaminari Attack","Monster","Fusion","WIND","Thunder",5,1900,1400,9653271,3
-371,"Kaminarikozou","Monster","Normal","WIND","Thunder",2,700,600,15510988,3
-372,"Kamionwizard","Monster","Fusion","DARK","Spellcaster",4,1300,1100,41544074,3
+358,"Jellyfish","Monster","Normal","WATER","Aqua",4,1200,1500,"14851496",3
+359,"Jigen Bakudan","Monster","Effect","FIRE","Pyro",2,200,1000,"90020065",3
+360,"Jinzo","Monster","Effect","DARK","Machine",6,2400,1500,"77585513",1
+361,"Jinzo #7","Monster","Effect","DARK","Machine",2,500,400,"32809211",3
+362,"Jirai Gumo","Monster","Effect","EARTH","Insect",4,2200,100,"94773007",3
+363,"Judge Man","Monster","Normal","EARTH","Warrior",6,2200,1500,"30113682",3
+364,"Just Desserts","Trap",,,,,,,"24068492",3
+365,"Kagemusha of the Blue Flame","Monster","Normal","EARTH","Warrior",2,800,400,"15401633",3
+366,"Kageningen","Monster","Normal","DARK","Warrior",2,800,600,"80600490",3
+367,"Kairyu-Shin","Monster","Normal","WATER","Sea Serpent",5,1800,1500,"76634149",3
+368,"Kaiser Dragon","Monster","Fusion","LIGHT","Dragon",7,2300,2000,"94566432",3
+369,"Kamakiriman","Monster","Normal","EARTH","Insect",4,1150,1400,"68928540",3
+370,"Kaminari Attack","Monster","Fusion","WIND","Thunder",5,1900,1400,"09653271",3
+371,"Kaminarikozou","Monster","Normal","WIND","Thunder",2,700,600,"15510988",3
+372,"Kamionwizard","Monster","Fusion","DARK","Spellcaster",4,1300,1100,"41544074",3
 373,"Kanan the Swordmistress","Monster","Normal","EARTH","Warrior",4,1400,1400,,3
-374,"Kanikabuto","Monster","Normal","WATER","Aqua",3,650,900,84103702,3
-375,"Karate Man","Monster","Effect","EARTH","Warrior",3,1000,1000,23289281,3
-376,"Karbonala Warrior","Monster","Fusion","EARTH","Warrior",4,1500,1200,54541900,3
-377,"Kattapillar","Monster","Normal","EARTH","Insect",1,250,300,81179446,3
+374,"Kanikabuto","Monster","Normal","WATER","Aqua",3,650,900,"84103702",3
+375,"Karate Man","Monster","Effect","EARTH","Warrior",3,1000,1000,"23289281",3
+376,"Karbonala Warrior","Monster","Fusion","EARTH","Warrior",4,1500,1200,"54541900",3
+377,"Kattapillar","Monster","Normal","EARTH","Insect",1,250,300,"81179446",3
 378,"Kazejin","Monster","Effect","WIND","Spellcaster",7,2400,2200,,3
-379,"Key Mace #2","Monster","Normal","DARK","Fiend",4,1050,1200,20541432,3
-380,"Killer Needle","Monster","Normal","WIND","Insect",4,1200,1000,88979991,3
-381,"King Fog","Monster","Normal","DARK","Fiend",3,1000,900,84686841,3
-382,"King of Yamimakai","Monster","Normal","DARK","Fiend",5,2000,1530,69455834,3
-383,"Kiseitai","Monster","Effect","DARK","Fiend",2,300,800,4266839,3
-384,"Kojikocy","Monster","Normal","EARTH","Warrior",4,1500,1200,1184620,3
-385,"Kotodama","Monster","Effect","EARTH","Fairy",3,0,1600,19406822,3
-386,"Koumori Dragon","Monster","Normal","DARK","Dragon",4,1500,1200,67724379,3
-387,"Krokodilus","Monster","Normal","WATER","Reptile",4,1100,1200,76512652,3
-388,"Kumootoko","Monster","Normal","EARTH","Insect",3,700,1400,56283725,3
-389,"Kunai with Chain","Trap",,,,,,,37390589,3
-390,"Kurama","Monster","Normal","WIND","Winged Beast",3,800,800,85705804,3
-391,"Kuriboh","Monster","Effect","DARK","Fiend",1,300,200,40640057,3
-392,"Kuwagata a","Monster","Normal","EARTH","Insect",4,1250,1000,60802233,3
-393,"Kwagar Hercules","Monster","Fusion","EARTH","Insect",6,1900,1700,95144193,3
-394,"La Jinn the Mystical Genie of the Lamp","Monster","Normal","DARK","Fiend",4,1800,1000,97590747,3
-395,"Labyrinth Tank","Monster","Fusion","DARK","Machine",7,2400,2400,99551425,3
+379,"Key Mace #2","Monster","Normal","DARK","Fiend",4,1050,1200,"20541432",3
+380,"Killer Needle","Monster","Normal","WIND","Insect",4,1200,1000,"88979991",3
+381,"King Fog","Monster","Normal","DARK","Fiend",3,1000,900,"84686841",3
+382,"King of Yamimakai","Monster","Normal","DARK","Fiend",5,2000,1530,"69455834",3
+383,"Kiseitai","Monster","Effect","DARK","Fiend",2,300,800,"04266839",3
+384,"Kojikocy","Monster","Normal","EARTH","Warrior",4,1500,1200,"01184620",3
+385,"Kotodama","Monster","Effect","EARTH","Fairy",3,0,1600,"19406822",3
+386,"Koumori Dragon","Monster","Normal","DARK","Dragon",4,1500,1200,"67724379",3
+387,"Krokodilus","Monster","Normal","WATER","Reptile",4,1100,1200,"76512652",3
+388,"Kumootoko","Monster","Normal","EARTH","Insect",3,700,1400,"56283725",3
+389,"Kunai with Chain","Trap",,,,,,,"37390589",3
+390,"Kurama","Monster","Normal","WIND","Winged Beast",3,800,800,"85705804",3
+391,"Kuriboh","Monster","Effect","DARK","Fiend",1,300,200,"40640057",3
+392,"Kuwagata a","Monster","Normal","EARTH","Insect",4,1250,1000,"60802233",3
+393,"Kwagar Hercules","Monster","Fusion","EARTH","Insect",6,1900,1700,"95144193",3
+394,"La Jinn the Mystical Genie of the Lamp","Monster","Normal","DARK","Fiend",4,1800,1000,"97590747",3
+395,"Labyrinth Tank","Monster","Fusion","DARK","Machine",7,2400,2400,"99551425",3
 396,"Labyrinth Wall","Monster","Normal","EARTH","Rock",5,0,3000,,3
-397,"Lady of Faith","Monster","Normal","LIGHT","Spellcaster",3,1100,800,17358176,3
-398,"LaLa Li-oon","Monster","Normal","WIND","Thunder",2,600,600,9430387,3
+397,"Lady of Faith","Monster","Normal","LIGHT","Spellcaster",3,1100,800,"17358176",3
+398,"LaLa Li-oon","Monster","Normal","WIND","Thunder",2,600,600,"09430387",3
 399,"Larvae Moth","Monster","Effect","EARTH","Insect",2,500,400,,3
-400,"Larvas","Monster","Normal","EARTH","Beast",3,800,1000,94675535,3
-401,"Laser Cannon Armor","Magic",,,,,,,77007920,3
-402,"Last Day of Witch","Magic",,,,,,,90330453,3
-403,"Last Will","Magic",,,,,,,85602018,3
-404,"Laughing Flower","Monster","Normal","EARTH","Plant",2,900,500,42591472,3
-405,"Launcher Spider","Monster","Normal","FIRE","Machine",7,2200,2500,87322377,3
-406,"Launcher Spider (alternate artwork)","Monster","Normal","FIRE","Machine",7,2200,2500,80703020,3
-407,"Lava Battleguard","Monster","Effect","EARTH","Warrior",5,1550,1800,20394040,3
-408,"Left Arm of the Forbidden One","Monster","Normal","DARK","Spellcaster",1,200,300,7902349,1
-409,"Left Leg of the Forbidden One","Monster","Normal","DARK","Spellcaster",1,200,300,44519536,1
-410,"Legendary Sword","Magic",,,,,,,61854111,3
-411,"Leghul","Monster","Effect","EARTH","Insect",1,300,350,12472242,3
-412,"Leogun","Monster","Normal","EARTH","Beast",5,1750,1550,10538007,3
-413,"Lesser Dragon","Monster","Normal","WIND","Dragon",4,1200,1000,55444629,3
-414,"Light of Intervention","Trap",,,,,,,62867251,3
-415,"Lightforce Sword","Trap",,,,,,,49587034,3
-416,"Liquid Beast","Monster","Normal","WATER","Aqua",3,950,800,93108297,3
-417,"Little Chimera","Monster","Effect","FIRE","Beast",2,600,550,68658728,3
-418,"Little D","Monster","Normal","EARTH","Dinosaur",3,1100,700,42625254,3
-419,"Lord of D.","Monster","Effect","DARK","Spellcaster",4,1200,1100,17985575,3
-420,"Lord of the Lamp","Monster","Normal","DARK","Fiend",4,1400,1200,99510761,3
-421,"Lord of Zemia","Monster","Normal","DARK","Fiend",4,1300,1000,81618817,3
-422,"Luminous Spark","Magic",,,,,,,81777047,3
-423,"Lunar Queen Elzaim","Monster","Normal","LIGHT","Fairy",3,750,1100,62210247,3
-424,"Mabarrel","Monster","Normal","DARK","Fiend",5,1700,1400,98795934,3
-425,"Machine Conversion Factory","Magic",,,,,,,25769732,3
-426,"Machine King","Monster","Effect","EARTH","Machine",6,2200,2000,46700124,3
-427,"Magic Jammer","Trap",,,,,,,77414722,3
-428,"Magic Thorn","Trap",,,,,,,53119267,3
-429,"Magical Ghost","Monster","Normal","DARK","Zombie",4,1300,1400,46474915,3
-430,"Magical Hats","Trap",,,,,,,81210420,3
-431,"Magical Labyrinth","Magic",,,,,,,64389297,3
-432,"Magic-Arm Shield","Trap",,,,,,,96008713,3
+400,"Larvas","Monster","Normal","EARTH","Beast",3,800,1000,"94675535",3
+401,"Laser Cannon Armor","Magic",,,,,,,"77007920",3
+402,"Last Day of Witch","Magic",,,,,,,"90330453",3
+403,"Last Will","Magic",,,,,,,"85602018",3
+404,"Laughing Flower","Monster","Normal","EARTH","Plant",2,900,500,"42591472",3
+405,"Launcher Spider","Monster","Normal","FIRE","Machine",7,2200,2500,"87322377",3
+406,"Launcher Spider (alternate artwork)","Monster","Normal","FIRE","Machine",7,2200,2500,"80703020",3
+407,"Lava Battleguard","Monster","Effect","EARTH","Warrior",5,1550,1800,"20394040",3
+408,"Left Arm of the Forbidden One","Monster","Normal","DARK","Spellcaster",1,200,300,"07902349",1
+409,"Left Leg of the Forbidden One","Monster","Normal","DARK","Spellcaster",1,200,300,"44519536",1
+410,"Legendary Sword","Magic",,,,,,,"61854111",3
+411,"Leghul","Monster","Effect","EARTH","Insect",1,300,350,"12472242",3
+412,"Leogun","Monster","Normal","EARTH","Beast",5,1750,1550,"10538007",3
+413,"Lesser Dragon","Monster","Normal","WIND","Dragon",4,1200,1000,"55444629",3
+414,"Light of Intervention","Trap",,,,,,,"62867251",3
+415,"Lightforce Sword","Trap",,,,,,,"49587034",3
+416,"Liquid Beast","Monster","Normal","WATER","Aqua",3,950,800,"93108297",3
+417,"Little Chimera","Monster","Effect","FIRE","Beast",2,600,550,"68658728",3
+418,"Little D","Monster","Normal","EARTH","Dinosaur",3,1100,700,"42625254",3
+419,"Lord of D.","Monster","Effect","DARK","Spellcaster",4,1200,1100,"17985575",3
+420,"Lord of the Lamp","Monster","Normal","DARK","Fiend",4,1400,1200,"99510761",3
+421,"Lord of Zemia","Monster","Normal","DARK","Fiend",4,1300,1000,"81618817",3
+422,"Luminous Spark","Magic",,,,,,,"81777047",3
+423,"Lunar Queen Elzaim","Monster","Normal","LIGHT","Fairy",3,750,1100,"62210247",3
+424,"Mabarrel","Monster","Normal","DARK","Fiend",5,1700,1400,"98795934",3
+425,"Machine Conversion Factory","Magic",,,,,,,"25769732",3
+426,"Machine King","Monster","Effect","EARTH","Machine",6,2200,2000,"46700124",3
+427,"Magic Jammer","Trap",,,,,,,"77414722",3
+428,"Magic Thorn","Trap",,,,,,,"53119267",3
+429,"Magical Ghost","Monster","Normal","DARK","Zombie",4,1300,1400,"46474915",3
+430,"Magical Hats","Trap",,,,,,,"81210420",3
+431,"Magical Labyrinth","Magic",,,,,,,"64389297",3
+432,"Magic-Arm Shield","Trap",,,,,,,"96008713",3
 433,"Magician of Black Chaos","Monster","Ritual","DARK","Spellcaster",8,2800,2600,,3
-434,"Magician of Faith","Monster","Effect","LIGHT","Spellcaster",1,300,400,31560081,3
-435,"Maha Vailo","Monster","Effect","LIGHT","Spellcaster",4,1550,1400,93013676,3
-436,"Maiden of the Moonlight","Monster","Normal","LIGHT","Spellcaster",4,1500,1300,79629370,3
-437,"Major Riot","Trap",,,,,,,9074847,3
-438,"Malevolent Nuzzler","Magic",,,,,,,99597615,3
-439,"Mammoth Graveyard","Monster","Normal","EARTH","Dinosaur",3,1200,800,40374923,3
-440,"Man Eater","Monster","Normal","EARTH","Plant",2,800,600,93553943,3
-441,"Man-Eater Bug","Monster","Effect","EARTH","Insect",2,450,600,54652250,3
-442,"Man-eating Black Shark","Monster","Fusion","WATER","Fish",5,2100,1300,80727036,3
-443,"Man-Eating Plant","Monster","Normal","EARTH","Plant",2,800,600,49127943,3
-444,"Man-Eating Treasure Chest","Monster","Normal","DARK","Fiend",4,1600,1000,13723605,3
-445,"Manga Ryu-Ran","Monster","Effect","FIRE","Dragon",7,2200,2600,38369349,3
-446,"Marine Beast","Monster","Fusion","WATER","Fish",5,1700,1600,29929832,3
-447,"Masaki the Legendary Swordsman","Monster","Normal","EARTH","Warrior",4,1100,1100,44287299,3
-448,"Mask of Darkness","Monster","Effect","DARK","Fiend",2,900,400,28933734,3
-449,"Masked Sorcerer","Monster","Effect","DARK","Spellcaster",4,900,1400,10189126,3
-450,"Master & Expert","Monster","Normal","EARTH","Beast",4,1200,1000,75499502,3
-451,"Mavelus","Monster","Fusion","WIND","Winged Beast",4,1300,900,59036972,3
-452,"Mechanical Snail","Monster","Normal","DARK","Machine",3,800,1000,34442949,3
-453,"Mechanical Spider","Monster","Effect","EARTH","Machine",2,400,500,45688586,3
-454,"Mechanicalchaser","Monster","Normal","DARK","Machine",4,1850,800,7359741,3
-455,"Meda Bat","Monster","Normal","DARK","Fiend",2,800,400,76211194,3
-456,"Mega Thunderball","Monster","Normal","WIND","Thunder",2,750,600,21817254,3
-457,"Megamorph","Magic",,,,,,,22046459,1
-458,"Megazowler","Monster","Normal","EARTH","Dinosaur",6,1800,2000,75390004,3
-459,"Meotoko","Monster","Normal","EARTH","Beast",2,700,600,53832650,3
-460,"Mesmeric Control","Magic",,,,,,,48642904,3
-461,"Messenger of Peace","Magic",,,,,,,44656491,3
-462,"Metal Detector","Trap",,,,,,,75646520,3
-463,"Metal Dragon","Monster","Fusion","WIND","Machine",6,1850,1700,9293977,3
-464,"Metal Fish","Monster","Normal","WATER","Machine",5,1600,1900,55998462,3
-465,"Metal Guardian","Monster","Normal","DARK","Fiend",5,1150,2150,68339286,3
-466,"Metalmorph","Trap",,,,,,,68540058,3
-467,"Metalzoa","Monster","Effect","DARK","Machine",8,3000,2300,50705071,3
+434,"Magician of Faith","Monster","Effect","LIGHT","Spellcaster",1,300,400,"31560081",3
+435,"Maha Vailo","Monster","Effect","LIGHT","Spellcaster",4,1550,1400,"93013676",3
+436,"Maiden of the Moonlight","Monster","Normal","LIGHT","Spellcaster",4,1500,1300,"79629370",3
+437,"Major Riot","Trap",,,,,,,"09074847",3
+438,"Malevolent Nuzzler","Magic",,,,,,,"99597615",3
+439,"Mammoth Graveyard","Monster","Normal","EARTH","Dinosaur",3,1200,800,"40374923",3
+440,"Man Eater","Monster","Normal","EARTH","Plant",2,800,600,"93553943",3
+441,"Man-Eater Bug","Monster","Effect","EARTH","Insect",2,450,600,"54652250",3
+442,"Man-eating Black Shark","Monster","Fusion","WATER","Fish",5,2100,1300,"80727036",3
+443,"Man-Eating Plant","Monster","Normal","EARTH","Plant",2,800,600,"49127943",3
+444,"Man-Eating Treasure Chest","Monster","Normal","DARK","Fiend",4,1600,1000,"13723605",3
+445,"Manga Ryu-Ran","Monster","Effect","FIRE","Dragon",7,2200,2600,"38369349",3
+446,"Marine Beast","Monster","Fusion","WATER","Fish",5,1700,1600,"29929832",3
+447,"Masaki the Legendary Swordsman","Monster","Normal","EARTH","Warrior",4,1100,1100,"44287299",3
+448,"Mask of Darkness","Monster","Effect","DARK","Fiend",2,900,400,"28933734",3
+449,"Masked Sorcerer","Monster","Effect","DARK","Spellcaster",4,900,1400,"10189126",3
+450,"Master & Expert","Monster","Normal","EARTH","Beast",4,1200,1000,"75499502",3
+451,"Mavelus","Monster","Fusion","WIND","Winged Beast",4,1300,900,"59036972",3
+452,"Mechanical Snail","Monster","Normal","DARK","Machine",3,800,1000,"34442949",3
+453,"Mechanical Spider","Monster","Effect","EARTH","Machine",2,400,500,"45688586",3
+454,"Mechanicalchaser","Monster","Normal","DARK","Machine",4,1850,800,"07359741",3
+455,"Meda Bat","Monster","Normal","DARK","Fiend",2,800,400,"76211194",3
+456,"Mega Thunderball","Monster","Normal","WIND","Thunder",2,750,600,"21817254",3
+457,"Megamorph","Magic",,,,,,,"22046459",1
+458,"Megazowler","Monster","Normal","EARTH","Dinosaur",6,1800,2000,"75390004",3
+459,"Meotoko","Monster","Normal","EARTH","Beast",2,700,600,"53832650",3
+460,"Mesmeric Control","Magic",,,,,,,"48642904",3
+461,"Messenger of Peace","Magic",,,,,,,"44656491",3
+462,"Metal Detector","Trap",,,,,,,"75646520",3
+463,"Metal Dragon","Monster","Fusion","WIND","Machine",6,1850,1700,"09293977",3
+464,"Metal Fish","Monster","Normal","WATER","Machine",5,1600,1900,"55998462",3
+465,"Metal Guardian","Monster","Normal","DARK","Fiend",5,1150,2150,"68339286",3
+466,"Metalmorph","Trap",,,,,,,"68540058",3
+467,"Metalzoa","Monster","Effect","DARK","Machine",8,3000,2300,"50705071",3
 468,"Meteor B. Dragon","Monster","Fusion","FIRE","Dragon",8,3500,2000,,3
 469,"Meteor Dragon","Monster","Normal","EARTH","Dragon",6,1800,2000,,3
 470,"Mikazukinoyaiba","Monster","Normal","DARK","Dragon",7,2200,2350,,3
-471,"Millennium Golem","Monster","Normal","EARTH","Rock",6,2000,2200,47986555,3
-472,"Millennium Shield","Monster","Normal","EARTH","Warrior",5,0,3000,32012841,3
-473,"Milus Radiant","Monster","Effect","EARTH","Beast",1,300,250,7489323,3
-474,"Minar","Monster","Effect","EARTH","Insect",3,850,750,32539892,3
-475,"Minomushi Warrior","Monster","Normal","EARTH","Rock",4,1300,1200,46864967,3
-476,"Mirror Force","Trap",,,,,,,44095762,1
-477,"Mirror Wall","Trap",,,,,,,22359980,3
-478,"Misairuzame","Monster","Normal","WATER","Fish",5,1400,1600,33178416,3
-479,"Molten Destruction","Magic",,,,,,,19384334,3
-480,"Monster Egg","Monster","Normal","EARTH","Warrior",3,600,900,36121917,3
-481,"Monster Eye","Monster","Effect","DARK","Fiend",1,250,350,84133008,3
-482,"Monster Reborn","Magic",,,,,,,83764718,1
-483,"Monster Tamer","Monster","Normal","EARTH","Warrior",5,1800,1600,97612389,3
-484,"Monstrous Bird","Monster","Normal","WIND","Winged Beast",6,2000,1900,35712107,3
-485,"Moon Envoy","Monster","Normal","LIGHT","Warrior",4,1100,1000,45909477,3
-486,"Mooyan Curry","Magic",,,,,,,58074572,3
-487,"Morinphen","Monster","Normal","DARK","Fiend",5,1550,1300,55784832,3
-488,"Morphing Jar","Monster","Effect","EARTH","Rock",2,700,600,33508719,3
-489,"Morphing Jar #2","Monster","Effect","EARTH","Rock",3,800,700,79106360,2
-490,"Mother Grizzly","Monster","Effect","WATER","Beast-Warrior",4,1400,1000,57839750,3
-491,"Mountain","Magic",,,,,,,50913601,3
-492,"Mountain Warrior","Monster","Normal","EARTH","Beast-Warrior",3,600,1000,4931562,3
-493,"Mr. Volcano","Monster","Normal","FIRE","Pyro",5,2100,1300,31477025,3
-494,"Muka Muka","Monster","Effect","EARTH","Rock",2,600,300,46657337,3
-495,"Mushroom Man","Monster","Normal","EARTH","Plant",2,800,600,14181608,3
-496,"Mushroom Man #2","Monster","Effect","EARTH","Warrior",3,1250,800,93900406,3
-497,"Musician King","Monster","Fusion","LIGHT","Spellcaster",5,1750,1500,56907389,3
-498,"M-Warrior #1","Monster","Normal","EARTH","Warrior",3,1000,500,56342351,3
-499,"M-Warrior #2","Monster","Normal","EARTH","Warrior",3,500,1000,92731455,3
-500,"Mysterious Puppeteer","Monster","Effect","EARTH","Warrior",4,1000,1500,54098121,3
-501,"Mystic Horseman","Monster","Normal","EARTH","Beast",4,1300,1550,68516705,3
-502,"Mystic Lamp","Monster","Effect","DARK","Spellcaster",1,400,300,98049915,3
-503,"Mystic Plasma Zone","Magic",,,,,,,18161786,3
-504,"Mystic Probe","Trap",,,,,,,49251811,3
-505,"Mystic Tomato","Monster","Effect","DARK","Plant",4,1400,1100,83011277,3
-506,"Mystical Capture Chain","Monster","Normal","LIGHT","Fairy",2,700,700,63515678,3
-507,"Mystical Elf","Monster","Normal","LIGHT","Spellcaster",4,800,2000,15025844,3
-508,"Mystical Moon","Magic",,,,,,,36607978,3
-509,"Mystical Sand","Monster","Fusion","EARTH","Rock",6,2100,1700,32751480,3
-510,"Mystical Sheep #1","Monster","Effect","EARTH","Beast",3,1150,900,30451366,3
-511,"Mystical Sheep #2","Monster","Normal","EARTH","Beast",3,800,1000,83464209,3
-512,"Mystical Space Typhoon","Magic",,,,,,,5318639,3
-513,"Needle Ball","Monster","Effect","DARK","Fiend",2,750,700,94230224,3
-514,"Needle Worm","Monster","Effect","EARTH","Insect",2,750,600,81843628,3
-515,"Negate Attack","Trap",,,,,,,14315573,3
-516,"Nekogal #1","Monster","Normal","EARTH","Beast",3,1100,900,1761063,3
-517,"Nekogal #2","Monster","Normal","EARTH","Beast-Warrior",6,1900,2000,43352213,3
-518,"Nemuriko","Monster","Normal","DARK","Spellcaster",3,800,700,90963488,3
-519,"Neo the Magic Swordsman","Monster","Normal","LIGHT","Spellcaster",4,1700,1000,50930991,3
-520,"Nimble Momonga","Monster","Effect","EARTH","Beast",2,1000,100,22567609,3
-521,"Niwatori","Monster","Normal","EARTH","Winged Beast",3,900,800,7805359,3
-522,"Nobleman of Crossout","Magic",,,,,,,71044499,2
-523,"Nobleman of Extermination","Magic",,,,,,,17449108,3
+471,"Millennium Golem","Monster","Normal","EARTH","Rock",6,2000,2200,"47986555",3
+472,"Millennium Shield","Monster","Normal","EARTH","Warrior",5,0,3000,"32012841",3
+473,"Milus Radiant","Monster","Effect","EARTH","Beast",1,300,250,"07489323",3
+474,"Minar","Monster","Effect","EARTH","Insect",3,850,750,"32539892",3
+475,"Minomushi Warrior","Monster","Normal","EARTH","Rock",4,1300,1200,"46864967",3
+476,"Mirror Force","Trap",,,,,,,"44095762",1
+477,"Mirror Wall","Trap",,,,,,,"22359980",3
+478,"Misairuzame","Monster","Normal","WATER","Fish",5,1400,1600,"33178416",3
+479,"Molten Destruction","Magic",,,,,,,"19384334",3
+480,"Monster Egg","Monster","Normal","EARTH","Warrior",3,600,900,"36121917",3
+481,"Monster Eye","Monster","Effect","DARK","Fiend",1,250,350,"84133008",3
+482,"Monster Reborn","Magic",,,,,,,"83764718",1
+483,"Monster Tamer","Monster","Normal","EARTH","Warrior",5,1800,1600,"97612389",3
+484,"Monstrous Bird","Monster","Normal","WIND","Winged Beast",6,2000,1900,"35712107",3
+485,"Moon Envoy","Monster","Normal","LIGHT","Warrior",4,1100,1000,"45909477",3
+486,"Mooyan Curry","Magic",,,,,,,"58074572",3
+487,"Morinphen","Monster","Normal","DARK","Fiend",5,1550,1300,"55784832",3
+488,"Morphing Jar","Monster","Effect","EARTH","Rock",2,700,600,"33508719",3
+489,"Morphing Jar #2","Monster","Effect","EARTH","Rock",3,800,700,"79106360",2
+490,"Mother Grizzly","Monster","Effect","WATER","Beast-Warrior",4,1400,1000,"57839750",3
+491,"Mountain","Magic",,,,,,,"50913601",3
+492,"Mountain Warrior","Monster","Normal","EARTH","Beast-Warrior",3,600,1000,"04931562",3
+493,"Mr. Volcano","Monster","Normal","FIRE","Pyro",5,2100,1300,"31477025",3
+494,"Muka Muka","Monster","Effect","EARTH","Rock",2,600,300,"46657337",3
+495,"Mushroom Man","Monster","Normal","EARTH","Plant",2,800,600,"14181608",3
+496,"Mushroom Man #2","Monster","Effect","EARTH","Warrior",3,1250,800,"93900406",3
+497,"Musician King","Monster","Fusion","LIGHT","Spellcaster",5,1750,1500,"56907389",3
+498,"M-Warrior #1","Monster","Normal","EARTH","Warrior",3,1000,500,"56342351",3
+499,"M-Warrior #2","Monster","Normal","EARTH","Warrior",3,500,1000,"92731455",3
+500,"Mysterious Puppeteer","Monster","Effect","EARTH","Warrior",4,1000,1500,"54098121",3
+501,"Mystic Horseman","Monster","Normal","EARTH","Beast",4,1300,1550,"68516705",3
+502,"Mystic Lamp","Monster","Effect","DARK","Spellcaster",1,400,300,"98049915",3
+503,"Mystic Plasma Zone","Magic",,,,,,,"18161786",3
+504,"Mystic Probe","Trap",,,,,,,"49251811",3
+505,"Mystic Tomato","Monster","Effect","DARK","Plant",4,1400,1100,"83011277",3
+506,"Mystical Capture Chain","Monster","Normal","LIGHT","Fairy",2,700,700,"63515678",3
+507,"Mystical Elf","Monster","Normal","LIGHT","Spellcaster",4,800,2000,"15025844",3
+508,"Mystical Moon","Magic",,,,,,,"36607978",3
+509,"Mystical Sand","Monster","Fusion","EARTH","Rock",6,2100,1700,"32751480",3
+510,"Mystical Sheep #1","Monster","Effect","EARTH","Beast",3,1150,900,"30451366",3
+511,"Mystical Sheep #2","Monster","Normal","EARTH","Beast",3,800,1000,"83464209",3
+512,"Mystical Space Typhoon","Magic",,,,,,,"05318639",3
+513,"Needle Ball","Monster","Effect","DARK","Fiend",2,750,700,"94230224",3
+514,"Needle Worm","Monster","Effect","EARTH","Insect",2,750,600,"81843628",3
+515,"Negate Attack","Trap",,,,,,,"14315573",3
+516,"Nekogal #1","Monster","Normal","EARTH","Beast",3,1100,900,"01761063",3
+517,"Nekogal #2","Monster","Normal","EARTH","Beast-Warrior",6,1900,2000,"43352213",3
+518,"Nemuriko","Monster","Normal","DARK","Spellcaster",3,800,700,"90963488",3
+519,"Neo the Magic Swordsman","Monster","Normal","LIGHT","Spellcaster",4,1700,1000,"50930991",3
+520,"Nimble Momonga","Monster","Effect","EARTH","Beast",2,1000,100,"22567609",3
+521,"Niwatori","Monster","Normal","EARTH","Winged Beast",3,900,800,"07805359",3
+522,"Nobleman of Crossout","Magic",,,,,,,"71044499",2
+523,"Nobleman of Extermination","Magic",,,,,,,"17449108",3
 524,"Novox's Prayer","Magic",,,,,,,,3
-525,"Numinous Healer","Trap",,,,,,,2130625,3
-526,"Octoberser","Monster","Normal","WATER","Aqua",5,1600,1400,74637266,3
-527,"Ocubeam","Monster","Normal","LIGHT","Fairy",5,1550,1650,86088138,3
-528,"Ogre of the Black Shadow","Monster","Normal","EARTH","Beast-Warrior",4,1200,1400,45121025,3
-529,"One-Eyed Shield Dragon","Monster","Normal","WIND","Dragon",3,700,1300,33064647,3
-530,"Ooguchi","Monster","Effect","WATER","Aqua",1,300,250,58861941,3
-531,"Ookazi","Magic",,,,,,,19523799,3
-532,"Orion the Battle King","Monster","Normal","LIGHT","Fairy",5,1800,1500,2971090,3
-533,"Oscillo Hero","Monster","Normal","EARTH","Warrior",3,1250,700,82065276,3
-534,"Oscillo Hero #2","Monster","Normal","LIGHT","Thunder",3,1000,500,27324313,3
-535,"Painful Choice","Magic",,,,,,,74191942,1
-536,"Pale Beast","Monster","Normal","EARTH","Beast",4,1500,1200,21263083,3
-537,"Panther Warrior","Monster","Effect","EARTH","Beast-Warrior",4,2000,1600,42035044,3
-538,"Paralyzing Potion","Magic",,,,,,,50152549,3
-539,"Parasite Paracide","Monster","Effect","EARTH","Insect",2,500,300,27911549,3
-540,"Parrot Dragon","Monster","Normal","WIND","Dragon",5,2000,1300,62762898,3
-541,"Patrol Robo","Monster","Effect","EARTH","Machine",3,1100,900,76775123,3
-542,"Peacock","Monster","Normal","WIND","Winged Beast",5,1700,1500,20624263,3
-543,"Pendulum Machine","Monster","Normal","DARK","Machine",6,1750,2000,24433920,3
-544,"Pendulum Machine (alternate artwork)","Monster","Normal","DARK","Machine",6,1750,2000,20404030,3
-545,"Penguin Knight","Monster","Effect","WATER","Aqua",3,900,800,36039163,3
-546,"Penguin Soldier","Monster","Effect","WATER","Aqua",2,750,500,93920745,3
+525,"Numinous Healer","Trap",,,,,,,"02130625",3
+526,"Octoberser","Monster","Normal","WATER","Aqua",5,1600,1400,"74637266",3
+527,"Ocubeam","Monster","Normal","LIGHT","Fairy",5,1550,1650,"86088138",3
+528,"Ogre of the Black Shadow","Monster","Normal","EARTH","Beast-Warrior",4,1200,1400,"45121025",3
+529,"One-Eyed Shield Dragon","Monster","Normal","WIND","Dragon",3,700,1300,"33064647",3
+530,"Ooguchi","Monster","Effect","WATER","Aqua",1,300,250,"58861941",3
+531,"Ookazi","Magic",,,,,,,"19523799",3
+532,"Orion the Battle King","Monster","Normal","LIGHT","Fairy",5,1800,1500,"02971090",3
+533,"Oscillo Hero","Monster","Normal","EARTH","Warrior",3,1250,700,"82065276",3
+534,"Oscillo Hero #2","Monster","Normal","LIGHT","Thunder",3,1000,500,"27324313",3
+535,"Painful Choice","Magic",,,,,,,"74191942",1
+536,"Pale Beast","Monster","Normal","EARTH","Beast",4,1500,1200,"21263083",3
+537,"Panther Warrior","Monster","Effect","EARTH","Beast-Warrior",4,2000,1600,"42035044",3
+538,"Paralyzing Potion","Magic",,,,,,,"50152549",3
+539,"Parasite Paracide","Monster","Effect","EARTH","Insect",2,500,300,"27911549",3
+540,"Parrot Dragon","Monster","Normal","WIND","Dragon",5,2000,1300,"62762898",3
+541,"Patrol Robo","Monster","Effect","EARTH","Machine",3,1100,900,"76775123",3
+542,"Peacock","Monster","Normal","WIND","Winged Beast",5,1700,1500,"20624263",3
+543,"Pendulum Machine","Monster","Normal","DARK","Machine",6,1750,2000,"24433920",3
+544,"Pendulum Machine (alternate artwork)","Monster","Normal","DARK","Machine",6,1750,2000,"20404030",3
+545,"Penguin Knight","Monster","Effect","WATER","Aqua",3,900,800,"36039163",3
+546,"Penguin Soldier","Monster","Effect","WATER","Aqua",2,750,500,"93920745",3
 547,"Perfectly Ultimate Great Moth","Monster","Effect","EARTH","Insect",8,3500,3000,,3
 548,"Performance of Sword","Monster","Ritual","EARTH","Warrior",6,1950,1850,,3
-549,"Petit Angel","Monster","Normal","LIGHT","Fairy",3,600,900,38142739,3
-550,"Petit Dragon","Monster","Normal","WIND","Dragon",2,600,700,75356564,3
-551,"Petit Moth","Monster","Normal","EARTH","Insect",1,300,200,58192742,3
-552,"Polymerization","Magic",,,,,,,24094653,3
-553,"Polymerization (alternate artwork)","Magic",,,,,,,27847700,3
-554,"Pot of Greed","Magic",,,,,,,55144522,1
-555,"Power of Kaishin","Magic",,,,,,,77027445,3
-556,"Pragtical","Monster","Fusion","EARTH","Dinosaur",5,1900,1500,33691040,3
-557,"Premature Burial","Magic",,,,,,,70828912,3
-558,"Prevent Rat","Monster","Normal","EARTH","Beast",4,500,2000,549481,3
-559,"Princess of Tsurugi","Monster","Effect","WIND","Warrior",3,900,700,51371017,3
-560,"Prisman","Monster","Normal","LIGHT","Rock",3,800,1000,80234301,3
-561,"Prohibition","Magic",,,,,,,43711255,3
-562,"Protector of the Throne","Monster","Normal","EARTH","Warrior",4,800,1500,10071456,3
-563,"Psychic Kappa","Monster","Normal","WATER","Aqua",2,400,1000,7892180,3
-564,"Pumpking the King of Ghosts","Monster","Effect","DARK","Zombie",6,1800,2000,29155212,3
-565,"Punished Eagle","Monster","Fusion","WIND","Winged Beast",6,2100,1800,74703140,3
-566,"Queen Bird","Monster","Normal","WIND","Winged Beast",5,1200,2000,73081602,3
-567,"Queen of Autumn Leaves","Monster","Normal","EARTH","Plant",5,1800,1500,4179849,3
-568,"Queen's Double","Monster","Effect","EARTH","Warrior",1,350,300,5901497,3
+549,"Petit Angel","Monster","Normal","LIGHT","Fairy",3,600,900,"38142739",3
+550,"Petit Dragon","Monster","Normal","WIND","Dragon",2,600,700,"75356564",3
+551,"Petit Moth","Monster","Normal","EARTH","Insect",1,300,200,"58192742",3
+552,"Polymerization","Magic",,,,,,,"24094653",3
+553,"Polymerization (alternate artwork)","Magic",,,,,,,"27847700",3
+554,"Pot of Greed","Magic",,,,,,,"55144522",1
+555,"Power of Kaishin","Magic",,,,,,,"77027445",3
+556,"Pragtical","Monster","Fusion","EARTH","Dinosaur",5,1900,1500,"33691040",3
+557,"Premature Burial","Magic",,,,,,,"70828912",3
+558,"Prevent Rat","Monster","Normal","EARTH","Beast",4,500,2000,"00549481",3
+559,"Princess of Tsurugi","Monster","Effect","WIND","Warrior",3,900,700,"51371017",3
+560,"Prisman","Monster","Normal","LIGHT","Rock",3,800,1000,"80234301",3
+561,"Prohibition","Magic",,,,,,,"43711255",3
+562,"Protector of the Throne","Monster","Normal","EARTH","Warrior",4,800,1500,"10071456",3
+563,"Psychic Kappa","Monster","Normal","WATER","Aqua",2,400,1000,"07892180",3
+564,"Pumpking the King of Ghosts","Monster","Effect","DARK","Zombie",6,1800,2000,"29155212",3
+565,"Punished Eagle","Monster","Fusion","WIND","Winged Beast",6,2100,1800,"74703140",3
+566,"Queen Bird","Monster","Normal","WIND","Winged Beast",5,1200,2000,"73081602",3
+567,"Queen of Autumn Leaves","Monster","Normal","EARTH","Plant",5,1800,1500,"04179849",3
+568,"Queen's Double","Monster","Effect","EARTH","Warrior",1,350,300,"05901497",3
 569,"Rabid Horseman","Monster","Fusion","EARTH","Beast-Warrior",6,2000,1700,,3
-570,"Raigeki","Magic",,,,,,,12580477,1
-571,"Raimei","Magic",,,,,,,56260110,3
-572,"Rainbow Flower","Monster","Effect","EARTH","Plant",2,400,500,21347810,3
-573,"Raise Body Heat","Magic",,,,,,,51267887,3
-574,"Rare Fish","Monster","Fusion","WATER","Fish",4,1500,1200,80516007,3
-575,"Ray & Temperature","Monster","Normal","LIGHT","Fairy",3,1000,1000,85309439,3
-576,"Reaper of the Cards","Monster","Effect","DARK","Fiend",5,1380,1930,33066139,3
-577,"Red Archery Girl","Monster","Normal","WATER","Aqua",4,1400,1500,65570596,3
-578,"Red Medicine","Magic",,,,,,,38199696,3
-579,"Red-Eyes B. Dragon","Monster","Normal","DARK","Dragon",7,2400,2000,74677422,3
-580,"Red-Eyes Black Metal Dragon","Monster","Effect","DARK","Machine",8,2800,2400,64335804,3
-581,"Reinforcements","Trap",,,,,,,17814387,3
-582,"Relinquished","Monster","Ritual","DARK","Spellcaster",1,0,0,64631466,3
-583,"Remove Trap","Magic",,,,,,,51482758,3
-584,"Respect Play","Trap",,,,,,,8951260,3
-585,"Restructer Revolution","Magic",,,,,,,99518961,3
+570,"Raigeki","Magic",,,,,,,"12580477",1
+571,"Raimei","Magic",,,,,,,"56260110",3
+572,"Rainbow Flower","Monster","Effect","EARTH","Plant",2,400,500,"21347810",3
+573,"Raise Body Heat","Magic",,,,,,,"51267887",3
+574,"Rare Fish","Monster","Fusion","WATER","Fish",4,1500,1200,"80516007",3
+575,"Ray & Temperature","Monster","Normal","LIGHT","Fairy",3,1000,1000,"85309439",3
+576,"Reaper of the Cards","Monster","Effect","DARK","Fiend",5,1380,1930,"33066139",3
+577,"Red Archery Girl","Monster","Normal","WATER","Aqua",4,1400,1500,"65570596",3
+578,"Red Medicine","Magic",,,,,,,"38199696",3
+579,"Red-Eyes B. Dragon","Monster","Normal","DARK","Dragon",7,2400,2000,"74677422",3
+580,"Red-Eyes Black Metal Dragon","Monster","Effect","DARK","Machine",8,2800,2400,"64335804",3
+581,"Reinforcements","Trap",,,,,,,"17814387",3
+582,"Relinquished","Monster","Ritual","DARK","Spellcaster",1,0,0,"64631466",3
+583,"Remove Trap","Magic",,,,,,,"51482758",3
+584,"Respect Play","Trap",,,,,,,"08951260",3
+585,"Restructer Revolution","Magic",,,,,,,"99518961",3
 586,"Resurrection of Chakra","Magic",,,,,,,,3
-587,"Reverse Trap","Trap",,,,,,,77622396,3
+587,"Reverse Trap","Trap",,,,,,,"77622396",3
 588,"Revival of Dokurorider","Magic",,,,,,,,3
-589,"Rhaimundos of the Red Sword","Monster","Normal","EARTH","Warrior",4,1200,1300,62403074,3
-590,"Right Arm of the Forbidden One","Monster","Normal","DARK","Spellcaster",1,200,300,70903634,1
-591,"Right Leg of the Forbidden One","Monster","Normal","DARK","Spellcaster",1,200,300,8124921,1
-592,"Ring of Magnetism","Magic",,,,,,,20436034,3
-593,"Riryoku","Magic",,,,,,,34016756,2
-594,"Rising Air Current","Magic",,,,,,,45778932,3
-595,"Roaring Ocean Snake","Monster","Fusion","WATER","Aqua",6,2100,1800,19066538,3
-596,"Robbin' Goblin","Trap",,,,,,,88279736,3
-597,"Rock Ogre Grotto #1","Monster","Normal","EARTH","Rock",3,800,1200,68846917,3
-598,"Rogue Doll","Monster","Normal","LIGHT","Spellcaster",4,1600,1000,91939608,3
-599,"Root Water","Monster","Normal","WATER","Fish",3,900,800,39004808,3
-600,"Rose Spectre of Dunn","Monster","Fusion","DARK","Plant",6,2000,1800,32485271,3
-601,"Royal Decree","Trap",,,,,,,51452091,3
-602,"Royal Guard","Monster","Normal","EARTH","Machine",6,1900,2200,39239728,3
-603,"Rude Kaiser","Monster","Normal","EARTH","Beast-Warrior",5,1800,1600,26378150,3
-604,"Rush Recklessly","Magic",,,,,,,70046172,3
-605,"Ryu-Kishin","Monster","Normal","DARK","Fiend",3,1000,500,15303296,3
-606,"Ryu-Kishin Powered","Monster","Normal","DARK","Fiend",4,1600,1200,24611934,3
-607,"Ryu-Ran","Monster","Normal","FIRE","Dragon",7,2200,2600,2964201,3
-608,"Saber Slasher","Monster","Normal","DARK","Machine",5,1450,1500,73911410,3
-609,"Saggi the Dark Clown","Monster","Normal","DARK","Spellcaster",3,600,1500,66602787,3
-610,"Salamandra","Magic",,,,,,,32268901,3
-611,"Sand Stone","Monster","Normal","EARTH","Rock",5,1300,1600,73051941,3
+589,"Rhaimundos of the Red Sword","Monster","Normal","EARTH","Warrior",4,1200,1300,"62403074",3
+590,"Right Arm of the Forbidden One","Monster","Normal","DARK","Spellcaster",1,200,300,"70903634",1
+591,"Right Leg of the Forbidden One","Monster","Normal","DARK","Spellcaster",1,200,300,"08124921",1
+592,"Ring of Magnetism","Magic",,,,,,,"20436034",3
+593,"Riryoku","Magic",,,,,,,"34016756",2
+594,"Rising Air Current","Magic",,,,,,,"45778932",3
+595,"Roaring Ocean Snake","Monster","Fusion","WATER","Aqua",6,2100,1800,"19066538",3
+596,"Robbin' Goblin","Trap",,,,,,,"88279736",3
+597,"Rock Ogre Grotto #1","Monster","Normal","EARTH","Rock",3,800,1200,"68846917",3
+598,"Rogue Doll","Monster","Normal","LIGHT","Spellcaster",4,1600,1000,"91939608",3
+599,"Root Water","Monster","Normal","WATER","Fish",3,900,800,"39004808",3
+600,"Rose Spectre of Dunn","Monster","Fusion","DARK","Plant",6,2000,1800,"32485271",3
+601,"Royal Decree","Trap",,,,,,,"51452091",3
+602,"Royal Guard","Monster","Normal","EARTH","Machine",6,1900,2200,"39239728",3
+603,"Rude Kaiser","Monster","Normal","EARTH","Beast-Warrior",5,1800,1600,"26378150",3
+604,"Rush Recklessly","Magic",,,,,,,"70046172",3
+605,"Ryu-Kishin","Monster","Normal","DARK","Fiend",3,1000,500,"15303296",3
+606,"Ryu-Kishin Powered","Monster","Normal","DARK","Fiend",4,1600,1200,"24611934",3
+607,"Ryu-Ran","Monster","Normal","FIRE","Dragon",7,2200,2600,"02964201",3
+608,"Saber Slasher","Monster","Normal","DARK","Machine",5,1450,1500,"73911410",3
+609,"Saggi the Dark Clown","Monster","Normal","DARK","Spellcaster",3,600,1500,"66602787",3
+610,"Salamandra","Magic",,,,,,,"32268901",3
+611,"Sand Stone","Monster","Normal","EARTH","Rock",5,1300,1600,"73051941",3
 612,"Sanga of the Thunder","Monster","Effect","LIGHT","Thunder",7,2600,2200,,3
-613,"Sangan","Monster","Effect","DARK","Fiend",3,1000,600,26202165,2
-614,"Sea Kamen","Monster","Normal","WATER","Aqua",4,1100,1300,71746462,3
-615,"Sea King Dragon","Monster","Normal","WATER","Sea Serpent",6,2000,1700,23659124,3
-616,"Seal of the Ancients","Magic",,,,,,,97809599,3
-617,"Sebek's Blessing","Magic",,,,,,,22537443,3
-618,"Sectarian of Secrets","Monster","Normal","DARK","Spellcaster",2,700,500,15507080,3
+613,"Sangan","Monster","Effect","DARK","Fiend",3,1000,600,"26202165",2
+614,"Sea Kamen","Monster","Normal","WATER","Aqua",4,1100,1300,"71746462",3
+615,"Sea King Dragon","Monster","Normal","WATER","Sea Serpent",6,2000,1700,"23659124",3
+616,"Seal of the Ancients","Magic",,,,,,,"97809599",3
+617,"Sebek's Blessing","Magic",,,,,,,"22537443",3
+618,"Sectarian of Secrets","Monster","Normal","DARK","Spellcaster",2,700,500,"15507080",3
 619,"Seiyaryu","Monster","Normal","LIGHT","Dragon",7,2500,2300,,3
 620,"Sengenjin","Monster","Normal","EARTH","Beast-Warrior",8,2750,2500,,3
-621,"Senju of the Thousand Hands","Monster","Effect","LIGHT","Fairy",4,1400,1000,23401839,3
+621,"Senju of the Thousand Hands","Monster","Effect","LIGHT","Fairy",4,1400,1000,"23401839",3
 622,"Serpent Night Dragon","Monster","Normal","DARK","Dragon",7,2350,2400,,3
-623,"Seven Tools of the Bandit","Trap",,,,,,,3819470,3
+623,"Seven Tools of the Bandit","Trap",,,,,,,"03819470",3
 624,"Shadow Ghoul","Monster","Effect","DARK","Zombie",5,1600,1300,,3
-625,"Shadow Specter","Monster","Normal","DARK","Zombie",1,500,200,40575313,3
-626,"Share the Pain","Magic",,,,,,,56830749,3
-627,"Shield & Sword","Magic",,,,,,,52097679,3
-628,"Shining Fairy","Monster","Effect","LIGHT","Fairy",4,1400,800,95956346,3
-629,"Shovel Crusher","Monster","Normal","EARTH","Machine",3,900,1200,71950093,3
-630,"Silver Bow and Arrow","Magic",,,,,,,1557499,3
-631,"Silver Fang","Monster","Normal","EARTH","Beast",3,1200,800,90357090,3
-632,"Sinister Serpent","Monster","Effect","WATER","Reptile",1,300,250,8131171,1
-633,"Skelengel","Monster","Effect","LIGHT","Fairy",2,900,400,60694662,3
-634,"Skelgon","Monster","Fusion","DARK","Zombie",6,1700,1900,32355828,3
-635,"Skull Dice","Trap",,,,,,,126218,3
+625,"Shadow Specter","Monster","Normal","DARK","Zombie",1,500,200,"40575313",3
+626,"Share the Pain","Magic",,,,,,,"56830749",3
+627,"Shield & Sword","Magic",,,,,,,"52097679",3
+628,"Shining Fairy","Monster","Effect","LIGHT","Fairy",4,1400,800,"95956346",3
+629,"Shovel Crusher","Monster","Normal","EARTH","Machine",3,900,1200,"71950093",3
+630,"Silver Bow and Arrow","Magic",,,,,,,"01557499",3
+631,"Silver Fang","Monster","Normal","EARTH","Beast",3,1200,800,"90357090",3
+632,"Sinister Serpent","Monster","Effect","WATER","Reptile",1,300,250,"08131171",1
+633,"Skelengel","Monster","Effect","LIGHT","Fairy",2,900,400,"60694662",3
+634,"Skelgon","Monster","Fusion","DARK","Zombie",6,1700,1900,"32355828",3
+635,"Skull Dice","Trap",,,,,,,"00126218",3
 636,"Skull Guardian","Monster","Ritual","LIGHT","Warrior",7,2050,2500,,3
 637,"Skull Knight","Monster","Fusion","DARK","Spellcaster",7,2650,2250,,3
-638,"Skull Red Bird","Monster","Normal","WIND","Winged Beast",4,1550,1200,10202894,3
-639,"Skull Servant","Monster","Normal","DARK","Zombie",1,300,200,32274490,3
-640,"Skull Stalker","Monster","Normal","DARK","Warrior",3,900,800,54844990,3
-641,"Skullbird","Monster","Fusion","WIND","Winged Beast",6,1900,1700,8327462,3
-642,"Sleeping Lion","Monster","Normal","EARTH","Beast",4,700,1700,40200834,3
-643,"Slot Machine","Monster","Normal","DARK","Machine",7,2000,2300,3797883,3
-644,"Snake Fang","Trap",,,,,,,596051,3
-645,"Snakeyashi","Monster","Normal","EARTH","Plant",4,1000,1200,29802344,3
-646,"Snatch Steal","Magic",,,,,,,45986603,1
-647,"Sogen","Magic",,,,,,,86318356,3
-648,"Solemn Judgment","Trap",,,,,,,41420027,3
-649,"Solitude","Monster","Normal","EARTH","Beast-Warrior",3,1050,1000,84794011,3
-650,"Solomon's Lawbook","Trap",,,,,,,23471572,3
-651,"Sonic Bird","Monster","Effect","WIND","Winged Beast",4,1400,1000,57617178,3
-652,"Sonic Maid","Monster","Normal","EARTH","Warrior",3,1200,900,38942059,3
-653,"Soul Hunter","Monster","Fusion","DARK","Fiend",6,2200,1800,72869010,3
-654,"Soul of the Pure","Magic",,,,,,,47852924,3
-655,"Soul Release","Magic",,,,,,,5758500,3
-656,"Sparks","Magic",,,,,,,76103675,3
-657,"Spear Cretin","Monster","Effect","DARK","Fiend",2,500,500,58551308,3
-658,"Spellbinding Circle","Trap",,,,,,,18807108,3
-659,"Spike Seadra","Monster","Normal","WATER","Sea Serpent",5,1600,1300,85326399,3
-660,"Spirit of the Books","Monster","Normal","WIND","Winged Beast",4,1400,1200,14037717,3
-661,"Spirit of the Harp","Monster","Normal","LIGHT","Fairy",4,800,2000,80770678,3
-662,"Stain Storm","Magic",,,,,,,21323861,3
-663,"Star Boy","Monster","Effect","WATER","Aqua",2,550,500,8201910,3
-664,"Steel Ogre Grotto #1","Monster","Normal","EARTH","Machine",5,1400,1800,29172562,3
-665,"Steel Ogre Grotto #2","Monster","Normal","EARTH","Machine",6,1900,2200,90908427,3
-666,"Steel Scorpion","Monster","Effect","EARTH","Machine",1,250,300,13599884,3
-667,"Steel Shell","Magic",,,,,,,2370081,3
-668,"Stim-Pack","Magic",,,,,,,83225447,3
-669,"Stone Armadiller","Monster","Normal","EARTH","Rock",3,800,1200,63432835,3
-670,"Stone Ogre Grotto","Monster","Normal","EARTH","Rock",5,1600,1500,15023985,3
-671,"Stop Defense","Magic",,,,,,,63102017,3
-672,"Stuffed Animal","Monster","Normal","EARTH","Warrior",3,1200,900,71068263,3
-673,"Succubus Knight","Monster","Normal","DARK","Warrior",5,1650,1300,55291359,3
+638,"Skull Red Bird","Monster","Normal","WIND","Winged Beast",4,1550,1200,"10202894",3
+639,"Skull Servant","Monster","Normal","DARK","Zombie",1,300,200,"32274490",3
+640,"Skull Stalker","Monster","Normal","DARK","Warrior",3,900,800,"54844990",3
+641,"Skullbird","Monster","Fusion","WIND","Winged Beast",6,1900,1700,"08327462",3
+642,"Sleeping Lion","Monster","Normal","EARTH","Beast",4,700,1700,"40200834",3
+643,"Slot Machine","Monster","Normal","DARK","Machine",7,2000,2300,"03797883",3
+644,"Snake Fang","Trap",,,,,,,"00596051",3
+645,"Snakeyashi","Monster","Normal","EARTH","Plant",4,1000,1200,"29802344",3
+646,"Snatch Steal","Magic",,,,,,,"45986603",1
+647,"Sogen","Magic",,,,,,,"86318356",3
+648,"Solemn Judgment","Trap",,,,,,,"41420027",3
+649,"Solitude","Monster","Normal","EARTH","Beast-Warrior",3,1050,1000,"84794011",3
+650,"Solomon's Lawbook","Trap",,,,,,,"23471572",3
+651,"Sonic Bird","Monster","Effect","WIND","Winged Beast",4,1400,1000,"57617178",3
+652,"Sonic Maid","Monster","Normal","EARTH","Warrior",3,1200,900,"38942059",3
+653,"Soul Hunter","Monster","Fusion","DARK","Fiend",6,2200,1800,"72869010",3
+654,"Soul of the Pure","Magic",,,,,,,"47852924",3
+655,"Soul Release","Magic",,,,,,,"05758500",3
+656,"Sparks","Magic",,,,,,,"76103675",3
+657,"Spear Cretin","Monster","Effect","DARK","Fiend",2,500,500,"58551308",3
+658,"Spellbinding Circle","Trap",,,,,,,"18807108",3
+659,"Spike Seadra","Monster","Normal","WATER","Sea Serpent",5,1600,1300,"85326399",3
+660,"Spirit of the Books","Monster","Normal","WIND","Winged Beast",4,1400,1200,"14037717",3
+661,"Spirit of the Harp","Monster","Normal","LIGHT","Fairy",4,800,2000,"80770678",3
+662,"Stain Storm","Magic",,,,,,,"21323861",3
+663,"Star Boy","Monster","Effect","WATER","Aqua",2,550,500,"08201910",3
+664,"Steel Ogre Grotto #1","Monster","Normal","EARTH","Machine",5,1400,1800,"29172562",3
+665,"Steel Ogre Grotto #2","Monster","Normal","EARTH","Machine",6,1900,2200,"90908427",3
+666,"Steel Scorpion","Monster","Effect","EARTH","Machine",1,250,300,"13599884",3
+667,"Steel Shell","Magic",,,,,,,"02370081",3
+668,"Stim-Pack","Magic",,,,,,,"83225447",3
+669,"Stone Armadiller","Monster","Normal","EARTH","Rock",3,800,1200,"63432835",3
+670,"Stone Ogre Grotto","Monster","Normal","EARTH","Rock",5,1600,1500,"15023985",3
+671,"Stop Defense","Magic",,,,,,,"63102017",3
+672,"Stuffed Animal","Monster","Normal","EARTH","Warrior",3,1200,900,"71068263",3
+673,"Succubus Knight","Monster","Normal","DARK","Warrior",5,1650,1300,"55291359",3
 674,"Suijin","Monster","Effect","WATER","Aqua",7,2500,2400,,3
-675,"Summoned Skull","Monster","Normal","DARK","Fiend",6,2500,1200,70781052,3
+675,"Summoned Skull","Monster","Normal","DARK","Fiend",6,2500,1200,"70781052",3
 676,"Super War-Lion","Monster","Ritual","EARTH","Beast",7,2300,2100,,3
-677,"Supporter in the Shadows","Monster","Normal","EARTH","Warrior",3,1000,1000,41422426,3
-678,"Swamp Battleguard","Monster","Effect","EARTH","Warrior",5,1800,1500,40453765,3
-679,"Sword Arm of Dragon","Monster","Normal","EARTH","Dinosaur",6,1750,2030,13069066,3
-680,"Sword of Dark Destruction","Magic",,,,,,,37120512,3
-681,"Sword of Deep-Seated","Magic",,,,,,,98495314,3
-682,"Sword of Dragon's Soul","Magic",,,,,,,61405855,3
-683,"Swords of Revealing Light","Magic",,,,,,,72302403,2
-684,"Swordsman from a Foreign Land","Monster","Effect","EARTH","Warrior",1,250,250,85255550,3
-685,"Swordstalker","Monster","Normal","DARK","Warrior",6,2000,1600,50005633,3
-686,"Tailor of the Fickle","Magic",,,,,,,43641473,3
-687,"Tainted Wisdom","Monster","Effect","DARK","Fiend",3,1250,800,28725004,3
-688,"Takriminos","Monster","Normal","WATER","Sea Serpent",4,1500,1200,44073668,3
-689,"Takuhee","Monster","Normal","WIND","Winged Beast",4,1450,1000,3170832,3
-690,"Tao the Chanter","Monster","Normal","EARTH","Spellcaster",3,1200,900,46247516,3
-691,"Temple of Skulls","Monster","Normal","DARK","Zombie",4,900,1300,732302,3
-692,"Tenderness","Monster","Normal","LIGHT","Fairy",3,700,1400,57935140,3
-693,"Terra the Terrible","Monster","Normal","DARK","Fiend",4,1200,1300,63308047,3
-694,"The 13th Grave","Monster","Normal","DARK","Zombie",3,1200,900,32864,3
-695,"The Bewitching Phantom Thief","Monster","Normal","DARK","Spellcaster",2,700,700,24348204,3
-696,"The Bistro Butcher","Monster","Effect","DARK","Fiend",4,1800,1000,71107816,3
-697,"The Cheerful Coffin","Magic",,,,,,,41142615,3
-698,"The Drdek","Monster","Normal","DARK","Fiend",3,700,800,8944575,3
-699,"The Eye of Truth","Trap",,,,,,,34694160,3
-700,"The Flute of Summoning Dragon","Magic",,,,,,,43973174,3
-701,"The Forceful Sentry","Magic",,,,,,,42829885,1
-702,"The Furious Sea King","Monster","Normal","WATER","Aqua",3,800,700,18710707,3
-703,"The Immortal of Thunder","Monster","Effect","LIGHT","Thunder",4,1500,1300,84926738,3
-704,"The Inexperienced Spy","Magic",,,,,,,81820689,3
-705,"The Little Swordsman of Aile","Monster","Effect","WATER","Warrior",3,800,1300,25109950,3
-706,"The Regulation of Tribe","Trap",,,,,,,296499,3
-707,"The Reliable Guardian","Magic",,,,,,,16430187,3
-708,"The Shallow Grave","Magic",,,,,,,43434803,3
-709,"The Snake Hair","Monster","Normal","DARK","Zombie",4,1500,1200,29491031,3
-710,"The Stern Mystic","Monster","Effect","LIGHT","Spellcaster",4,1500,1200,87557188,3
-711,"The Thing That Hides in the Mud","Monster","Normal","EARTH","Rock",4,1200,1300,18180762,3
-712,"The Unhappy Maiden","Monster","Effect","LIGHT","Spellcaster",1,0,100,51275027,3
-713,"The Wandering Doomed","Monster","Normal","DARK","Zombie",2,800,600,93788854,3
-714,"The Wicked Worm Beast","Monster","Effect","EARTH","Beast",3,1400,700,6285791,3
+677,"Supporter in the Shadows","Monster","Normal","EARTH","Warrior",3,1000,1000,"41422426",3
+678,"Swamp Battleguard","Monster","Effect","EARTH","Warrior",5,1800,1500,"40453765",3
+679,"Sword Arm of Dragon","Monster","Normal","EARTH","Dinosaur",6,1750,2030,"13069066",3
+680,"Sword of Dark Destruction","Magic",,,,,,,"37120512",3
+681,"Sword of Deep-Seated","Magic",,,,,,,"98495314",3
+682,"Sword of Dragon's Soul","Magic",,,,,,,"61405855",3
+683,"Swords of Revealing Light","Magic",,,,,,,"72302403",2
+684,"Swordsman from a Foreign Land","Monster","Effect","EARTH","Warrior",1,250,250,"85255550",3
+685,"Swordstalker","Monster","Normal","DARK","Warrior",6,2000,1600,"50005633",3
+686,"Tailor of the Fickle","Magic",,,,,,,"43641473",3
+687,"Tainted Wisdom","Monster","Effect","DARK","Fiend",3,1250,800,"28725004",3
+688,"Takriminos","Monster","Normal","WATER","Sea Serpent",4,1500,1200,"44073668",3
+689,"Takuhee","Monster","Normal","WIND","Winged Beast",4,1450,1000,"03170832",3
+690,"Tao the Chanter","Monster","Normal","EARTH","Spellcaster",3,1200,900,"46247516",3
+691,"Temple of Skulls","Monster","Normal","DARK","Zombie",4,900,1300,"00732302",3
+692,"Tenderness","Monster","Normal","LIGHT","Fairy",3,700,1400,"57935140",3
+693,"Terra the Terrible","Monster","Normal","DARK","Fiend",4,1200,1300,"63308047",3
+694,"The 13th Grave","Monster","Normal","DARK","Zombie",3,1200,900,"00032864",3
+695,"The Bewitching Phantom Thief","Monster","Normal","DARK","Spellcaster",2,700,700,"24348204",3
+696,"The Bistro Butcher","Monster","Effect","DARK","Fiend",4,1800,1000,"71107816",3
+697,"The Cheerful Coffin","Magic",,,,,,,"41142615",3
+698,"The Drdek","Monster","Normal","DARK","Fiend",3,700,800,"08944575",3
+699,"The Eye of Truth","Trap",,,,,,,"34694160",3
+700,"The Flute of Summoning Dragon","Magic",,,,,,,"43973174",3
+701,"The Forceful Sentry","Magic",,,,,,,"42829885",1
+702,"The Furious Sea King","Monster","Normal","WATER","Aqua",3,800,700,"18710707",3
+703,"The Immortal of Thunder","Monster","Effect","LIGHT","Thunder",4,1500,1300,"84926738",3
+704,"The Inexperienced Spy","Magic",,,,,,,"81820689",3
+705,"The Little Swordsman of Aile","Monster","Effect","WATER","Warrior",3,800,1300,"25109950",3
+706,"The Regulation of Tribe","Trap",,,,,,,"00296499",3
+707,"The Reliable Guardian","Magic",,,,,,,"16430187",3
+708,"The Shallow Grave","Magic",,,,,,,"43434803",3
+709,"The Snake Hair","Monster","Normal","DARK","Zombie",4,1500,1200,"29491031",3
+710,"The Stern Mystic","Monster","Effect","LIGHT","Spellcaster",4,1500,1200,"87557188",3
+711,"The Thing That Hides in the Mud","Monster","Normal","EARTH","Rock",4,1200,1300,"18180762",3
+712,"The Unhappy Maiden","Monster","Effect","LIGHT","Spellcaster",1,0,100,"51275027",3
+713,"The Wandering Doomed","Monster","Normal","DARK","Zombie",2,800,600,"93788854",3
+714,"The Wicked Worm Beast","Monster","Effect","EARTH","Beast",3,1400,700,"06285791",3
 715,"Thousand Dragon","Monster","Fusion","WIND","Dragon",7,2400,2000,,3
 716,"Thousand Dragon (alternate artwork)","Monster","Fusion","WIND","Dragon",7,2400,2000,,3
-717,"Three-Headed Geedo","Monster","Normal","DARK","Fiend",4,1200,1400,78423643,3
-718,"Three-Legged Zombies","Monster","Normal","DARK","Zombie",3,1100,800,33734439,3
-719,"Thunder Dragon","Monster","Effect","LIGHT","Thunder",5,1600,1500,31786629,3
-720,"Tiger Axe","Monster","Normal","EARTH","Beast-Warrior",4,1300,1100,49791927,3
-721,"Tiger Axe (alternate artwork)","Monster","Normal","EARTH","Beast-Warrior",4,1300,1100,40907090,3
-722,"Time Machine","Trap",,,,,,,80987696,3
-723,"Time Seal","Trap",,,,,,,35316708,3
-724,"Time Wizard","Monster","Effect","LIGHT","Spellcaster",2,500,400,71625222,3
-725,"Toad Master","Monster","Normal","WATER","Aqua",3,1000,1000,62671448,3
-726,"Togex","Monster","Normal","EARTH","Beast",5,1600,1800,33878931,3
-727,"Toll","Magic",,,,,,,82003859,3
-728,"Tomozaurus","Monster","Normal","EARTH","Dinosaur",2,500,400,46457856,3
-729,"Tongyo","Monster","Normal","WATER","Fish",4,1350,800,69572024,3
-730,"Toon Alligator","Monster","Normal","WATER","Reptile",4,800,1600,59383041,3
-731,"Toon Mermaid","Monster","Effect","WATER","Aqua",4,1400,1500,65458948,3
-732,"Toon Summoned Skull","Monster","Effect","DARK","Fiend",6,2500,1200,91842653,3
-733,"Toon World","Magic",,,,,,,15259703,3
-734,"Torike","Monster","Normal","EARTH","Beast",3,1200,600,80813021,3
-735,"Total Defense Shogun","Monster","Effect","DARK","Warrior",6,1550,2500,75372290,3
-736,"Trakadon","Monster","Normal","EARTH","Dinosaur",3,1300,800,42348802,3
-737,"Trap Hole","Trap",,,,,,,4206964,3
-738,"Trap Master","Monster","Effect","EARTH","Warrior",3,500,1100,46461247,3
+717,"Three-Headed Geedo","Monster","Normal","DARK","Fiend",4,1200,1400,"78423643",3
+718,"Three-Legged Zombies","Monster","Normal","DARK","Zombie",3,1100,800,"33734439",3
+719,"Thunder Dragon","Monster","Effect","LIGHT","Thunder",5,1600,1500,"31786629",3
+720,"Tiger Axe","Monster","Normal","EARTH","Beast-Warrior",4,1300,1100,"49791927",3
+721,"Tiger Axe (alternate artwork)","Monster","Normal","EARTH","Beast-Warrior",4,1300,1100,"40907090",3
+722,"Time Machine","Trap",,,,,,,"80987696",3
+723,"Time Seal","Trap",,,,,,,"35316708",3
+724,"Time Wizard","Monster","Effect","LIGHT","Spellcaster",2,500,400,"71625222",3
+725,"Toad Master","Monster","Normal","WATER","Aqua",3,1000,1000,"62671448",3
+726,"Togex","Monster","Normal","EARTH","Beast",5,1600,1800,"33878931",3
+727,"Toll","Magic",,,,,,,"82003859",3
+728,"Tomozaurus","Monster","Normal","EARTH","Dinosaur",2,500,400,"46457856",3
+729,"Tongyo","Monster","Normal","WATER","Fish",4,1350,800,"69572024",3
+730,"Toon Alligator","Monster","Normal","WATER","Reptile",4,800,1600,"59383041",3
+731,"Toon Mermaid","Monster","Effect","WATER","Aqua",4,1400,1500,"65458948",3
+732,"Toon Summoned Skull","Monster","Effect","DARK","Fiend",6,2500,1200,"91842653",3
+733,"Toon World","Magic",,,,,,,"15259703",3
+734,"Torike","Monster","Normal","EARTH","Beast",3,1200,600,"80813021",3
+735,"Total Defense Shogun","Monster","Effect","DARK","Warrior",6,1550,2500,"75372290",3
+736,"Trakadon","Monster","Normal","EARTH","Dinosaur",3,1300,800,"42348802",3
+737,"Trap Hole","Trap",,,,,,,"04206964",3
+738,"Trap Master","Monster","Effect","EARTH","Warrior",3,500,1100,"46461247",3
 739,"Tremendous Fire","Magic",,,,,,,,3
-740,"Trent","Monster","Normal","EARTH","Plant",5,1500,1800,78780140,3
-741,"Trial of Nightmare","Monster","Normal","DARK","Fiend",4,1300,900,77827521,3
-742,"Tribute to The Doomed","Magic",,,,,,,79759861,3
+740,"Trent","Monster","Normal","EARTH","Plant",5,1500,1800,"78780140",3
+741,"Trial of Nightmare","Monster","Normal","DARK","Fiend",4,1300,900,"77827521",3
+742,"Tribute to The Doomed","Magic",,,,,,,"79759861",3
 743,"Tri-Horned Dragon","Monster","Normal","DARK","Dragon",8,2850,2350,,3
-744,"Tripwire Beast","Monster","Normal","EARTH","Thunder",4,1200,1300,45042329,3
+744,"Tripwire Beast","Monster","Normal","EARTH","Thunder",4,1200,1300,"45042329",3
 745,"Turtle Oath","Magic",,,,,,,,3
-746,"Turtle Tiger","Monster","Normal","WATER","Aqua",4,1000,1500,37313348,3
-747,"Twin Long Rods #2","Monster","Normal","WATER","Aqua",3,850,700,29692206,3
-748,"Twin-Headed Fire Dragon","Monster","Normal","FIRE","Pyro",6,2200,1700,78984772,3
-749,"Twin-Headed Thunder Dragon","Monster","Fusion","LIGHT","Thunder",7,2800,2100,54752875,3
-750,"Two-Headed King Rex","Monster","Normal","EARTH","Dinosaur",4,1600,1200,94119974,3
-751,"Two-Mouth Darkruler","Monster","Normal","EARTH","Dinosaur",3,900,700,57305373,3
-752,"Two-Pronged Attack","Trap",,,,,,,83887306,3
-753,"Tyhone","Monster","Normal","WIND","Winged Beast",4,1200,1400,72842870,3
-754,"Tyhone #2","Monster","Normal","FIRE","Dragon",6,1700,1900,56789759,3
-755,"UFO Turtle","Monster","Effect","FIRE","Machine",4,1400,1200,60806437,3
-756,"Ultimate Offering","Trap",,,,,,,80604091,3
-757,"Umi","Magic",,,,,,,22702055,3
-758,"Umiiruka","Magic",,,,,,,82999629,3
-759,"Unknown Warrior of Fiend","Monster","Normal","DARK","Warrior",3,1000,500,97360116,3
-760,"Upstart Goblin","Magic",,,,,,,70368879,3
-761,"Uraby","Monster","Normal","EARTH","Dinosaur",4,1500,800,1784619,3
-762,"Ushi Oni","Monster","Normal","DARK","Fiend",6,2150,1950,48649353,3
-763,"Valkyrion the Magna Warrior","Monster","Effect","EARTH","Rock",8,3500,3850,75347539,3
-764,"Vermillion Sparrow","Monster","Fusion","FIRE","Pyro",5,1900,1500,35752363,3
-765,"Versago the Destroyer","Monster","Effect","DARK","Fiend",3,1100,900,50259460,3
-766,"Vile Germs","Magic",,,,,,,39774685,3
-767,"Violent Rain","Monster","Normal","WATER","Aqua",4,1550,800,94042337,3
-768,"Violet Crystal","Magic",,,,,,,15052462,3
-769,"Vishwar Randi","Monster","Normal","DARK","Warrior",3,900,700,78556320,3
-770,"Vorse Raider","Monster","Normal","DARK","Beast-Warrior",4,1900,1200,14898066,3
-771,"Waboku","Trap",,,,,,,12607053,3
-772,"Wall of Illusion","Monster","Effect","DARK","Fiend",4,1000,1850,13945283,3
+746,"Turtle Tiger","Monster","Normal","WATER","Aqua",4,1000,1500,"37313348",3
+747,"Twin Long Rods #2","Monster","Normal","WATER","Aqua",3,850,700,"29692206",3
+748,"Twin-Headed Fire Dragon","Monster","Normal","FIRE","Pyro",6,2200,1700,"78984772",3
+749,"Twin-Headed Thunder Dragon","Monster","Fusion","LIGHT","Thunder",7,2800,2100,"54752875",3
+750,"Two-Headed King Rex","Monster","Normal","EARTH","Dinosaur",4,1600,1200,"94119974",3
+751,"Two-Mouth Darkruler","Monster","Normal","EARTH","Dinosaur",3,900,700,"57305373",3
+752,"Two-Pronged Attack","Trap",,,,,,,"83887306",3
+753,"Tyhone","Monster","Normal","WIND","Winged Beast",4,1200,1400,"72842870",3
+754,"Tyhone #2","Monster","Normal","FIRE","Dragon",6,1700,1900,"56789759",3
+755,"UFO Turtle","Monster","Effect","FIRE","Machine",4,1400,1200,"60806437",3
+756,"Ultimate Offering","Trap",,,,,,,"80604091",3
+757,"Umi","Magic",,,,,,,"22702055",3
+758,"Umiiruka","Magic",,,,,,,"82999629",3
+759,"Unknown Warrior of Fiend","Monster","Normal","DARK","Warrior",3,1000,500,"97360116",3
+760,"Upstart Goblin","Magic",,,,,,,"70368879",3
+761,"Uraby","Monster","Normal","EARTH","Dinosaur",4,1500,800,"01784619",3
+762,"Ushi Oni","Monster","Normal","DARK","Fiend",6,2150,1950,"48649353",3
+763,"Valkyrion the Magna Warrior","Monster","Effect","EARTH","Rock",8,3500,3850,"75347539",3
+764,"Vermillion Sparrow","Monster","Fusion","FIRE","Pyro",5,1900,1500,"35752363",3
+765,"Versago the Destroyer","Monster","Effect","DARK","Fiend",3,1100,900,"50259460",3
+766,"Vile Germs","Magic",,,,,,,"39774685",3
+767,"Violent Rain","Monster","Normal","WATER","Aqua",4,1550,800,"94042337",3
+768,"Violet Crystal","Magic",,,,,,,"15052462",3
+769,"Vishwar Randi","Monster","Normal","DARK","Warrior",3,900,700,"78556320",3
+770,"Vorse Raider","Monster","Normal","DARK","Beast-Warrior",4,1900,1200,"14898066",3
+771,"Waboku","Trap",,,,,,,"12607053",3
+772,"Wall of Illusion","Monster","Effect","DARK","Fiend",4,1000,1850,"13945283",3
 773,"Wall Shadow","Monster","Effect","DARK","Warrior",7,1600,3000,,3
 774,"War-Lion Ritual","Magic",,,,,,,,3
-775,"Warrior Elimination","Magic",,,,,,,90873992,3
-776,"Warrior of Tradition","Monster","Fusion","EARTH","Warrior",6,1900,1700,56413937,3
-777,"Wasteland","Magic",,,,,,,23424603,3
-778,"Water Element","Monster","Normal","WATER","Aqua",3,900,700,3732747,3
-779,"Water Girl","Monster","Normal","WATER","Aqua",4,1250,1000,55014050,3
-780,"Water Magician","Monster","Normal","WATER","Aqua",4,1400,1000,93343894,3
-781,"Water Omotics","Monster","Normal","WATER","Aqua",4,1400,1200,2483611,3
-782,"Waterdragon Fairy","Monster","Normal","WATER","Aqua",3,1100,700,66836598,3
-783,"Weather Control","Monster","Normal","LIGHT","Fairy",2,600,400,37243151,3
-784,"Weather Report","Monster","Effect","WATER","Aqua",4,950,1500,72053645,3
-785,"Whiptail Crow","Monster","Normal","DARK","Fiend",4,1650,1600,91996584,3
-786,"White Hole","Trap",,,,,,,43487744,3
-787,"White Magical Hat","Monster","Effect","LIGHT","Spellcaster",3,1000,700,15150365,3
-788,"Wicked Mirror","Monster","Normal","DARK","Fiend",2,700,600,15150371,3
-789,"Widespread Ruin","Trap",,,,,,,77754944,3
-790,"Windstorm of Etaqua","Trap",,,,,,,59744639,3
-791,"Wing Egg Elf","Monster","Normal","LIGHT","Fairy",3,500,1300,98582704,3
-792,"Winged Cleaver","Monster","Normal","EARTH","Insect",2,700,700,39175982,3
-793,"Winged Dragon,Guardian of the Fortress #1","Monster","Normal","WIND","Dragon",4,1400,1200,87796900,3
-794,"Wings of Wicked Flame","Monster","Normal","FIRE","Pyro",2,700,600,92944626,3
-795,"Witch of the Black Forest","Monster","Effect","DARK","Spellcaster",4,1100,1200,78010363,2
-796,"Witch's Apprentice","Monster","Effect","DARK","Spellcaster",2,550,500,80741828,3
-797,"Witty Phantom","Monster","Normal","DARK","Fiend",4,1400,1300,36304921,3
-798,"Wodan the Resident of the Forest","Monster","Effect","EARTH","Warrior",3,900,1200,42883273,3
-799,"Wood Remains","Monster","Normal","DARK","Zombie",3,1000,900,17733394,3
-800,"World Suppression","Trap",,,,,,,12253117,3
-801,"Wow Warrior","Monster","Normal","WATER","Fish",4,1250,900,69750536,3
-802,"Wretched Ghost of the Attic","Monster","Normal","DARK","Fiend",2,550,400,17238333,3
-803,"Yado Karu","Monster","Effect","WATER","Aqua",4,900,1700,29380133,3
-804,"Yaiba Robo","Monster","Normal","DARK","Machine",4,1000,1300,10315429,3
-805,"Yamatano Dragon Scroll","Monster","Normal","WIND","Dragon",2,900,300,76704943,3
-806,"Yami","Magic",,,,,,,59197169,3
-807,"Yaranzo","Monster","Normal","DARK","Zombie",4,1300,1500,71280811,3
-808,"Zanki","Monster","Normal","EARTH","Warrior",5,1500,1700,30090452,3
+775,"Warrior Elimination","Magic",,,,,,,"90873992",3
+776,"Warrior of Tradition","Monster","Fusion","EARTH","Warrior",6,1900,1700,"56413937",3
+777,"Wasteland","Magic",,,,,,,"23424603",3
+778,"Water Element","Monster","Normal","WATER","Aqua",3,900,700,"03732747",3
+779,"Water Girl","Monster","Normal","WATER","Aqua",4,1250,1000,"55014050",3
+780,"Water Magician","Monster","Normal","WATER","Aqua",4,1400,1000,"93343894",3
+781,"Water Omotics","Monster","Normal","WATER","Aqua",4,1400,1200,"02483611",3
+782,"Waterdragon Fairy","Monster","Normal","WATER","Aqua",3,1100,700,"66836598",3
+783,"Weather Control","Monster","Normal","LIGHT","Fairy",2,600,400,"37243151",3
+784,"Weather Report","Monster","Effect","WATER","Aqua",4,950,1500,"72053645",3
+785,"Whiptail Crow","Monster","Normal","DARK","Fiend",4,1650,1600,"91996584",3
+786,"White Hole","Trap",,,,,,,"43487744",3
+787,"White Magical Hat","Monster","Effect","LIGHT","Spellcaster",3,1000,700,"15150365",3
+788,"Wicked Mirror","Monster","Normal","DARK","Fiend",2,700,600,"15150371",3
+789,"Widespread Ruin","Trap",,,,,,,"77754944",3
+790,"Windstorm of Etaqua","Trap",,,,,,,"59744639",3
+791,"Wing Egg Elf","Monster","Normal","LIGHT","Fairy",3,500,1300,"98582704",3
+792,"Winged Cleaver","Monster","Normal","EARTH","Insect",2,700,700,"39175982",3
+793,"Winged Dragon,Guardian of the Fortress #1","Monster","Normal","WIND","Dragon",4,1400,1200,"87796900",3
+794,"Wings of Wicked Flame","Monster","Normal","FIRE","Pyro",2,700,600,"92944626",3
+795,"Witch of the Black Forest","Monster","Effect","DARK","Spellcaster",4,1100,1200,"78010363",2
+796,"Witch's Apprentice","Monster","Effect","DARK","Spellcaster",2,550,500,"80741828",3
+797,"Witty Phantom","Monster","Normal","DARK","Fiend",4,1400,1300,"36304921",3
+798,"Wodan the Resident of the Forest","Monster","Effect","EARTH","Warrior",3,900,1200,"42883273",3
+799,"Wood Remains","Monster","Normal","DARK","Zombie",3,1000,900,"17733394",3
+800,"World Suppression","Trap",,,,,,,"12253117",3
+801,"Wow Warrior","Monster","Normal","WATER","Fish",4,1250,900,"69750536",3
+802,"Wretched Ghost of the Attic","Monster","Normal","DARK","Fiend",2,550,400,"17238333",3
+803,"Yado Karu","Monster","Effect","WATER","Aqua",4,900,1700,"29380133",3
+804,"Yaiba Robo","Monster","Normal","DARK","Machine",4,1000,1300,"10315429",3
+805,"Yamatano Dragon Scroll","Monster","Normal","WIND","Dragon",2,900,300,"76704943",3
+806,"Yami","Magic",,,,,,,"59197169",3
+807,"Yaranzo","Monster","Normal","DARK","Zombie",4,1300,1500,"71280811",3
+808,"Zanki","Monster","Normal","EARTH","Warrior",5,1500,1700,"30090452",3
 809,"Zera Ritual","Magic",,,,,,,,3
 810,"Zera The Mant","Monster","Ritual","DARK","Fiend",8,2800,2300,,3
-811,"Zoa","Monster","Normal","DARK","Fiend",7,2600,1900,24311372,3
-812,"Zombie Warrior","Monster","Fusion","DARK","Zombie",3,1200,900,31339260,3
-813,"Zone Eater","Monster","Effect","WATER","Aqua",1,250,200,86100785,3
+811,"Zoa","Monster","Normal","DARK","Fiend",7,2600,1900,"24311372",3
+812,"Zombie Warrior","Monster","Fusion","DARK","Zombie",3,1200,900,"31339260",3
+813,"Zone Eater","Monster","Effect","WATER","Aqua",1,250,200,"86100785",3
 814,"The Monarchy","Ticket",,,,,,,,0
 815,"Set Sail for the Kingdom","Ticket",,,,,,,,0
 816,"Glory of the King's Hand","Ticket",,,,,,,,0

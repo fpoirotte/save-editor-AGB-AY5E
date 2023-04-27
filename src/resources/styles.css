@@ -16,3 +16,10 @@
     background: rgb(38,162,105);
 }
 
+*:focus {
+  outline-color: red;
+  outline-style: dashed;
+  outline-offset: -2px;
+  outline-width: 2px;
+  -gtk-outline-radius: 4px;
+}

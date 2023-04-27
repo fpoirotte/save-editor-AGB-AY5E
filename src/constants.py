@@ -20,7 +20,10 @@ class FrozenModelDict(dict):
     __setattr__ = __delitem__ = __setitem__ = __delattr__
 
 
+# A frozen dict for the game's cards.
 CARDS = FrozenModelDict(load_dataset('cards', Card))
+
+# A frozen dict for the game's duelists.
 DUELISTS = FrozenModelDict(load_dataset('duelists', Duelist))
 
 # Technically, the game contains 820 cards, but the last one (Insect Monster Token)
@@ -37,12 +40,13 @@ MAX_TRUNK_CARDS = 0xFFFF
 # This counter is stored as a 10-bit number.
 MAX_TRUNK_COPIES = 0x3F
 
-# Maximum number of duels won/drawn/lost against a given duelist.
-# Won/lost duels are encoded as 11-bit numbers,
-# while drawn duels are encoded as a 10-bit number.
-MAX_WON = MAX_LOST = 0x7F
-MAX_DRAWN = 0x3F
+# Technically, the number of won/lost duels is stored on 11 bits
+# while drawn duels are stored as a 10-bit number.
+# However, these numbers are always displayed on 2 digits in the game,
+# hence the value set below.
+MAX_WON = MAX_LOST = MAX_DRAWN = 99
 
+# Constants for the various offsets inside the savegame.
 OFFSET_HEADER           = 0x0000
 OFFSET_STATS_CARDS      = 0x000C
 OFFSET_PADDING_1        = 0x0CDD
@@ -66,10 +70,16 @@ OFFSET_CHECKSUM         = 0x216E
 OFFSET_FINAL_PADDING    = 0x2170
 OFFSET_EOF              = 0x8000
 
+# Number of bytes used to store the statistics for a single card.
 SIZE_CARD_STATS         = 4
+
+# Number of bytes used to store the statistics for a single duelist.
 SIZE_DUELIST_STATS      = 4
+
+# Number of bytes used to compute the savegame's checksum.
 SIZE_CHECKSUM_INPUT     = 0x10B6
 
+# Various static values.
 VALUE_HEADER            = (0, 0, 1, 0, 0, 0)
 VALUE_STATIC            = (3, )
 VALUE_GAME_ID           = b'DMEX1INT'

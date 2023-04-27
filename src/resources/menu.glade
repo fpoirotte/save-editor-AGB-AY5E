@@ -38,20 +38,34 @@
     </submenu>
 
     <submenu>
-      <attribute name="label" translatable="yes">_Edit</attribute>
+      <attribute name="label" translatable="yes">_View</attribute>
       <item>
-        <attribute name="action">app.search</attribute>
-        <attribute name="label" translatable="yes">_Search</attribute>
-        <attribute name="accel">&lt;Primary&gt;F</attribute>
+        <attribute name="action">app.tab-set-general</attribute>
+        <attribute name="label" translatable="yes">_General info</attribute>
+        <attribute name="accel">&lt;Alt&gt;G</attribute>
+      </item>
+      <item>
+        <attribute name="action">app.tab-set-cards</attribute>
+        <attribute name="label" translatable="yes">_Cards</attribute>
+        <attribute name="accel">&lt;Alt&gt;C</attribute>
+      </item>
+      <item>
+        <attribute name="action">app.tab-set-duelists</attribute>
+        <attribute name="label" translatable="yes">_Duelists</attribute>
+        <attribute name="accel">&lt;Alt&gt;D</attribute>
       </item>
     </submenu>
 
     <submenu>
       <attribute name="label" translatable="yes">_Help</attribute>
       <item>
+        <attribute name="action">app.help</attribute>
+        <attribute name="label" translatable="yes">_Help...</attribute>
+        <attribute name="accel">F1</attribute>
+      </item>
+      <item>
         <attribute name="action">app.about</attribute>
         <attribute name="label" translatable="yes">_About...</attribute>
-        <attribute name="accel">F1</attribute>
       </item>
     </submenu>
   </menu>
