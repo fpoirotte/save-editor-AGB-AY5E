@@ -36,21 +36,33 @@ This program requires the following dependencies:
 
 On Linux, the following commands can be used to install all of the dependencies listed above:
 
-*   Debian/Ubuntu:  `sudo apt install libgirepository1.0-dev        gir1.2-gtk-3.0  gir1.2-webkit2-4.0  python3-poetry`
-*   Fedora:         `sudo dnf install gobject-introspection-devel   gtk3            webkit2gtk4.0       poetry`
+*   Debian/Ubuntu:
+
+        sudo apt install \
+            libgirepository1.0-dev \
+            gir1.2-gtk-3.0 \
+            gir1.2-webkit2-4.0 \
+            python3-poetry`
+
+*   Fedora:
+
+        sudo dnf install \
+            gobject-introspection-devel \
+            gtk3 \
+            webkit2gtk4.0 \
+            poetry
 
 Windows support has not been tested.
 
 ### Installation steps
 
-1.  Grab and uncompress the [latest archive](./tags/latest/) for this program.
-2.  From a commandline prompt, go to the folder where you uncompressed the files
-3.  Run: `poetry install`
+1.  Grab and uncompress the [latest archive](https://github.com/fpoirotte/save-editor-AGB-AY5E/archive/refs/heads/main.tar.gz) for this program.
+2.  Inside a shell, go to the folder where you extracted the files and run `poetry install`
 
 
 ## Usage
 
-The editor can be started by running `poetry run save-editor-AGB-AY5E` from a commandline prompt inside the folder where the sources where extracted.
+The editor can be started by executing `poetry run save-editor-AGB-AY5E` from a shell running inside the folder where the sources were extracted.
 
 Information about how to use the editor can be found in the dedicated [documentation](./docs/Usage.md).
 
@@ -58,6 +70,7 @@ Information about how to use the editor can be found in the dedicated [documenta
 ## Transferring savegames from/to the game's cartridge
 
 There are several methods and tools that can be used to exchange savegames between an actual GameBoy Advance cartridge and a computer.
+
 If you've never done that before, the following post may be a good starting point:
 https://projectpokemon.org/home/tutorials/save-editing/managing-gba-saves/using-gba-backup-tool-r55/
 
@@ -66,4 +79,11 @@ https://projectpokemon.org/home/tutorials/save-editing/managing-gba-saves/using-
 
 This program should only be used by people who legally own a copy of the original game.
 I do not condone nor encourage software/video game piracy.
-If you do not own a legitimate copy of the game, please remove this program from your computer immediately.
+
+If you do not own a legitimate copy of the game, please uninstall this program from your computer immediately.
+
+
+## License
+
+This program is released under the MIT license.
+See https://github.com/fpoirotte/save-editor-AGB-AY5E/blob/main/LICENSE for more information.
