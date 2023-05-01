@@ -1,9 +1,9 @@
 import random
 
-from constants import CARDS
-from enums import DeckColor
-from metadata import RESOURCES_DIR
-from models import Card
+from .constants import CARDS
+from .enums import DeckColor
+from .metadata import RESOURCES_DIR
+from .models import Card
 
 
 class Deck():

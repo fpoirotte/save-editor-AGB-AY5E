@@ -30,8 +30,8 @@ Author: F. Poirotte
   <requires lib="gtk+" version="3.20"/>
   <!-- interface-css-provider-path styles.css -->
   <!-- interface-license-type mit -->
-  <!-- interface-name save-editor-AGB-AYSE -->
-  <!-- interface-description Save editor for \"Yu-Gi-Oh! The Eternal Duelist Soul\" -->
+  <!-- interface-name save-editor-AGB-AY5E -->
+  <!-- interface-description Save editor for \"Yu-Gi-Oh! The Eternal Duelist Soul\" (US version) -->
   <!-- interface-copyright 2023 - F. Poirotte -->
   <!-- interface-authors F. Poirotte -->
   <object class="GtkAdjustment" id="adjustment">
@@ -86,7 +86,6 @@ Author: F. Poirotte
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="enable-popup">True</property>
-        <signal name="switch-page" handler="switch_page" after="yes" swapped="no"/>
         <child>
           <object class="GtkBox" id="page-general">
             <property name="name">tab-general</property>
@@ -1090,7 +1089,7 @@ qualification:</property>
                 </child>
                 <child>
                   <object class="GtkButton">
-                    <property name="label" translatable="yes">Unlock all stages</property>
+                    <property name="label" translatable="yes">Unlock duelists</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <signal name="clicked" handler="duels_unlock_duelists" swapped="no"/>
@@ -1103,7 +1102,7 @@ qualification:</property>
                 </child>
                 <child>
                   <object class="GtkButton">
-                    <property name="label" translatable="yes">Unlock all packs</property>
+                    <property name="label" translatable="yes">Unlock packs</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <signal name="clicked" handler="duels_unlock_packs" swapped="no"/>

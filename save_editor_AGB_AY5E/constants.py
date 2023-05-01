@@ -1,4 +1,4 @@
-from models import Card, Duelist, load_dataset
+from .models import Card, Duelist, load_dataset
 
 
 class FrozenModelDict(dict):
@@ -69,6 +69,11 @@ OFFSET_GAME_ID          = 0x2166
 OFFSET_CHECKSUM         = 0x216E
 OFFSET_FINAL_PADDING    = 0x2170
 OFFSET_EOF              = 0x8000
+
+# The following values are not used by the editor itself and are only listed for reference.
+OFFSET_WRAM_START       = 0x02011C20 # Start of savegame in On-board Working RAM
+OFFSET_WRAM_END         = 0x02013D90 # End of savegame = OFFSET_WRAM_START + OFFSET_FINAL_PADDING
+OFFSET_MAIN_MENU_INDEX  = 0x02015ED8 # Focused entry in main menu (0-6)
 
 # Number of bytes used to store the statistics for a single card.
 SIZE_CARD_STATS         = 4

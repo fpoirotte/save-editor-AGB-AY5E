@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "save-editor-AGB-AY5E"
+version = "0.1.0"
+description = ""
+authors = ["François Poirotte <clicky@erebot.net>"]
+readme = "README.md"
+packages = [{include = "save_editor_AGB_AY5E"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+PyGObject = "^3.38"
+
+[tool.poetry.scripts]
+save-editor-AGB-AY5E = "save_editor_AGB_AY5E.main:main"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -3,10 +3,10 @@ import struct
 
 from datetime import date, timedelta
 
-from constants import *
-from deck import Deck, MainDeck, ExtraDeck, SideDeck
-from enums import NextNationalChampionshipRound, MonsterType
-from models import Card
+from .constants import *
+from .decks import Deck, MainDeck, ExtraDeck, SideDeck
+from .enums import NextNationalChampionshipRound, MonsterType
+from .models import Card
 
 
 __all__ = ('Save', )
@@ -48,11 +48,11 @@ class CardStats():
 
     def __bytes__(self):
         # (u32) counts + flags1
-        #     0-9 = nb dans le trunk
-        #     10-11 = nb dans le main deck, y.c. fusions
-        #     12-13 = nb dans le side deck
+        #     0-9 = # of copies in the trunk
+        #     10-11 = # of copies in main deck/extra deck
+        #     12-13 = # of copies in side deck
         #     14-16 = ?
-        #     17 = password used
+        #     17 = 1 if password has been used already, 0 otherwise
         #     18-31 = ?
         return self.PACKER.pack(
             (self.copiesTrunk & 0x3F) |
@@ -181,7 +181,15 @@ class Save():
     216E-216F = checksum (u16)
     2170-7FFF = 0xFF... (padding)
     """
+
+    # In-game date when the game starts.
     STARTING_DATE = date(2001, 1, 1)
+
+    # Because the number of in-game days since `STARTING_DATE` is stored as a 16-bit value,
+    # the maximum date that can be stored is June 6th, 2180 (=0xFFFF).
+    # After that, the date will magically roll back to January 1st, 2001 due to integer overflow.
+    # This can also be seen by trying to look for events after June 2180 in the game's calendar.
+    MAX_DATE = date(2180, 6, 6)
 
     def __init__(self, data=None, filename=None):
         self.cardsStats = CardsStats(data[OFFSET_STATS_CARDS:] if data else None)
@@ -319,7 +327,7 @@ class Save():
         return self.ingameDate
 
     def set_ingame_date(self, new_date):
-        if new_date < self.STARTING_DATE:
+        if new_date < self.STARTING_DATE or new_date > self.MAX_DATE:
             raise ValueError(new_date)
         self.ingameDate = new_date
 

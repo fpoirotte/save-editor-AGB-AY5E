@@ -1,10 +1,10 @@
 import csv
 
-import enums
-import metadata
-
 from dataclasses import dataclass
 from typing import Union, get_origin, get_args, get_type_hints
+
+from .enums import Attribute, CardType, Level, Limit, MonsterType, Stage, Type
+from .metadata import RESOURCES_DIR
 
 
 def NonEmptyString(value):
@@ -37,29 +37,29 @@ class Model:
 class Duelist(Model):
     ID: int
     Name: str
-    Stage: enums.Stage
+    Stage: Stage
 
 
 @dataclass(frozen=True)
 class Card(Model):
     ID: int
     Name: str
-    CardType: enums.CardType
-    MonsterType: Union[enums.MonsterType, EmptyString]
-    Attribute: Union[enums.Attribute, EmptyString]
-    Type: Union[enums.Type, EmptyString]
-    Level: Union[enums.Level, EmptyString]
+    CardType: CardType
+    MonsterType: Union[MonsterType, EmptyString]
+    Attribute: Union[Attribute, EmptyString]
+    Type: Union[Type, EmptyString]
+    Level: Union[Level, EmptyString]
     ATK: Union[NonEmptyString, EmptyString]
     DEF: Union[NonEmptyString, EmptyString]
     Password: Union[Password, EmptyString]
-    Limit: enums.Limit
+    Limit: Limit
 
 
 def load_dataset(filename: str, model: Model):
     hints = get_type_hints(model)
     fields = set(hints)
     none = None.__class__
-    fullpath = metadata.RESOURCES_DIR / (filename + '.csv')
+    fullpath = RESOURCES_DIR / (filename + '.csv')
     with fullpath.open("r", newline="") as fd:
         reader = csv.DictReader(fd, dialect="excel")
 

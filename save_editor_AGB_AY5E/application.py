@@ -1,7 +1,9 @@
 import argparse
 import calendar
 import datetime
+import functools
 import os
+import subprocess
 import sys
 import textwrap
 
@@ -9,12 +11,12 @@ from functools import partial
 
 from gi.repository import Gio, Gtk, Gdk
 
-from constants import CARDS, DUELISTS, MAX_WON, MAX_DRAWN, MAX_LOST, MAX_TRUNK_COPIES, MAX_TRUNK_CARDS
-from deck import InitialDeck
-from enums import CardColumn, CardType, DeckColor, DuelistColumn, Event
-from enums import Limit, MonsterType, NextNationalChampionshipRound, NotebookPage
-from metadata import RESOURCES_DIR, __game_title__, __game_name__, __game_id__, __version__
-from save import Save
+from .constants import CARDS, DUELISTS, MAX_WON, MAX_DRAWN, MAX_LOST, MAX_TRUNK_COPIES, MAX_TRUNK_CARDS
+from .decks import InitialDeck
+from .enums import CardColumn, CardType, DeckColor, DuelistColumn, Event
+from .enums import Limit, MonsterType, NextNationalChampionshipRound, NotebookPage
+from .metadata import RESOURCES_DIR, __game_title__, __game_name__, __game_id__, __version__
+from .save import Save
 
 
 def compute_card_usage(used, limit):
@@ -23,6 +25,37 @@ def compute_card_usage(used, limit):
 
 class Application(Gtk.Application):
     CALENDAR = calendar.Calendar(calendar.SUNDAY)
+
+    # The in-game delivery of "Weekly Yu-Gi-Oh!" follows the rules of japanese holidays,
+    # AS THEY WERE when "Yu-Gi-Oh! Duel Monsters 5: Expert 1" (the japanese game
+    # "Yu-Gi-Oh! The Eternal Duelist Soul" is based on) was released (~ July 2001).
+    # When a delivery falls on a holiday, it will happen on the previous working day instead.
+    # Sundays are considered non-working days.
+    HOLIDAYS = (
+        (1, 1),     # New Year's Day
+        # Ignore Coming of Age Day (2nd Monday of January) as no event ever takes place on Mondays.
+        (2, 11),    # National Foundation Day
+        # Not entirely sure why February 24th is marked as a holiday in the game.
+        # This could be a reference to Emperor Hirohito's funeral day dating 1989.
+        (2, 24),    # ???
+        # Ignore Vernal Equinox Day (at it changes every year and cannot be computed).
+        (4, 29),    # Showa Day
+        (5, 3),     # Constitution Memorial Day
+        (5, 4),     # Greenery Day
+        (5, 5),     # Children's Day
+        # Marine Day used to be celebrated on July 20th back when the game was released.
+        # It was later changed to the 3rd Monday of July starting in 2003.
+        (7, 20),    # Marine Day
+        (8, 11),    # Mountain Day
+        # Respect for the Aged Day used to be celebrated on September 15th,
+        # until it was changed to the 3rd Monday of September starting in 2003.
+        (9, 15),
+        # Ignore Autumnal Equinox Day (at it changes every year and cannot be computed).
+        # Ignore Health and Sports Day (2nd Monday of October). See also Coming of Age Day.
+        (11, 3),    # Culture Day
+        (11, 23),   # Labor Thanksgiving Day
+        (12, 23),   # The Emperor's Birthday (Emperor Akihito)
+    )
 
     def __init__(self, *args, **kwargs):
         super().__init__(
@@ -61,7 +94,6 @@ class Application(Gtk.Application):
     def get_builder(self):
         handlers = {
             "quit_request": self.on_quit_request,
-            "switch_page": self.on_switch_page,
 
             "misc_date_changed": self.on_misc_date_changed,
             "misc_national_championship_changed": self.on_misc_national_championship_changed,
@@ -178,53 +210,72 @@ class Application(Gtk.Application):
             # Make sure all widgets are fully realized when this function returns
             self.window.show_all()
 
+    @functools.lru_cache(maxsize=64)
+    def get_events_for_month(self, year, month):
+        # Note: it is possible for multiple events to happen on the same day
+        # (e.g. Yu-Gi-Oh! Magazine & Weekly Yu-Gi-Oh! when the 21st day is a Tuesday).
+        # Therefore, we use a list of lists to represent the events.
+        month_events = []
+        for week_in_month, days in enumerate(self.CALENDAR.monthdayscalendar(year, month), 1):
+            for day in days:
+                # Skip padding at the beginning/end of the month
+                if not day:
+                    continue
+
+                date = datetime.date(year, month, day)
+                weekday = date.weekday()
+                events = []
+                month_events.append(events)
+                day_occurrence = (day - 1) // 7 + 1
+
+                # 1st Saturday of June: Grandpa's Cup Qualifiers
+                if weekday == calendar.SATURDAY and month == 6 and day_occurrence == 1:
+                    events.append(Event.GRANDPA_QUALIFIERS)
+
+                # At the start of the 2nd week of June: Grandpa's Cup Final
+                elif weekday == calendar.SUNDAY and month == 6 and week_in_month == 2:
+                    events.append(Event.GRANDPA_FINAL)
+
+                # 2nd & 4th Saturday of the month: Weekend Duel
+                if weekday == calendar.SATURDAY and day_occurrence in (2, 4):
+                    events.append(Event.WEEKEND_DUEL)
+
+                # 1st, 2nd, 3rd & 4th Sunday of November: National Championship
+                elif weekday == calendar.SUNDAY and month == 11:
+                    rounds = [
+                        Event.NATIONALS_ROUND_1,
+                        Event.NATIONALS_ROUND_2,
+                        Event.NATIONALS_SEMI_FINAL,
+                        Event.NATIONALS_FINAL,
+                    ]
+                    events.append(rounds[day_occurrence-1])
+
+                # every Tuesday (or on the previous working day if it falls on a Sunday/holiday): Weekly Yu-Gi-Oh!
+                elif weekday == calendar.TUESDAY:
+                    curr_date = datetime.date(date.year, date.month, date.day)
+                    while curr_date.weekday() == calendar.SUNDAY or (curr_date.month, curr_date.day) in self.HOLIDAYS:
+                        curr_date -= datetime.timedelta(days=1)
+                    if curr_date.month == month: # Protect against month swapping
+                        month_events[curr_date.day-1].append(Event.WEEKLY_YUGIOH)
+
+                # on the 21st (or on the previous working day if it falls on a Sunday/holiday): Yu-Gi-Oh! Magazine
+                if day == 21:
+                    curr_date = datetime.date(date.year, date.month, date.day)
+                    while curr_date.weekday() == calendar.SUNDAY or (curr_date.month, curr_date.day) in self.HOLIDAYS:
+                        curr_date -= datetime.timedelta(days=1)
+                    if curr_date.month == month: # Protect against month swapping
+                        month_events[curr_date.day-1].append(Event.YUGIOH_MAGAZINE)
+        return month_events
+
+
     def get_details_for_date(self, widget, year, month, day):
-        events = []
-        month += 1
-        date = datetime.date(year, month, day)
-        weekday = date.weekday()
-        day_occurrence = (day - 1) // 7 + 1
-
-        it = enumerate(self.CALENDAR.monthdayscalendar(year, month), 1)
-        month_week = next(index for index, days in it if day in days)
-
-        # Weekly Yu-Gi-Oh arrives on Tuesday, unless... @FIXME e.g. February 2003, April 2003, Septembre 2009, November 2009, ...
-        if weekday == calendar.TUESDAY:
-            events.append(Event.WEEKLY_YUGIOH)
-
-        if weekday == calendar.SATURDAY:
-            # If the 21st is a Sunday, Yu-Gi-Oh! Magazine will arrive on the 20th instead
-            if day == 20:
-                events.append(Event.YUGIOH_MAGAZINE)
-
-            if day_occurrence in (2, 4):
-                events.append(Event.WEEKEND_DUEL)
-
-            # 1st Saturday of June: qualifiers for Grandpa's Cup
-            if month == 6 and day_occurrence == 1:
-                events.append(Event.GRANDPA_QUALIFIERS)
-
-        if weekday == calendar.SUNDAY:
-            # The day after the 1st Saturday of June (i.e. Sunday on the 2nd week):
-            # it's Grandpa's Cup's final!
-            if month == 6 and month_week == 2:
-                events.append(Event.GRANDPA_FINAL)
-
-            # National Championship: one round per week, starting on the 1st Sunday of November
-            if month == 11 and day_occurrence < 5:
-                rounds = [
-                    Event.NATIONALS_ROUND_1,
-                    Event.NATIONALS_ROUND_2,
-                    Event.NATIONALS_SEMI_FINAL,
-                    Event.NATIONALS_FINAL,
-                ]
-                events.append(rounds[day_occurrence-1])
-
-        # Yu-Gi-Oh! Magazine arrives on the 21st, unless it's a Sunday (see above)
-        if day == 21 and weekday != calendar.SUNDAY:
-            events.append(Event.YUGIOH_MAGAZINE)
-
-        return "\n".join(e.value for e in events) if events else None
+        # Due to the observance of japanese holidays, it is easier to recreate
+        # and cache the calendar for the whole month, then pick up the information we need,
+        # rather that trying to compute the details for any given day directly.
+        # Also, are 0-based in GTKCalendar while days are 1-based.
+        events = self.get_events_for_month(year, month+1)
+        day_events = events[day-1]
+        return "\n".join(e.value for e in day_events) if day_events else None
 
     def do_activate(self):
         # We only allow a single window and raise any existing ones
@@ -323,7 +374,31 @@ class Application(Gtk.Application):
         self.save_save(filename)
 
     def on_help(self, action, param):
-        pass
+        help_page = "https://github.com/fpoirotte/save-editor-{}/tree/main/docs/Usage.md".format(__game_id__)
+
+        # Try calling GIO/GVFS handlers first.
+        try:
+            Gtk.show_uri_on_window(self.window, help_page, Gdk.CURRENT_TIME)
+            return
+        except Exception as e:
+            print(e)
+
+        # Fall back to xdg-open
+        try:
+            subprocess.check_call(["xdg-open", help_page])
+            return
+        except Exception as e:
+            print(e)
+
+        # Last resort: display a message with the help's URL
+        dialog = Gtk.MessageDialog(
+            transient_for=self.window,
+            flags=Gtk.DialogFlags.MODAL,
+            message_type=Gtk.MessageType.INFO,
+            buttons=Gtk.ButtonsType.CLOSE,
+            text="This program's help can be read online at:\n" + help_page)
+        dialog.run()
+        dialog.destroy()
 
     def on_about(self, action, param):
         dialog = Gtk.AboutDialog(
@@ -359,23 +434,6 @@ class Application(Gtk.Application):
 
     def on_tab_set(self, action, param, tab):
         self.notebook.set_current_page(tab.value)
-
-    def on_switch_page(self, notebook, widget, page):
-        pass
-#        page = NotebookPage(page)
-#        if page == NotebookPage.CARDS:
-#            path = self.list_cards.get_cursor().path or '0'
-#            self.list_cards.set_cursor(path)
-#            self.list_cards.grab_focus()
-#            self.list_cards.grab_default()
-#            print(self.list_cards.is_focus())
-#            print(self.list_cards.has_focus())
-#            print(self.list_cards.has_default())
-#        elif page == NotebookPage.DUELISTS:
-#            self.list_duelists.grab_focus()
-#            print(self.list_duelists.props.is_focus)
-#            print(self.list_duelists.props.has_focus)
-#            print(self.list_duelists.props.has_default)
 
     def update_title(self):
         title = "Save Editor for {}".format(__game_id__)
@@ -460,7 +518,7 @@ class Application(Gtk.Application):
     def confirm_data_loss(self):
         dialog = Gtk.MessageDialog(
             transient_for=self.window,
-            flags=0,
+            flags=Gtk.DialogFlags.MODAL,
             message_type=Gtk.MessageType.WARNING,
             buttons=Gtk.ButtonsType.OK_CANCEL,
             text="Warning: there are unsaved changes!",
@@ -567,34 +625,32 @@ class Application(Gtk.Application):
         builder = Gtk.Builder.new_from_file(str(RESOURCES_DIR / "card.glade"))
         dialog = builder.get_object("root")
         grid = builder.get_object("grid")
-        data = [("Name", card.Name)]
+        data = [("Name", card.Name), ("Card Number", "{:03}".format(card.ID))]
+        restrictions = {
+            Limit.LIMIT_0: "Cannot be used in\nmain/extra/side deck",
+            Limit.LIMIT_1: "only 1 copy allowed\n(main/extra + side deck)",
+            Limit.LIMIT_2: "only 2 copies allowed\n(main/extra + side deck)",
+            Limit.LIMIT_3: "only 3 copies allowed\n(main/extra + side deck)",
+        }
+
+        if card.MonsterType:
+            data.append(("Card Type", "{} {}".format(card.MonsterType.value, card.CardType.value)))
+        else:
+            data.append(("Card Type", card.CardType.value))
+
+        if card.Password:
+            data.append(("Password", card.Password))
 
         if card.CardType == CardType.MONSTER:
-            restrictions = {
-                Limit.LIMIT_0: "Cannot be used in\nmain/extra/side deck",
-                Limit.LIMIT_1: "only 1 copy allowed\n(main + extra + side deck)",
-                Limit.LIMIT_2: "only 2 copies allowed\n(main + extra + side deck)",
-                Limit.LIMIT_3: "only 3 copies allowed\n(main + extra + side deck)",
-            }
-
-            if card.MonsterType:
-                data.append(("Card Type", "{} Monster".format(card.MonsterType.value)))
-            else:
-                data.append(("Card Type", "Monster"))
-
             data.extend([
-                ("Monster Attribute", card.Attribute.value),
                 ("Level", card.Level.value),
+                ("Attribute", card.Attribute.value),
                 ("Monster Type", card.Type.value),
-                ("Attribute", card.Type.value),
                 ("ATK", card.ATK),
                 ("DEF", card.DEF)
             ])
-            if card.Password:
-                data.append(("Password", card.Password))
-            data.append(("Restrictions", restrictions[int(card.Limit)]))
-        else:
-            data.append(("Card type", card.CardType))
+
+        data.append(("Restrictions", restrictions[int(card.Limit)]))
 
         for index, (name, value) in enumerate(data):
             grid.insert_row(index)
@@ -662,7 +718,7 @@ class Application(Gtk.Application):
     def on_duels_unlock_duelists(self, widget):
         dialog = Gtk.MessageDialog(
             transient_for=self.window,
-            flags=0,
+            flags=Gtk.DialogFlags.MODAL,
             message_type=Gtk.MessageType.INFO,
             buttons=Gtk.ButtonsType.OK,
             text="This feature has not been implemented yet!",
