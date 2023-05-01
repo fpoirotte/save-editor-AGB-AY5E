@@ -41,7 +41,6 @@ On Linux, the following commands can be used to install all of the dependencies 
         sudo apt install \
             libgirepository1.0-dev \
             gir1.2-gtk-3.0 \
-            gir1.2-webkit2-4.0 \
             python3-poetry`
 
 *   Fedora:
@@ -49,7 +48,6 @@ On Linux, the following commands can be used to install all of the dependencies 
         sudo dnf install \
             gobject-introspection-devel \
             gtk3 \
-            webkit2gtk4.0 \
             poetry
 
 Windows support has not been tested.
