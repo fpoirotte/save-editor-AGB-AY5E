@@ -2,11 +2,13 @@
 
 ## Interface Overview
 
-The interface is divided in 3 parts:
+The interface is divided into 3 parts:
 
-1.  At the top, the menu bar gives access to basic actions (see below)
+![User interface overview](ui_overview.png)
+
+1.  At the top, the menu bar gives access to some of the basic actions (see below)
 2.  Right below the menu bar, a notebook with several tabs can be used to switch between the editor's various views
-3.  The rest of the screen displays the currently selected view
+3.  The rest of the screen is used to display the selected view's content
 
 Available menus:
 
