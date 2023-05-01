@@ -50,7 +50,7 @@ On Linux, the following commands can be used to install all of the dependencies 
             gtk3 \
             poetry
 
-Windows support has not been tested.
+**Note:** support for Microsoft Windows has not been tested.
 
 ### Installation steps
 
