@@ -27,9 +27,9 @@ class CardStats():
         self.card = card
         value = self.PACKER.unpack(data)[0] if data else 0
         self.password = bool(value & 0x20000)
-        self.copiesTrunk = value & 0x3F
-        self.copiesMainExtra = (value >> 10) & 0x3F
-        self.copiesSide = (value >> 12) & 0x3F
+        self.copiesTrunk = value & 0x3FF
+        self.copiesMainExtra = (value >> 10) & 0x3
+        self.copiesSide = (value >> 12) & 0x3
         self.validate()
 
     def validate(self):
@@ -55,7 +55,7 @@ class CardStats():
         #     17 = 1 if password has been used already, 0 otherwise
         #     18-31 = ?
         return self.PACKER.pack(
-            (self.copiesTrunk & 0x3F) |
+            (self.copiesTrunk & 0x3FF) |
             ((self.copiesMainExtra & 0x3) << 10) |
             ((self.copiesSide & 0x3) << 12) |
             (int(bool(self.password)) << 17)
@@ -118,9 +118,9 @@ class DuelistStats():
     def __init__(self, duelist, data=None):
         self.duelist = duelist
         value = self.PACKER.unpack(data)[0] if data else 0
-        self.won = value & 0x7F
-        self.drawn = (value >> 11) & 0x7F
-        self.lost = (value >> 22) & 0x3F
+        self.won = value & 0x7FF
+        self.drawn = (value >> 11) & 0x7FF
+        self.lost = (value >> 22) & 0x3FF
 
     def __str__(self):
         return str(self.duelist)
@@ -134,9 +134,9 @@ class DuelistStats():
         #     11-21 = lost
         #     22-31 = drawn
         return self.PACKER.pack(
-            (self.won & 0x7F) |
-            ((self.lost & 0x7F) << 11) |
-            ((self.drawn & 0x3F) << 22)
+            (self.won & 0x7FF) |
+            ((self.lost & 0x7FF) << 11) |
+            ((self.drawn & 0x3FF) << 22)
         )
 
 
