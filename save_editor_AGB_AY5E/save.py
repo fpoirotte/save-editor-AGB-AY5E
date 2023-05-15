@@ -4,9 +4,9 @@ import struct
 from datetime import date, timedelta
 
 from .constants import *
-from .decks import Deck, MainDeck, ExtraDeck, SideDeck
+from .decks import Deck, ExtraDeck, MainDeck, SideDeck
 from .enums import NextNationalChampionshipRound, MonsterType
-from .models import Card
+from .models import BoosterPack, Card, Duelist
 
 
 __all__ = ('Save', )
@@ -70,7 +70,7 @@ class CardsStats():
     def reset_deck(self, deck: Deck):
         self.cards = [CardStats(card) for card in CARDS.values()]
         for card in deck:
-            self.cards[card.ID-1].copiesMainExtra += 1
+            self.cards[card.ID].copiesMainExtra += 1
 
     def move_to_trunk(self):
         moved = 0
@@ -93,7 +93,7 @@ class CardsStats():
         return sum(card.copiesTrunk for card in self.cards)
 
     def __getitem__(self, key):
-        return self.cards[int(CARDS[key])-1]
+        return self.cards[int(CARDS[key])]
 
     def as_decks(self):
         main = MainDeck()
@@ -143,7 +143,7 @@ class DuelistStats():
 class DuelistsStats():
     def __init__(self, data=None):
         it = itertools.repeat(None) if not data else splitter(data, DuelistStats.PACKER.size)
-        self.duelists = [DuelistStats(duelist, next(it)) for duelist in DUELISTS]
+        self.duelists = [DuelistStats(duelist, next(it)) for duelist in DUELISTS.values()]
 
     def __iter__(self):
         return iter(self.duelists)
@@ -156,40 +156,15 @@ class DuelistsStats():
 
 
 class Save():
-    """
-    0000-000B = header (u32[3] = {0, 1, 0})
-    000C-0CDC = cards stats (u32[820])
-    0CDD-2007 = 0x00... (padding)
-    2008-207F = card IDs for main deck (u16[60])
-    2080-209D = card IDs for side deck (u16[15])
-    209E-20C5 = card IDs for extra deck / fusions (u16[20])
-    20C6-20C7 = number of cards in trunk (u16)
-    20C8-20C9 = number of cards in main deck (u16)
-    20CA-20CB = number of cards in side deck (u16)
-    20CC-20CD = number of cards in extra deck / fusions (u16)
-    20CE-20D3 = 0x00... (padding)
-    20D4-2133 = duel stats (u32[24])
-    2134-214F = ?
-    2150-2151 = in-game days (u16)
-    2152-2153 = 0x3 (u16 ?)
-    2154-2157 = ? (u32 ?)
-    2158-215B = ? (u32 ?)
-    215C-215D = ? (u16 ?)
-    215E-2161 = national championship (u32 ?)
-    2162-2165 = 0x00... (padding)
-    2166-216D = "DMEX1INT" (Duel Monsters Expert 1 - International version)
-    216E-216F = checksum (u16)
-    2170-7FFF = 0xFF... (padding)
-    """
-
     # In-game date when the game starts.
     STARTING_DATE = date(2001, 1, 1)
 
-    # Because the number of in-game days since `STARTING_DATE` is stored as a 16-bit value,
-    # the maximum date that can be stored is June 6th, 2180 (=0xFFFF).
-    # After that, the date will magically roll back to January 1st, 2001 due to integer overflow.
-    # This can also be seen by trying to look for events after June 2180 in the game's calendar.
-    MAX_DATE = date(2180, 6, 6)
+    # Because the game stored the number of in-game days since `STARTING_DATE` as a 16-bit value,
+    # the maximum theoretical date that can be stored is June 6th, 2180 (=0xFFFF).
+    # After that, the date would simply roll back to January 1st, 2001 due to integer overflow.
+    # Indeed, this can be seen when trying to look for events past June 2180 in the game's calendar.
+    # In reality, the game will stop incrementing the date as soon as December 31st, 2100 is reached.
+    MAX_DATE = date(2100, 12, 31)
 
     def __init__(self, data=None, filename=None):
         self.cardsStats = CardsStats(data[OFFSET_STATS_CARDS:] if data else None)
@@ -197,6 +172,10 @@ class Save():
         self.ingameDate = date(self.STARTING_DATE.year, self.STARTING_DATE.month, self.STARTING_DATE.day)
         self.nextNationalChampionshipRound = NextNationalChampionshipRound.ROUND_1
         self.filename = filename
+        self.lastPackReceived = PACKS[0]
+        self.lastDuelistFought = DUELISTS[0]
+        self.publicationVictories = 0
+        self.nationalChampionshipVictories = 0
 
         if data:
             mainDeck = MainDeck()
@@ -210,8 +189,15 @@ class Save():
 
             daysElapsed = struct.unpack('<H', data[OFFSET_DAYS_ELAPSED:OFFSET_STATIC])[0]
             self.ingameDate += timedelta(days=daysElapsed)
-            nextNationalChampionshipRound = struct.unpack('<B', data[OFFSET_NAT_CHAMPIONSHIP:OFFSET_PADDING_4])[0]
+            lastPackReceived = struct.unpack('<H', data[OFFSET_LAST_PACK:OFFSET_PUB_VICTORIES])[0]
+            self.lastPackReceived = PACKS[lastPackReceived]
+            self.publicationVictories = struct.unpack('<H', data[OFFSET_PUB_VICTORIES:OFFSET_LAST_DUELIST])[0]
+            lastDuelistFought = struct.unpack('<H', data[OFFSET_LAST_DUELIST:OFFSET_PADDING_4])[0]
+            self.lastDuelistFought = DUELISTS[lastDuelistFought]
+            nextNationalChampionshipRound = struct.unpack('<B', data[OFFSET_NAT_CHAMPIONSHIP:OFFSET_PADDING_5])[0]
             self.nextNationalChampionshipRound = NextNationalChampionshipRound(nextNationalChampionshipRound)
+            self.nationalChampionshipVictories = struct.unpack('<b', data[OFFSET_NAT_VICTORIES:OFFSET_PADDING_6])[0]
+
             self.validate(data, mainDeck, extraDeck, sideDeck, nbTrunkCards, nbMainCards, nbSideCards, nbExtraCards)
 
     def dump(self, fp):
@@ -238,23 +224,28 @@ class Save():
             '{}x'       # Padding #2
             '{}s'       # Duelists stats
             'H'         # In-game days elapsed
-            '{}H'       # @FIXME Static value ?
-            '{}x'       # @FIXME Unknown values, marked as padding for now
+            'H'         # Static value (3 = game initialized)
+            'H'         # ID of last received booster pack
+            'H'         # Number of victories since last publication
+            'H'         # ID of last duelist fought
+            '{}x'       # @FIXME Unknown values, marked as padding #4 for now
             'B'         # Championship progression
-            '{}x'       # Padding #4
+            '{}x'       # Padding #5
+            'b'         # Number of victories in National Championship
+            '{}x'       # Padding #6
             '{}s'       # Game ID
         )
         fmt = fmt.format(
             len(VALUE_HEADER),                                  # Header
-            len(cardsStats),                                    # Cards stats + padding #2
+            len(cardsStats),                                    # Cards stats + padding #1
             nbMain, (MainDeck.LIMIT - nbMain) * cardSize,       # Main cards
             nbSide, (SideDeck.LIMIT - nbSide) * cardSize,       # Side cards
             nbExtra, (ExtraDeck.LIMIT - nbExtra) * cardSize,    # Extra cards
             OFFSET_STATS_DUELISTS - OFFSET_PADDING_2,           # Padding #2
             len(duelistsStats),                                 # Duelists stats + padding #3
-            len(VALUE_STATIC),                                  # Static value
-            OFFSET_NAT_CHAMPIONSHIP - OFFSET_UNKNOWN,           # Unknown
-            OFFSET_GAME_ID - OFFSET_PADDING_4,                  # Padding #4
+            OFFSET_NAT_CHAMPIONSHIP - OFFSET_PADDING_4,         # Unknown / Padding #4
+            OFFSET_NAT_VICTORIES - OFFSET_PADDING_5,            # Padding #5
+            OFFSET_GAME_ID - OFFSET_PADDING_6,                  # Padding #6
             len(VALUE_GAME_ID),                                 # Game ID
         )
         args = [
@@ -270,7 +261,11 @@ class Save():
             duelistsStats,
             (self.ingameDate - self.STARTING_DATE).days,
             *VALUE_STATIC,
+            self.lastPackReceived,
+            self.publicationVictories,
+            self.lastDuelistFought,
             self.nextNationalChampionshipRound,
+            self.nationalChampionshipVictories,
             VALUE_GAME_ID,
         ]
 
@@ -282,15 +277,15 @@ class Save():
         return b''.join(data)
 
     @classmethod
-    def load(cls, fp):
+    def load(cls, fp) -> "Save":
         return cls.loads(fp.read(), fp.name)
 
     @classmethod
-    def loads(cls, s, filename=None):
+    def loads(cls, s: str, filename=None) -> "Save":
         return cls(s, filename)
 
     @staticmethod
-    def checksum(data):
+    def checksum(data) -> int:
         chk = sum(struct.unpack_from('<{}H'.format(SIZE_CHECKSUM_INPUT), data)) & 0xFFFF
         chk = (chk ^ 0xFFFF) + 1
         return chk
@@ -323,21 +318,27 @@ class Save():
         assert nbExtraCards == len(extra)
         assert nbSideCards == len(side)
 
-    def get_ingame_date(self):
+    def get_ingame_date(self) -> date:
         return self.ingameDate
 
-    def set_ingame_date(self, new_date):
+    def set_ingame_date(self, new_date:date) -> None:
         if new_date < self.STARTING_DATE or new_date > self.MAX_DATE:
             raise ValueError(new_date)
         self.ingameDate = new_date
 
-    def get_next_national_championship_round(self):
+    def get_next_national_championship_round(self) -> NextNationalChampionshipRound:
         return self.nextNationalChampionshipRound
 
-    def set_next_national_championship_round(self, value):
+    def set_next_national_championship_round(self, value: NextNationalChampionshipRound) -> None:
         self.nextNationalChampionshipRound = NextNationalChampionshipRound(value)
 
-    def get_cards_stats(self):
+    def get_national_championship_victories(self) -> int:
+        return self.nationalChampionshipVictories
+
+    def set_national_championship_victories(self, victories: int) -> None:
+        self.nationalChampionshipVictories = victories
+
+    def get_cards_stats(self) -> dict:
         res = {
             "total": 0,
             "unique": 0,
@@ -362,10 +363,10 @@ class Save():
             res["side"] += card.copiesSide
         return res
 
-    def get_detailed_cards_stats(self):
+    def get_detailed_cards_stats(self) -> CardsStats:
         return self.cardsStats
 
-    def get_duelists_stats(self):
+    def get_duelists_stats(self) -> dict:
         res = {
             "total": 0,
             "won": 0,
@@ -380,5 +381,24 @@ class Save():
                 res[outcome] += value
         return res
 
-    def get_detailed_duelists_stats(self):
+    def get_detailed_duelists_stats(self) -> DuelistsStats:
         return self.duelistsStats
+
+    def get_last_pack_received(self) -> BoosterPack:
+        return self.lastPackReceived
+
+    def set_last_pack_received(self, pack: BoosterPack) -> None:
+        self.lastPackReceived = pack
+
+    def get_last_duelist_fought(self) -> Duelist:
+        return self.lastDuelistFought
+
+    def set_last_duelist_fought(self, duelist: Duelist) -> None:
+        self.lastDuelistFought = duelist
+
+    def get_victories_since_last_publication(self) -> int:
+        return self.publicationVictories
+
+    def set_victories_since_last_publication(self, victories: int) -> None:
+        assert 0 <= victories < 0xFFFF
+        self.publicationVictories = victories

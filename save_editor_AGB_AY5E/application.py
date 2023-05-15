@@ -11,10 +11,12 @@ from functools import partial
 
 from gi.repository import Gio, Gtk, Gdk
 
-from .constants import CARDS, DUELISTS, MAX_WON, MAX_DRAWN, MAX_LOST, MAX_TRUNK_COPIES, MAX_TRUNK_CARDS
+from .constants import CARDS, DUELISTS, PACKS
+from .constants import MAX_WON, MAX_DRAWN, MAX_LOST, MAX_TRUNK_COPIES, MAX_TRUNK_CARDS
 from .decks import InitialDeck
 from .enums import CardColumn, CardType, DeckColor, DuelistColumn, Event
 from .enums import Limit, MonsterType, NextNationalChampionshipRound, NotebookPage
+from .enums import SpecialDuelist, Stage
 from .metadata import RESOURCES_DIR, __game_title__, __game_name__, __game_id__, __version__
 from .save import Save
 
@@ -26,19 +28,18 @@ def compute_card_usage(used, limit):
 class Application(Gtk.Application):
     CALENDAR = calendar.Calendar(calendar.SUNDAY)
 
-    # The in-game delivery of "Weekly Yu-Gi-Oh!" follows the rules of japanese holidays,
-    # AS THEY WERE when "Yu-Gi-Oh! Duel Monsters 5: Expert 1" (the japanese game
-    # "Yu-Gi-Oh! The Eternal Duelist Soul" is based on) was released (~ July 2001).
+    # The in-game deliveries of "Weekly Yu-Gi-Oh!" & "Yu-Gi-Oh! Magazine" follow japanese holidays,
+    # AS THEY WERE when "Yu-Gi-Oh! Duel Monsters 5: Expert 1" was released (~July 2001).
     # When a delivery falls on a holiday, it will happen on the previous working day instead.
     # Sundays are considered non-working days.
+    # The following dates were found by trial and error, and cross-referencing with known holidays.
+    # Format: (month, day)
     HOLIDAYS = (
         (1, 1),     # New Year's Day
-        # Ignore Coming of Age Day (2nd Monday of January) as no event ever takes place on Mondays.
         (2, 11),    # National Foundation Day
         # Not entirely sure why February 24th is marked as a holiday in the game.
         # This could be a reference to Emperor Hirohito's funeral day dating 1989.
         (2, 24),    # ???
-        # Ignore Vernal Equinox Day (at it changes every year and cannot be computed).
         (4, 29),    # Showa Day
         (5, 3),     # Constitution Memorial Day
         (5, 4),     # Greenery Day
@@ -49,13 +50,42 @@ class Application(Gtk.Application):
         (8, 11),    # Mountain Day
         # Respect for the Aged Day used to be celebrated on September 15th,
         # until it was changed to the 3rd Monday of September starting in 2003.
-        (9, 15),
-        # Ignore Autumnal Equinox Day (at it changes every year and cannot be computed).
-        # Ignore Health and Sports Day (2nd Monday of October). See also Coming of Age Day.
+        (9, 15),    # Respect for the Aged Day
         (11, 3),    # Culture Day
         (11, 23),   # Labor Thanksgiving Day
         (12, 23),   # The Emperor's Birthday (Emperor Akihito)
     )
+
+    # Some duelists will gift you with a special booster pack
+    # if you duel them in a match format on special occasions.
+    # Most of the dates are the same as for the holidays above.
+    # See also https://tcrf.net/Yu-Gi-Oh!_The_Eternal_Duelist_Soul#Special_Matches
+    # Key format:       (month, day) or (month, -Nth monday)
+    # Value format:     (pack, (character1, ...))
+    # The list of characters will be False if a random opponent is selected by the game
+    # and True if any opponent will do
+    SPECIAL_MATCHES = {
+        (1, 1):     ("Yellow Millennium Puzzle",    ("Yami Yugi", )),
+        (1, -2):    ("Cyber Harpie Lady",           ("Mai Valentine", )),
+        (2, 11):    ("Gate Guardian",               ("Rex Raptor", )),
+        (2, 14):    ("Blue Millennium Puzzle",      ("Tea Gardner", "Mai Valentine")),
+        (3, 14):    ("Blue Millennium Puzzle",      ("Yugi Muto", "Joey Wheeler", "Tristan Taylor", "Bakura Ryou")),
+        (3, 21):    ("Eye of Wdjat",                False),
+        (4, 29):    ("Yellow Millennium Puzzle",    ("Weevil Underwood", )),
+        (5, 3):     ("Relinquished",                ("Bakura Ryou", )),
+        (5, 4):     ("Blue-Eyes White Dragon",      ("Tristan Taylor", )),
+        (5, 5):     ("Green Millennium Puzzle",     ("Yugi Muto", )),
+        (6, 28):    ("Yellow Millennium Puzzle",    ("Simon", )),
+        (7, 20):    ("Exodia the Forbidden One",    ("Mako Tsunami", )),
+        (9, 15):    ("Blue-Eyes Toon Dragon",       ("Arkana", )),
+        (9, 23):    ("Eye of Wdjat",                False),
+        (10, -2):   ("Green Millennium Puzzle",     ("Joey Wheeler", )),
+        (10, 31):   ("Eye of Wdjat",                ("Rare Hunter", )),
+        (11, 3):    ("Buster Blader",               ("Espa Roba", )),
+        (11, 23):   ("Green Millennium Puzzle",     ("Tea Gardner", )),
+        (12, 23):   ("Yellow Millennium Puzzle",    ("Seto Kaiba", )),
+        (12, 24):   ("Eye of Wdjat",                True),
+    }
 
     def __init__(self, *args, **kwargs):
         super().__init__(
@@ -67,6 +97,7 @@ class Application(Gtk.Application):
         self.window = None
         self.save = None
         self.unsaved = False
+        self.details = None
 
     def do_startup(self):
         Gtk.Application.do_startup(self)
@@ -96,7 +127,11 @@ class Application(Gtk.Application):
             "quit_request": self.on_quit_request,
 
             "misc_date_changed": self.on_misc_date_changed,
-            "misc_national_championship_changed": self.on_misc_national_championship_changed,
+            "misc_nationals_round_changed": self.on_misc_nationals_round_changed,
+            "misc_nationals_victories_changed": self.on_misc_nationals_victories_changed,
+            "misc_publication_victories_changed": self.on_misc_publications_victories_changed,
+            "misc_last_duelist_changed": self.on_misc_last_duelist_changed,
+            "misc_last_pack_changed": self.on_misc_last_pack_changed,
 
             "card_trunk_editing_started": partial(self.on_card_spin_editing_started, column=CardColumn.TRUNK),
             "card_main_extra_editing_started": partial(self.on_card_spin_editing_started, column=CardColumn.MAIN_EXTRA),
@@ -138,15 +173,23 @@ class Application(Gtk.Application):
         )
 
         for index, (label, value) in enumerate(nationals):
-            self.misc_nationals.insert(index, str(value.value), label)
+            self.misc_nationals_round.insert(index, str(value.value), label)
+
+        for index, duelist in enumerate(DUELISTS.values()):
+            self.misc_last_duelist.insert(index, str(duelist.ID), duelist.Name)
+
+        for index, pack in enumerate(PACKS.values()):
+            self.misc_last_pack.insert(index, str(pack.ID), pack.Name)
 
         # Cards page
         for card in CARDS.values():
-            self.data_cards.append([card.ID, card.Name, 0, 0, 0, False, 0.0, "0/{}".format(card.Limit)])
+            if card.ID > 0:
+                self.data_cards.append([card.ID, card.Name, 0, 0, 0, False, 0.0, "0/{}".format(card.Limit)])
 
         # Duelists page
         for duelist in DUELISTS.values():
-            self.data_duelists.append([duelist.ID, duelist.Name, duelist.Stage.value, 0, 0, 0])
+            if duelist.ID > 0:
+                self.data_duelists.append([duelist.ID, duelist.Name, duelist.Stage.value, 0, 0, 0])
 
     def prepare_window(self, window, builder):
             actions = (
@@ -173,11 +216,16 @@ class Application(Gtk.Application):
                 self.window.add_action(action)
                 self.set_accels_for_action("win.{}".format(name), accels)
 
-            self.adjustment = builder.get_object("adjustment")
+            self.dyn_adjustment = builder.get_object("dyn-adjustment")
             self.notebook = builder.get_object("notebook")
 
-            self.misc_nationals = builder.get_object("misc-nationals")
             self.misc_date = builder.get_object("misc-date")
+            self.misc_publication_victories = builder.get_object("misc-publication-victories")
+            self.misc_last_duelist = builder.get_object("misc-last-duelist")
+            self.misc_last_pack = builder.get_object("misc-last-pack")
+
+            self.misc_nationals_victories = builder.get_object("misc-nationals-victories")
+            self.misc_nationals_round = builder.get_object("misc-nationals-round")
 
             self.stats_cards_total = builder.get_object("stats-cards-total")
             self.stats_cards_unique = builder.get_object("stats-cards-unique")
@@ -216,6 +264,7 @@ class Application(Gtk.Application):
         # (e.g. Yu-Gi-Oh! Magazine & Weekly Yu-Gi-Oh! when the 21st day is a Tuesday).
         # Therefore, we use a list of lists to represent the events.
         month_events = []
+        starting_date = self.save.STARTING_DATE
         for week_in_month, days in enumerate(self.CALENDAR.monthdayscalendar(year, month), 1):
             for day in days:
                 # Skip padding at the beginning/end of the month
@@ -230,33 +279,34 @@ class Application(Gtk.Application):
 
                 # 1st Saturday of June: Grandpa's Cup Qualifiers
                 if weekday == calendar.SATURDAY and month == 6 and day_occurrence == 1:
-                    events.append(Event.GRANDPA_QUALIFIERS)
+                    events.append(Event.GRANDPA_QUALIFIERS.value)
 
                 # At the start of the 2nd week of June: Grandpa's Cup Final
                 elif weekday == calendar.SUNDAY and month == 6 and week_in_month == 2:
-                    events.append(Event.GRANDPA_FINAL)
+                    events.append(Event.GRANDPA_FINAL.value)
 
                 # 2nd & 4th Saturday of the month: Weekend Duel
                 if weekday == calendar.SATURDAY and day_occurrence in (2, 4):
-                    events.append(Event.WEEKEND_DUEL)
+                    events.append(Event.WEEKEND_DUEL.value)
 
                 # 1st, 2nd, 3rd & 4th Sunday of November: National Championship
                 elif weekday == calendar.SUNDAY and month == 11:
                     rounds = [
-                        Event.NATIONALS_ROUND_1,
-                        Event.NATIONALS_ROUND_2,
-                        Event.NATIONALS_SEMI_FINAL,
-                        Event.NATIONALS_FINAL,
+                        Event.NATIONALS_ROUND_1.value,
+                        Event.NATIONALS_ROUND_2.value,
+                        Event.NATIONALS_SEMI_FINAL.value,
+                        Event.NATIONALS_FINAL.value,
                     ]
                     events.append(rounds[day_occurrence-1])
 
                 # every Tuesday (or on the previous working day if it falls on a Sunday/holiday): Weekly Yu-Gi-Oh!
-                elif weekday == calendar.TUESDAY:
+                # Exception: no release on the very first Tuesday following the game's start.
+                elif weekday == calendar.TUESDAY and date > datetime.date(2001, 1, 2):
                     curr_date = datetime.date(date.year, date.month, date.day)
                     while curr_date.weekday() == calendar.SUNDAY or (curr_date.month, curr_date.day) in self.HOLIDAYS:
                         curr_date -= datetime.timedelta(days=1)
                     if curr_date.month == month: # Protect against month swapping
-                        month_events[curr_date.day-1].append(Event.WEEKLY_YUGIOH)
+                        month_events[curr_date.day-1].append(Event.WEEKLY_YUGIOH.value)
 
                 # on the 21st (or on the previous working day if it falls on a Sunday/holiday): Yu-Gi-Oh! Magazine
                 if day == 21:
@@ -264,9 +314,25 @@ class Application(Gtk.Application):
                     while curr_date.weekday() == calendar.SUNDAY or (curr_date.month, curr_date.day) in self.HOLIDAYS:
                         curr_date -= datetime.timedelta(days=1)
                     if curr_date.month == month: # Protect against month swapping
-                        month_events[curr_date.day-1].append(Event.YUGIOH_MAGAZINE)
-        return month_events
+                        month_events[curr_date.day-1].append(Event.YUGIOH_MAGAZINE.value)
 
+                # Special matches. Negative values (e.g. -N) mean "Nth monday of the month".
+                special_match = self.SPECIAL_MATCHES.get((month, -day_occurrence)) if weekday == calendar.MONDAY else None
+                special_match = self.SPECIAL_MATCHES.get((month, day), special_match)
+                if special_match:
+                    pack, duelists = special_match
+                    if isinstance(duelists, tuple):
+                        msg = "Defeat {} to win a {} booster pack"
+                        events.append(msg.format(" or ".join(duelists), pack))
+                    elif duelists:
+                        events.append("Defeat any duelist in the game to win a {} booster pack".format(pack))
+                    else:
+                        events.append("A random duelist will give you a {} booster pack if defeated".format(pack))
+
+                # Every 60 days after the very first day, a Rare Hunter will challenge the player.
+                if (date - starting_date).days % 60 == 0 and date != starting_date:
+                    events.append(Event.RARE_HUNTER.value)
+        return month_events
 
     def get_details_for_date(self, widget, year, month, day):
         # Due to the observance of japanese holidays, it is easier to recreate
@@ -275,7 +341,7 @@ class Application(Gtk.Application):
         # Also, are 0-based in GTKCalendar while days are 1-based.
         events = self.get_events_for_month(year, month+1)
         day_events = events[day-1]
-        return "\n".join(e.value for e in day_events) if day_events else None
+        return "\n".join(day_events) if day_events else None
 
     def do_activate(self):
         # We only allow a single window and raise any existing ones
@@ -487,7 +553,11 @@ class Application(Gtk.Application):
 
     def update_ui(self):
         # - General
-        self.misc_nationals.set_active_id(str(self.save.get_next_national_championship_round().value))
+        self.misc_nationals_round.set_active_id(str(self.save.get_next_national_championship_round().value))
+        self.misc_nationals_victories.set_value(self.save.get_national_championship_victories())
+        self.misc_last_duelist.set_active_id(str(self.save.get_last_duelist_fought().ID))
+        self.misc_last_pack.set_active_id(str(self.save.get_last_pack_received().ID))
+        self.misc_publication_victories.set_value(self.save.get_victories_since_last_publication())
         ingame_date = self.save.get_ingame_date()
         self.misc_date.select_month(ingame_date.month-1, ingame_date.year)
         self.misc_date.select_day(ingame_date.day)
@@ -543,12 +613,24 @@ class Application(Gtk.Application):
             self.misc_date.select_month(old_value.month-1, old_value.year)
             self.misc_date.select_day(old_value.day)
 
-    def on_misc_national_championship_changed(self, widget):
+    def on_misc_nationals_round_changed(self, widget):
         old_value = self.save.get_next_national_championship_round()
         new_value = NextNationalChampionshipRound(widget.get_active_id())
         if old_value != new_value:
             self.save.set_next_national_championship_round(new_value)
             self.update_unsaved(True)
+
+    def on_misc_nationals_victories_changed(self, widget):
+        self.save.set_national_championship_victories(int(widget.get_value()))
+
+    def on_misc_publications_victories_changed(self, widget):
+        self.save.set_victories_since_last_publication(int(widget.get_value()))
+
+    def on_misc_last_duelist_changed(self, widget):
+        self.save.set_last_duelist_fought(DUELISTS[int(widget.get_active_id())])
+
+    def on_misc_last_pack_changed(self, widget):
+        self.save.set_last_pack_received(PACKS[int(widget.get_active_id())])
 
     def on_card_spin_editing_started(self, widget, button, path: str, column: CardColumn):
         row = self.data_cards[path]
@@ -580,15 +662,15 @@ class Application(Gtk.Application):
         # There must still be room left in the selected storage (deck)
         limits.append(stats[target + "_max"] - stats[target])
         upper = value + min(limits)
-        self.adjustment.configure(value=value, lower=0, upper=upper, step_increment=1, page_increment=10, page_size=0)
+        self.dyn_adjustment.configure(value=value, lower=0, upper=upper, step_increment=1, page_increment=10, page_size=0)
 
     def on_card_spin_edited(self, widget, path: str, value: str, column: CardColumn):
         try:
-            # Clamp the value to the adjustement's bounds
-            self.adjustment.set_value(int(value))
+            # Clamp the value to the dyn_adjustment's bounds
+            self.dyn_adjustment.set_value(int(value))
         except ValueError:
             pass
-        value = int(self.adjustment.get_value())
+        value = int(self.dyn_adjustment.get_value())
         row = self.data_cards[path]
         card = self.save.get_detailed_cards_stats()[row[CardColumn.ID]]
         limit = card.card.Limit
@@ -619,12 +701,51 @@ class Application(Gtk.Application):
         card.password = value
         row[CardColumn.PASSWORD] = value
 
-    def on_card_row_activated(self, widget, path: str, column):
+    def on_card_details_keypress(self, dialog, event):
+        key, value = event.get_keyval()
+        if not key:
+            return
+
+        selection = self.list_cards.get_selection()
+        tree, paths = selection.get_selected_rows()
+        path = int(str(paths[0]))
+        last_path = self.list_cards.get_model().iter_n_children(None)-1
+
+        # Unfortunately, the card information (modal) dialog has the keyboard focus,
+        # thus move_cursor() will refuse to do anything useful.
+        # We could use the treeview's vadjustement's page_incremendent to properly
+        # compute the increments, but the resulting code would be overly complex
+        # for no real benefit...
+        if value in (Gdk.KEY_Up, Gdk.KEY_KP_Up):
+            path -= 1
+        elif value in (Gdk.KEY_Down, Gdk.KEY_KP_Down):
+            path += 1
+        elif value in (Gdk.KEY_Page_Up, Gdk.KEY_KP_Page_Up):
+            path -= 10
+        elif value in (Gdk.KEY_Page_Down, Gdk.KEY_KP_Page_Down):
+            path += 10
+        elif value in (Gdk.KEY_Home, Gdk.KEY_KP_Home):
+            path = 0
+        elif value in (Gdk.KEY_End, Gdk.KEY_KP_End):
+            path = last_path
+        else:
+            return
+
+        # Clamp the value
+        path = min(last_path, max(0, path))
+        self.list_cards.set_cursor(path, None, False)
+        self.show_card_details(path)
+
+    def show_card_details(self, path):
         row = self.data_cards[path]
         card = self.save.get_detailed_cards_stats()[row[CardColumn.ID]].card
-        builder = Gtk.Builder.new_from_file(str(RESOURCES_DIR / "card.glade"))
-        dialog = builder.get_object("root")
-        grid = builder.get_object("grid")
+        dialog = self.details.get_object("root")
+        grid = self.details.get_object("grid")
+
+        # Clear the grid
+        while grid.get_child_at(0, 0) != None:
+            grid.remove_row(0)
+
         data = [("Name", card.Name), ("Card Number", "{:03}".format(card.ID))]
         restrictions = {
             Limit.LIMIT_0: "Cannot be used in\nmain/extra/side deck",
@@ -650,7 +771,10 @@ class Application(Gtk.Application):
                 ("DEF", card.DEF)
             ])
 
-        data.append(("Restrictions", restrictions[int(card.Limit)]))
+        data.extend([
+            ("Restrictions", restrictions[int(card.Limit)]),
+            ("Card Text", "\n".join(textwrap.wrap(card.Description, width=50))),
+        ])
 
         for index, (name, value) in enumerate(data):
             grid.insert_row(index)
@@ -658,11 +782,21 @@ class Application(Gtk.Application):
             label.set_markup("<b>{}:</b>".format(name))
             grid.attach(label, left=0, top=index, width=1, height=1)
             grid.attach(Gtk.Label(xalign=0, yalign=0, label=str(value)), left=1, top=index, width=1, height=1)
-
-        dialog.set_transient_for(self.window)
         dialog.show_all()
-        dialog.run()
-        dialog.destroy()
+
+    def on_card_row_activated(self, widget, path: str, column):
+        self.details = Gtk.Builder.new_from_file(str(RESOURCES_DIR / "card.glade"))
+        dialog = self.details.get_object("root")
+        dialog.set_modal(True)
+        dialog.set_destroy_with_parent(True)
+        dialog.connect("key_press_event", self.on_card_details_keypress)
+        dialog.set_transient_for(self.window)
+        self.show_card_details(path)
+        try:
+            dialog.run()
+            dialog.destroy()
+        finally:
+            self.details = None
 
     def on_deck_move_to_trunk(self, widget):
         if self.save.get_detailed_cards_stats().move_to_trunk():
@@ -681,15 +815,15 @@ class Application(Gtk.Application):
             DuelistColumn.DRAWN: MAX_DRAWN,
             DuelistColumn.LOST: MAX_LOST,
         }[column]
-        self.adjustment.configure(value=value, lower=0, upper=upper, step_increment=1, page_increment=10, page_size=0)
+        self.dyn_adjustment.configure(value=value, lower=0, upper=upper, step_increment=1, page_increment=10, page_size=0)
 
     def on_duelist_spin_edited(self, widget, path: str, value: str, column: DuelistColumn):
         try:
-            # Clamp the value to the adjustement's bounds
-            self.adjustment.set_value(int(value))
+            # Clamp the value to the dyn_adjustment's bounds
+            self.dyn_adjustment.set_value(int(value))
         except ValueError:
             pass
-        value = int(self.adjustment.get_value())
+        value = int(self.dyn_adjustment.get_value())
         row = self.data_duelists[path]
         duelist = self.save.get_detailed_duelists_stats()[row[DuelistColumn.ID]]
 
@@ -712,22 +846,76 @@ class Application(Gtk.Application):
         stats = self.save.get_detailed_duelists_stats()
         for duelist in stats:
             duelist.won = duelist.drawn = duelist.lost = 0
-        self.update_duels_stats()
         self.update_unsaved(True)
+        self.update_ui()
 
     def on_duels_unlock_duelists(self, widget):
-        dialog = Gtk.MessageDialog(
-            transient_for=self.window,
-            flags=Gtk.DialogFlags.MODAL,
-            message_type=Gtk.MessageType.INFO,
-            buttons=Gtk.ButtonsType.OK,
-            text="This feature has not been implemented yet!",
-        )
-        dialog.run()
-        dialog.destroy()
+        cards = self.save.get_detailed_cards_stats()
+        duelists = self.save.get_detailed_duelists_stats()
+        for stats in duelists:
+            duelist = stats.duelist
+            if duelist.Stage != Stage.STAGE_5:
+                stats.won = max(stats.won, duelist.Stage.value + 1)
+            elif duelist.ID == SpecialDuelist.SIMON:
+                # Must have won the National Championship at least twice
+                self.save.set_national_championship_victories(max(2, self.save.get_national_championship_victories()))
+            # The following code is unnecessary since Trusdale below requires
+            # at least one copy of every card in the game, including Toon World.
+            #elif duelist.ID == SpecialDuelist.PEGASUS:
+            #    # Must possess at least one copy of Toon World
+            #    toon_world = cards["Toon World"]
+            #    if not int(toon_world):
+            #        toon_world.copiesTrunk = 1
+            elif duelist.ID == SpecialDuelist.TRUSDALE:
+                # To unlock Trusdaly, you must:
+                # * have defeated Simon at least once
+                # * have at least one copy of each card, including non-playable ones
+                #   (the 3 tickets, the 3 Egyptian god cards & "Insect Monster Token")
+                simon = duelists[SpecialDuelist.SIMON]
+                simon.won = max(simon.won, 1)
+                for card in cards:
+                    if card.card.ID > 1 and not int(card):
+                        card.copiesTrunk = 1
+        self.update_unsaved(True)
+        self.update_ui()
 
     def on_duels_unlock_packs(self, widget):
-        self.on_duels_unlock_duelists(widget)
+        duelists = self.save.get_detailed_duelists_stats()
+        top_duelists = (
+            "Yugi Muto", "Joey Wheeler",
+            "Mako Tsunami", "Mai Valentine",
+            "Umbra & Lumis", "Marik Ishtar",
+            "Seto Kaiba", "Yami Yugi",
+            "Kaiba Seto", # Alternative spelling used in the game
+        )
+        for stats in duelists:
+            # Several packs are automatically unlocked by unlocking
+            # other boosters packs with stricter requirements:
+            # - Tiger Axe: defeat everyone in Tier 1 at least twice
+            # - Garoozis: defeat everyone in Tier 2 at least 3 times
+            # - BEUD: defeat everyone in Tier 3 at least 4 times
+            # - Judge Man: win at least 10 times in Tier 1
+            # - Gate Guardian: win at least 10 times in Tier 2
+            # - Relinquished: win at least 10 times in Tier 3
+            # - Blue Millennium Puzzle: win at least 10 times in Tier 4
+            duelist = stats.duelist
+            won = 0
+            if duelist.Name in top_duelists:
+                # Unlocks booster packs that require 20 wins against certain duelists:
+                # BEWD, Exodia, Launcher Spider, Gemini Elf, Blue-Eyes Toon Dragon,
+                # Battle Ox, Eye of Wdjat, Buster Blader.
+                won = 20
+            elif duelist.Stage != Stage.STAGE_5:
+                # Unlocks booster packs that require 10 wins against every duelist in a Tier:
+                # Cyber Harpie, Great Moth, Black Luster Soldier, Green Millennium Puzzle,
+                # plus all the booster packs listed above.
+                won = 10
+            elif duelist.ID == SpecialDuelist.SIMON:
+                # Unlocks the Yellow Millennium Puzzle booster pack
+                won = 1
+            stats.won = max(stats.won, won)
+        self.update_unsaved(True)
+        self.update_ui()
 
     def load_save(self, filename: str):
         if self.unsaved and self.confirm_data_loss() != Gtk.ResponseType.OK:

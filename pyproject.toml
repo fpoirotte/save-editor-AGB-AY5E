@@ -11,7 +11,7 @@ python = "^3.9"
 PyGObject = "^3.38"
 
 [tool.poetry.scripts]
-save-editor-AGB-AY5E = "save_editor_AGB_AY5E.main:main"
+save-editor-AGB-AY5E = "save_editor_AGB_AY5E.__main__:main"
 
 
 [build-system]

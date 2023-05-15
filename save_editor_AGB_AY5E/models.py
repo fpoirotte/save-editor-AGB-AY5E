@@ -43,6 +43,7 @@ class Duelist(Model):
 @dataclass(frozen=True)
 class Card(Model):
     ID: int
+    InternalID: int
     Name: str
     CardType: CardType
     MonsterType: Union[MonsterType, EmptyString]
@@ -53,6 +54,14 @@ class Card(Model):
     DEF: Union[NonEmptyString, EmptyString]
     Password: Union[Password, EmptyString]
     Limit: Limit
+    Description: str
+
+
+@dataclass(frozen=True)
+class BoosterPack(Model):
+    ID: int
+    Name: str
+    InternalName: str
 
 
 def load_dataset(filename: str, model: Model):
@@ -84,5 +93,24 @@ def load_dataset(filename: str, model: Model):
 
 
 if __name__ == '__main__':
-    print(list(load_dataset('cards', Card)))
-    print(list(load_dataset('duelists', Duelist)))
+    cards = list(load_dataset('cards', Card))
+    duelists = list(load_dataset('duelists', Duelist))
+    print(cards)
+    print(duelists)
+#    res = {}
+#    for card in cards:
+#        name = card.Name.upper().replace('.', '').replace('&', 'AND')
+#        for c in (' ', ',', '(', ')', '#',"'",'-'):
+#            name = name.replace(c, '_')
+#        if name[0].isdigit():
+#            name = '_' + name
+#        if not name.isidentifier():
+#            raise ValueError(name)
+#        if name in res:
+#            raise RuntimeError(name)
+#        res[name] = (card.InternalID, card.ID, card.Name)
+#    with open('/tmp/cards.h', 'w') as fd:
+#        fd.write("enum card {\n")
+#        for ident, value in res.items():
+#            fd.write("    {} = {}, // #{:03d}: {}\n".format(ident, *value))
+#        fd.write("};\n")

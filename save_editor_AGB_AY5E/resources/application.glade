@@ -34,11 +34,6 @@ Author: F. Poirotte
   <!-- interface-description Save editor for \"Yu-Gi-Oh! The Eternal Duelist Soul\" (US version) -->
   <!-- interface-copyright 2023 - F. Poirotte -->
   <!-- interface-authors F. Poirotte -->
-  <object class="GtkAdjustment" id="adjustment">
-    <property name="upper">100</property>
-    <property name="step-increment">1</property>
-    <property name="page-increment">10</property>
-  </object>
   <object class="GtkListStore" id="data-cards">
     <columns>
       <!-- column-name ID -->
@@ -74,6 +69,21 @@ Author: F. Poirotte
       <!-- column-name Lost -->
       <column type="guint"/>
     </columns>
+  </object>
+  <object class="GtkAdjustment" id="dyn-adjustment">
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="misc-nationals-adjustment">
+    <property name="upper">255</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="misc-publication-adjustement">
+    <property name="upper">65535</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
   </object>
   <object class="GtkApplicationWindow" id="root">
     <property name="can-focus">False</property>
@@ -112,6 +122,7 @@ Author: F. Poirotte
                     <property name="margin-bottom">12</property>
                     <property name="orientation">vertical</property>
                     <property name="spacing">8</property>
+                    <property name="baseline-position">top</property>
                     <child>
                       <object class="GtkLabel">
                         <property name="visible">True</property>
@@ -133,8 +144,8 @@ Author: F. Poirotte
                         <property name="year">2001</property>
                         <property name="month">1</property>
                         <property name="day">1</property>
-                        <property name="show-details">False</property>
                         <property name="show-week-numbers">True</property>
+                        <property name="show-details">False</property>
                         <signal name="day-selected" handler="misc_date_changed" swapped="no"/>
                         <signal name="day-selected-double-click" handler="misc_date_changed" swapped="no"/>
                         <signal name="month-changed" handler="misc_date_changed" swapped="no"/>
@@ -154,9 +165,8 @@ Author: F. Poirotte
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="halign">start</property>
-                        <property name="margin-top">16</property>
-                        <property name="label" translatable="yes">National Championship
-qualification:</property>
+                        <property name="label" translatable="yes">Victories since
+last publication:</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -165,16 +175,70 @@ qualification:</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkComboBoxText" id="misc-nationals">
+                      <object class="GtkSpinButton" id="misc-publication-victories">
                         <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="active">0</property>
-                        <signal name="changed" handler="misc_national_championship_changed" swapped="no"/>
+                        <property name="can-focus">True</property>
+                        <property name="tooltip-text" translatable="yes">The presence of a Normal Rare, Secret Rare or Ultra Rare card in the next Weekly Yu-Gi-Oh! or Yu-Gi-Oh! Magazine booster pack is guaranteed if you have &gt;10 victories. Read the documentation for more information.</property>
+                        <property name="adjustment">misc-publication-adjustement</property>
+                        <signal name="value-changed" handler="misc_publication_victories_changed" swapped="no"/>
                       </object>
                       <packing>
                         <property name="expand">False</property>
                         <property name="fill">True</property>
                         <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="label" translatable="yes">Last duelist fought:</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBoxText" id="misc-last-duelist">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="active">0</property>
+                        <signal name="changed" handler="misc_last_duelist_changed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="label" translatable="yes">Last Booster Pack received:</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBoxText" id="misc-last-pack">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">In some situations, this field increases the chance of receiving a Normal Rare, Secret Rare or Ultra Rare card in the next Weekly Yu-Gi-Oh! or Yu-Gi-Oh! Magazine booster pack. Read the documentation for more information.</property>
+                        <property name="active">0</property>
+                        <signal name="changed" handler="misc_last_pack_changed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">7</property>
                       </packing>
                     </child>
                   </object>
@@ -191,6 +255,100 @@ qualification:</property>
                 <property name="expand">True</property>
                 <property name="fill">False</property>
                 <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFrame">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="valign">start</property>
+                <property name="margin-start">8</property>
+                <property name="margin-end">8</property>
+                <property name="margin-top">8</property>
+                <property name="margin-bottom">8</property>
+                <property name="label-xalign">0</property>
+                <property name="shadow-type">in</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="orientation">vertical</property>
+                    <property name="baseline-position">top</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="label" translatable="yes">Victories:</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="misc-nationals-victories">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="text" translatable="yes">0</property>
+                        <property name="adjustment">misc-nationals-adjustment</property>
+                        <property name="snap-to-ticks">True</property>
+                        <property name="numeric">True</property>
+                        <property name="update-policy">if-valid</property>
+                        <signal name="value-changed" handler="misc_nationals_victories_changed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="margin-top">8</property>
+                        <property name="label" translatable="yes">Qualified for:</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkComboBoxText" id="misc-nationals-round">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="active">0</property>
+                        <signal name="changed" handler="misc_nationals_round_changed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+                <child type="label">
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">National Championship</property>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
               </packing>
             </child>
             <child>
@@ -644,7 +802,7 @@ qualification:</property>
               <packing>
                 <property name="expand">True</property>
                 <property name="fill">False</property>
-                <property name="position">1</property>
+                <property name="position">2</property>
               </packing>
             </child>
           </object>
@@ -736,7 +894,7 @@ qualification:</property>
                             <property name="editable">True</property>
                             <property name="width-chars">4</property>
                             <property name="max-width-chars">4</property>
-                            <property name="adjustment">adjustment</property>
+                            <property name="adjustment">dyn-adjustment</property>
                             <signal name="edited" handler="card_trunk_edited" swapped="no"/>
                             <signal name="editing-started" handler="card_trunk_editing_started" swapped="no"/>
                           </object>
@@ -758,7 +916,7 @@ qualification:</property>
                             <property name="editable">True</property>
                             <property name="width-chars">1</property>
                             <property name="max-width-chars">1</property>
-                            <property name="adjustment">adjustment</property>
+                            <property name="adjustment">dyn-adjustment</property>
                             <signal name="edited" handler="card_main_extra_edited" swapped="no"/>
                             <signal name="editing-started" handler="card_main_extra_editing_started" swapped="no"/>
                           </object>
@@ -780,7 +938,7 @@ qualification:</property>
                             <property name="editable">True</property>
                             <property name="width-chars">1</property>
                             <property name="max-width-chars">1</property>
-                            <property name="adjustment">adjustment</property>
+                            <property name="adjustment">dyn-adjustment</property>
                             <signal name="edited" handler="card_side_edited" swapped="no"/>
                             <signal name="editing-started" handler="card_side_editing_started" swapped="no"/>
                           </object>
@@ -841,6 +999,7 @@ qualification:</property>
                     <property name="label" translatable="yes">Move all to trunk</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
                     <signal name="clicked" handler="deck_move_to_trunk" swapped="no"/>
                   </object>
                   <packing>
@@ -854,6 +1013,7 @@ qualification:</property>
                     <property name="label" translatable="yes">New deck (Black)</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
                     <signal name="clicked" handler="deck_new_black" swapped="no"/>
                     <style>
                       <class name="deck_black"/>
@@ -870,6 +1030,7 @@ qualification:</property>
                     <property name="label" translatable="yes">New deck (Red)</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
                     <signal name="clicked" handler="deck_new_red" swapped="no"/>
                     <style>
                       <class name="deck_red"/>
@@ -886,6 +1047,7 @@ qualification:</property>
                     <property name="label" translatable="yes">New deck (Green)</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
                     <signal name="clicked" handler="deck_new_green" swapped="no"/>
                     <style>
                       <class name="deck_green"/>
@@ -1007,7 +1169,7 @@ qualification:</property>
                             <property name="xalign">1</property>
                             <property name="alignment">right</property>
                             <property name="editable">True</property>
-                            <property name="adjustment">adjustment</property>
+                            <property name="adjustment">dyn-adjustment</property>
                             <signal name="edited" handler="duelist_won_edited" swapped="no"/>
                             <signal name="editing-started" handler="duelist_won_editing_started" swapped="no"/>
                           </object>
@@ -1028,7 +1190,7 @@ qualification:</property>
                             <property name="xalign">1</property>
                             <property name="alignment">right</property>
                             <property name="editable">True</property>
-                            <property name="adjustment">adjustment</property>
+                            <property name="adjustment">dyn-adjustment</property>
                             <signal name="edited" handler="duelist_drawn_edited" swapped="no"/>
                             <signal name="editing-started" handler="duelist_drawn_editing_started" swapped="no"/>
                           </object>
@@ -1049,7 +1211,7 @@ qualification:</property>
                             <property name="xalign">1</property>
                             <property name="alignment">right</property>
                             <property name="editable">True</property>
-                            <property name="adjustment">adjustment</property>
+                            <property name="adjustment">dyn-adjustment</property>
                             <signal name="edited" handler="duelist_lost_edited" swapped="no"/>
                             <signal name="editing-started" handler="duelist_lost_editing_started" swapped="no"/>
                           </object>
@@ -1079,6 +1241,7 @@ qualification:</property>
                     <property name="label" translatable="yes">Reset</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
                     <signal name="clicked" handler="duels_reset" swapped="no"/>
                   </object>
                   <packing>
@@ -1092,6 +1255,7 @@ qualification:</property>
                     <property name="label" translatable="yes">Unlock duelists</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
                     <signal name="clicked" handler="duels_unlock_duelists" swapped="no"/>
                   </object>
                   <packing>
@@ -1105,6 +1269,7 @@ qualification:</property>
                     <property name="label" translatable="yes">Unlock packs</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
+                    <property name="receives-default">False</property>
                     <signal name="clicked" handler="duels_unlock_packs" swapped="no"/>
                   </object>
                   <packing>
