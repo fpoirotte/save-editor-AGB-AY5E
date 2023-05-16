@@ -220,6 +220,7 @@ class Application(Gtk.Application):
             self.notebook = builder.get_object("notebook")
 
             self.misc_date = builder.get_object("misc-date")
+            self.misc_days = builder.get_object("misc-days")
             self.misc_publication_victories = builder.get_object("misc-publication-victories")
             self.misc_last_duelist = builder.get_object("misc-last-duelist")
             self.misc_last_pack = builder.get_object("misc-last-pack")
@@ -551,6 +552,13 @@ class Application(Gtk.Application):
         self.stats_duels_lost.set_text("{lost}/{total}".format(**stats))
         self.stats_duels_lost_pct.set_text("({lost_pct:.2f}%)".format(**stats))
 
+    def update_days(self):
+        days_elapsed = self.save.get_elapsed_days()
+        if days_elapsed == 1:
+            self.misc_days.set_text("(1 day has passed)")
+        else:
+            self.misc_days.set_text("({} days have passed)".format(days_elapsed))
+
     def update_ui(self):
         # - General
         self.misc_nationals_round.set_active_id(str(self.save.get_next_national_championship_round().value))
@@ -561,6 +569,7 @@ class Application(Gtk.Application):
         ingame_date = self.save.get_ingame_date()
         self.misc_date.select_month(ingame_date.month-1, ingame_date.year)
         self.misc_date.select_day(ingame_date.day)
+        self.update_days()
         self.update_cards_stats()
         self.update_duels_stats()
 
@@ -612,6 +621,7 @@ class Application(Gtk.Application):
         except ValueError:
             self.misc_date.select_month(old_value.month-1, old_value.year)
             self.misc_date.select_day(old_value.day)
+        self.update_days()
 
     def on_misc_nationals_round_changed(self, widget):
         old_value = self.save.get_next_national_championship_round()

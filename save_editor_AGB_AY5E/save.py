@@ -183,6 +183,9 @@ class Save():
             raise ValueError(new_date)
         self.ingameDate = new_date
 
+    def get_elapsed_days(self) -> int:
+        return (self.ingameDate - self.STARTING_DATE).days
+
     def get_next_national_championship_round(self) -> NextNationalChampionshipRound:
         return self.nextNationalChampionshipRound
 
