@@ -7,7 +7,7 @@ from .constants import MAX_OBTAINABLE_CARDS, MAX_TRUNK_CARDS
 from .constants import Offsets, SIZE_CHECKSUM_INPUT
 from .constants import VALUE_GAME_ID, VALUE_HEADER, VALUE_STATIC
 from .decks import ExtraDeck, MainDeck, SideDeck
-from .enums import NextNationalChampionshipRound, MonsterType
+from .enums import Announcements, NextNationalChampionshipRound, MonsterType
 from .models import BoosterPack, Duelist
 from .stats import CardsStats, DuelistsStats
 
@@ -33,6 +33,8 @@ class Save():
         self.lastDuelistFought = DUELISTS[0]
         self.publicationVictories = 0
         self.nationalChampionshipVictories = 0
+        self.grandpaCupQualification = False
+        self.announcements = Announcements.NONE
 
         if data:
             mainDeck = MainDeck()
@@ -51,9 +53,15 @@ class Save():
             self.publicationVictories = struct.unpack('<H', data[Offsets.PUB_VICTORIES:Offsets.LAST_DUELIST])[0]
             lastDuelistFought = struct.unpack('<H', data[Offsets.LAST_DUELIST:Offsets.PADDING_4])[0]
             self.lastDuelistFought = DUELISTS[lastDuelistFought]
-            nextNationalChampionshipRound = struct.unpack('<B', data[Offsets.NAT_CHAMPIONSHIP:Offsets.PADDING_5])[0]
+
+            nextNationalChampionshipRound = struct.unpack('<H', data[Offsets.NAT_CHAMPIONSHIP:Offsets.GRANDPA_CUP])[0]
             self.nextNationalChampionshipRound = NextNationalChampionshipRound(nextNationalChampionshipRound)
-            self.nationalChampionshipVictories = struct.unpack('<b', data[Offsets.NAT_VICTORIES:Offsets.PADDING_6])[0]
+            grandpaCupQualification = struct.unpack('<H', data[Offsets.GRANDPA_CUP:Offsets.NAT_VICTORIES])[0]
+            self.grandpaCupQualification = bool(grandpaCupQualification)
+            self.nationalChampionshipVictories = struct.unpack('<b', data[Offsets.NAT_VICTORIES:Offsets.PADDING_5])[0]
+
+            announcements = struct.unpack('<H', data[Offsets.ANNOUNCEMENTS:Offsets.GAME_ID])[0]
+            self.announcements = Announcements(announcements)
 
             self.validate(data, mainDeck, extraDeck, sideDeck, nbTrunkCards, nbMainCards, nbSideCards, nbExtraCards)
 
@@ -66,30 +74,34 @@ class Save():
         nbMain = len(main)
         nbExtra = len(extra)
         nbSide = len(side)
+        cardSize = struct.calcsize('<H')
+
+        # The calls to ljust() allow us to pad the stats with NUL bytes
+        # to match the game's expectations.
         cardsStats = bytes(self.cardsStats).ljust(Offsets.CARDS_MAIN - Offsets.STATS_CARDS, b'\x00')
         duelistsStats = bytes(self.duelistsStats).ljust(Offsets.DAYS_ELAPSED - Offsets.STATS_DUELISTS, b'\x00')
-        cardSize = struct.calcsize('<H')
 
         fmt = (
             '<'         # Little-endian
             '{}H'       # Header
-            '{}s'       # Cards stats
+            '{}s'       # Cards stats (+ padding #1)
             '{}H{}x'    # Main cards
             '{}H{}x'    # Side cards
             '{}H{}x'    # Extra cards
             '4H'        # Counters for trunk, main, side, extra
-            '{}x'       # Padding #2
-            '{}s'       # Duelists stats
+            '2x'        # Padding #2
+            '{}s'       # Duelists stats (+ padding #3)
             'H'         # In-game days elapsed
             'H'         # Static value (3 = game initialized)
             'H'         # ID of last received booster pack
             'H'         # Number of victories since last publication
             'H'         # ID of last duelist fought
-            '{}x'       # @FIXME Unknown values, marked as padding #4 for now
-            'B'         # Championship progression
-            '{}x'       # Padding #5
+            '4x'        # Padding #4
+            'H'         # National Championship qualification
+            'H'         # Grandpa Cup qualification
             'b'         # Number of victories in National Championship
-            '{}x'       # Padding #6
+            'x'         # Padding #5
+            'H'         # Announcements
             '{}s'       # Game ID
         )
         fmt = fmt.format(
@@ -98,11 +110,7 @@ class Save():
             nbMain, (MainDeck.LIMIT - nbMain) * cardSize,       # Main cards
             nbSide, (SideDeck.LIMIT - nbSide) * cardSize,       # Side cards
             nbExtra, (ExtraDeck.LIMIT - nbExtra) * cardSize,    # Extra cards
-            Offsets.STATS_DUELISTS - Offsets.PADDING_2,           # Padding #2
             len(duelistsStats),                                 # Duelists stats + padding #3
-            Offsets.NAT_CHAMPIONSHIP - Offsets.PADDING_4,         # Unknown / Padding #4
-            Offsets.NAT_VICTORIES - Offsets.PADDING_5,            # Padding #5
-            Offsets.GAME_ID - Offsets.PADDING_6,                  # Padding #6
             len(VALUE_GAME_ID),                                 # Game ID
         )
         args = [
@@ -122,7 +130,9 @@ class Save():
             self.publicationVictories,
             self.lastDuelistFought,
             self.nextNationalChampionshipRound,
+            int(self.grandpaCupQualification),
             self.nationalChampionshipVictories,
+            self.announcements,
             VALUE_GAME_ID,
         ]
 
@@ -198,6 +208,12 @@ class Save():
     def set_national_championship_victories(self, victories: int) -> None:
         self.nationalChampionshipVictories = victories
 
+    def get_grandpa_cup_qualification(self) ->  bool:
+        return self.grandpaCupQualification
+
+    def set_grandpa_cup_qualification(self, qualified: bool) -> None:
+        self.grandpaCupQualification = qualified
+
     def get_cards_stats(self) -> dict:
         res = {
             "total": 0,
@@ -262,3 +278,9 @@ class Save():
     def set_victories_since_last_publication(self, victories: int) -> None:
         assert 0 <= victories < 0xFFFF
         self.publicationVictories = victories
+
+    def get_announcements(self) -> Announcements:
+        return self.announcements
+
+    def set_announcements(self, announcements: Announcements) -> None:
+        self.announcements = Announcements(announcements)

@@ -1,4 +1,26 @@
-from enum import Enum, IntEnum, auto
+from enum import auto, Enum, Flag, IntEnum, IntFlag
+
+
+class Announcements(IntFlag):
+    NONE = 0
+
+    # Next time the player opens the Campaign menu, Joey Wheeler
+    # will make an announcement saying new duelists are available.
+    NEW_DUELISTS_AVAILABLE = 1
+
+    # Next time the player wins a duel, Trusdale will make
+    # an announcement saying a new booster pack is available.
+    NEW_PACK_AVAILABLE = 2
+
+    ALL = 3
+
+    # enum.IntFlag.__invert__ generated invalid (negative) values
+    # on Python < 3.11. Use enum.Flag's implementation instead.
+    __invert__ = Flag.__invert__
+
+    @classmethod
+    def _missing_(cls, value):
+        raise ValueError(value)
 
 
 class IntStringEnum(IntEnum):

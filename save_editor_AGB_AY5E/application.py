@@ -14,7 +14,7 @@ from gi.repository import Gio, Gtk, Gdk
 from .constants import CARDS, DUELISTS, PACKS
 from .constants import MAX_WON, MAX_DRAWN, MAX_LOST, MAX_TRUNK_COPIES, MAX_TRUNK_CARDS
 from .decks import InitialDeck
-from .enums import CardColumn, CardType, DeckColor, DuelistColumn, Event
+from .enums import Announcements, CardColumn, CardType, DeckColor, DuelistColumn, Event
 from .enums import Limit, MonsterType, NextNationalChampionshipRound, NotebookPage
 from .enums import SpecialDuelist, Stage
 from .metadata import RESOURCES_DIR, __game_title__, __game_name__, __game_id__, __version__
@@ -126,11 +126,14 @@ class Application(Gtk.Application):
             "quit_request": self.on_quit_request,
 
             "misc_date_changed": self.on_misc_date_changed,
-            "misc_nationals_round_changed": self.on_misc_nationals_round_changed,
-            "misc_nationals_victories_changed": self.on_misc_nationals_victories_changed,
             "misc_publication_victories_changed": self.on_misc_publications_victories_changed,
             "misc_last_duelist_changed": self.on_misc_last_duelist_changed,
             "misc_last_pack_changed": self.on_misc_last_pack_changed,
+            "misc_announce_duelists_toggled": partial(self.on_misc_announcement_toggled, flag=Announcements.NEW_DUELISTS_AVAILABLE),
+            "misc_announce_pack_toggled": partial(self.on_misc_announcement_toggled, flag=Announcements.NEW_PACK_AVAILABLE),
+            "misc_grandpa_cup_toggled": self.on_misc_grandpa_cup_toggled,
+            "misc_nationals_round_changed": self.on_misc_nationals_round_changed,
+            "misc_nationals_victories_changed": self.on_misc_nationals_victories_changed,
 
             "card_trunk_editing_started": partial(self.on_card_spin_editing_started, column=CardColumn.TRUNK),
             "card_main_extra_editing_started": partial(self.on_card_spin_editing_started, column=CardColumn.MAIN_EXTRA),
@@ -223,7 +226,10 @@ class Application(Gtk.Application):
             self.misc_publication_victories = builder.get_object("misc-publication-victories")
             self.misc_last_duelist = builder.get_object("misc-last-duelist")
             self.misc_last_pack = builder.get_object("misc-last-pack")
+            self.misc_announce_duelists = builder.get_object("misc-announce-duelists")
+            self.misc_announce_pack = builder.get_object("misc-announce-pack")
 
+            self.misc_grandpa_cup = builder.get_object("misc-grandpa-cup")
             self.misc_nationals_victories = builder.get_object("misc-nationals-victories")
             self.misc_nationals_round = builder.get_object("misc-nationals-round")
 
@@ -569,6 +575,10 @@ class Application(Gtk.Application):
         ingame_date = self.save.get_ingame_date()
         self.misc_date.select_month(ingame_date.month-1, ingame_date.year)
         self.misc_date.select_day(ingame_date.day)
+        self.misc_grandpa_cup.set_active(self.save.get_grandpa_cup_qualification())
+        announcements = self.save.get_announcements()
+        self.misc_announce_duelists.set_active(Announcements.NEW_DUELISTS_AVAILABLE in announcements)
+        self.misc_announce_pack.set_active(Announcements.NEW_PACK_AVAILABLE in announcements)
         self.update_days()
         self.update_cards_stats()
         self.update_duels_stats()
@@ -622,6 +632,17 @@ class Application(Gtk.Application):
             self.misc_date.select_month(old_value.month-1, old_value.year)
             self.misc_date.select_day(old_value.day)
         self.update_days()
+
+    def on_misc_announcement_toggled(self, widget, flag: Announcements):
+        announcements = self.save.get_announcements() & ~flag
+        if widget.get_active():
+            announcements |= flag
+        self.save.set_announcements(announcements)
+        self.update_unsaved(True)
+
+    def on_misc_grandpa_cup_toggled(self, widget):
+        self.save.set_grandpa_cup_qualification(widget.get_active())
+        self.update_unsaved(True)
 
     def on_misc_nationals_round_changed(self, widget):
         old_value = self.save.get_next_national_championship_round()
