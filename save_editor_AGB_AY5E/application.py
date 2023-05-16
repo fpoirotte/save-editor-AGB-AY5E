@@ -197,7 +197,7 @@ class Application(Gtk.Application):
                     partial(self.on_tab_change, step=1),
                     [
                         "<Primary>Page_Down",
-#                        "<Primary>Tab",
+                        #"<Primary>Tab",
                     ],
                 ),
                 (
@@ -205,7 +205,7 @@ class Application(Gtk.Application):
                     partial(self.on_tab_change, step=-1),
                     [
                         "<Primary>Page_Up",
-#                        "<Primary><Shift>Tab",
+                        #"<Primary><Shift>Tab",
                     ]
                 ),
             )
@@ -336,7 +336,7 @@ class Application(Gtk.Application):
         # Due to the observance of japanese holidays, it is easier to recreate
         # and cache the calendar for the whole month, then pick up the information we need,
         # rather that trying to compute the details for any given day directly.
-        # Also, are 0-based in GTKCalendar while days are 1-based.
+        # Also, months are 0-based in GTKCalendar while days are 1-based.
         events = self.get_events_for_month(year, month+1)
         day_events = events[day-1]
         return "\n".join(day_events) if day_events else None
