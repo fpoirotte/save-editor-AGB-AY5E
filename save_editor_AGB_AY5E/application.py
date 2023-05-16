@@ -103,6 +103,7 @@ class Application(Gtk.Application):
         actions = (
             ("new",                 self.on_new),
             ("open",                self.on_open),
+            ("reload",              self.on_reload),
             ("save",                self.on_save),
             ("save-as",             self.on_save_as),
             ("help",                self.on_help),
@@ -425,6 +426,9 @@ class Application(Gtk.Application):
         if filename:
             self.load_save(filename)
 
+    def on_reload(self, action, param):
+        self.load_save(self.save.filename)
+
     def on_save(self, action, param):
         if self.save.filename is None:
             return self.on_save_as(action, param)
@@ -599,8 +603,8 @@ class Application(Gtk.Application):
             text="Warning: there are unsaved changes!",
         )
         dialog.format_secondary_text(
-            'Choose "OK" to drop the changes and close the file.\n'
-            'Choose "Cancel" to return to the file.'
+            'Choose "OK" to drop the changes.\n'
+            'Choose "Cancel" to return to editing the file.'
         )
         response = dialog.run()
         dialog.destroy()
