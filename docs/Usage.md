@@ -52,10 +52,22 @@ Pressing the `Enter` or `Space` key will activate the currently focused button.
 
 !["General Information" view](general_info.png)
 
-This view allows the game's general settings to be customized:
+This view allows various general values to be customized:
 
-*   Current in-game date. The calendar also shows what in-game events are set to occur on each date (such as delivery of the Yu-Gi-Oh! Magazine).
-*   Round in the November National Championship the player has qualified for.
+*   Current in-game date. The calendar also shows what in-game events are set to occur on each date (such as delivery of the Yu-Gi-Oh! Magazine, special matches, Ghouls encounter, etc.).
+*   The number of duels won since the last publication of Weekly Yu-Gi-Oh! / Yu-Gi-Oh! Magazine and the last Booster Pack received.  
+    When the number of victories is greater than 10, or greater than 6 and the Booster Pack in the next publication is different from the last one received,
+    a Normal Rare, Secret Rare or Ultra Rare card is guaranteed to be included in the pack the player will receive.
+*   The last duelist the player faced. This is used by the game to adapt some messages (to make it sound like a rematch if the player starts a new duel against the same opponent), but has no real impact on the overall game.
+*   Whether some announcements will activate:
+    * `Announce new duelists`: the next time the player goes to the game's `Campaign` menu, an announcement will be made about the availability of new duelists.
+    * `Announce new Booster Pack`: the next time the player wins a duel, an announcement will be made about the availability of a new Booster Pack.
+
+It also enables customization of values related to Grandpa's Cup and the National Championship:
+
+*   Whether the player has qualified for the final round in the Grandpa Cup held in June.
+*   The round the player has qualified for in the National Championship held in November.
+*   How many times the player has won the National Championship (e.g. at least 2 victories are required to unlock Simon).
 
 **Note:** the in-game date cannot be set to a value before January 1st, 2001, nor after June 6th, 2180.
 
@@ -73,10 +85,12 @@ The following keyboard shortcuts can also be used while on this view:
     *   `Ctrl+Up` / `Ctrl+Down`: move to the previous/next year
     *   `Space`: if the currently focused day refers to a day in the previous/next month, move to that month. Otherwise, select the focused day
 
-*   while focus is on the `National Championship qualification` field:
+*   while focus is on a dropdown field (`Last duelist fought`, `Last pack received`, `Qualified for`):
     *   `Space` or `Enter`: if the dropdown is closed, open it (display the list of values). Otherwise, select the currently focus value
     *   `Up` / `Down` arrow keys: move the focus to the previous/next value in the list
 
+*   while focus is on a checkbox field (`Announce new duelists`, `Announce new Boster Pack`, `Qualified for the final`):
+    *   `Space` or `Enter`: toggle the checkbox's state (from unchecked to checkedand vice versa)
 
 ### Cards
 
@@ -89,15 +103,7 @@ This view can be used to:
 
 **Note:** the editor applies the same limitations as the game. Therefore you may not have more than 3 copies of a card in your deck (including side deck).
 In addition, some cards may be further limited. In some cases, a card may be completely forbidden and cannot be added to the main deck/extra deck or side deck at all.
-This is the case for the following cards:
-
-*   #814 - The Monarchy
-*   #815 - Set Sail for the Kingdom
-*   #816 - Glory of the King's Hand
-*   #817 - Obelisk the Tormenter
-*   #818 - Slifer the Sky Dragon
-*   #819 - The Winged Dragon of Ra
-*   #820 - Insect Monster Token
+The `Limit` column shows how many copies of a card may be added to your main deck/extra deck and side deck (combined) and how many are present.
 
 In addition, several buttons at the bottom of the view can be used to edit the deck "en masse":
 
@@ -110,6 +116,7 @@ The following keyboard shortcuts can also be used while on this view:
 *   while focus is on the cards list:
     *   `Up` / `Down` arrow keys: move to the previous/next row in the list
     *   `PageUp` / `PageDown`: move to the previous/next page (in 10-entries increments) in the list
+    *   `Home` / `End`: move to the beginning/end of the list
     *   `Space` or `Enter`:
         *   while a cell in the `ID`, `Name` or `Deck usage` columns is focused: display the card's information dialog (see below)
         *   while a cell in the `Trunk`, `Main/Extra deck` or `Side deck` columns is focused: edit the value
@@ -136,6 +143,9 @@ For monsters, additional data is shown such as the monster's level, attribute, t
 The following keyboard shortcuts can also be used while this dialog is shown:
 
 *   `Escape` or `Alt+F4`: close the dialog (return to the card list)
+*   `Up` / `Down` arrows keys: display information about the previous/next card in the list
+*   `PageUp` / `PageDown`: move to the previous/next page in the card list and display information about the newly-selected card
+*   `Home` / `End`: move to the beginning/end of the card list and display information about the first/last card
 
 ### Duelists
 
@@ -149,7 +159,7 @@ In addition, several buttons at the bottom of the view can be used to lock/unloc
 
 *   `Reset` sets the number of duels won, drawn & lost to 0 (zero) for every duelist.
 *   `Unlock duelists` unlocks every duelist available in the game.
-*   `Unlock packs` unlocks every pack available in the game.
+*   `Unlock packs` unlocks every Booster Pack available in the game.
 
 **Note:** the `Reset` button also resets the list of duelists and packs available to the player (only those initially unlocked will be available).
 
@@ -158,6 +168,7 @@ The following keyboard shortcuts can also be used while on this view:
 *   while focus is on the duelists list:
     *   `Up` / `Down`: move to the previous/next row in the list
     *   `PageUp` / `PageDown`: move to the previous/next page (in 10-entries increments) in the list
+    *   `Home` / `End`: move to the beginning/end of the list
     *   `Space` or `Enter`:
         *   while a cell in the `Won`, `Drawn` or `Lost` columns is focused: edit the value
             (enter the new value, then press `Enter` to validate or `Escape` to cancel) 
@@ -169,4 +180,85 @@ The following keyboard shortcuts can also be used while on this view:
 
 *   while focus is on one of the buttons are the button of the screen:
     *   `Space` or `Enter`: activate the button
+
+## FAQ
+
+### How many duelists are available in the game?
+
+There are 24 duelists available in the game, grouped in 5 stages:
+
+*   Stage 1:
+    *   Tristan Taylor
+    *   Tea Gardner
+    *   Yugi Muto
+    *   Joey Wheeler
+    *   Bakura Ryou
+*   Stage 2:
+    *   Espa Roba
+    *   Mako Tsunami
+    *   Rex Raptor
+    *   Weevil Underwood
+*   Stage 3:
+    *   Umbra & Lumis
+    *   Arkana
+    *   Rare Hunter
+    *   Strings
+    *   Marik Ishtar
+*   Stage 4:
+    *   Yami Bakura
+    *   Ishizu Ishtar
+    *   Seto Kaiba (misspelled as Kaiba Seto in the game)
+    *   Shadi
+    *   Yami Yugi
+*   Stage 5:
+    *   Maximillion Pegasus
+    *   Simon (known as Simon Muran in the anime)
+    *   Duel Computer
+    *   Trusdale (known as Salomon Muto in the anime)
+
+### How many cards are available in the game?
+
+There are 820 cards in the game:
+
+*   813 playables cards:
+    *   148 Magic cards
+    *   72 Trap cards
+    *   381 Normal Monsters
+    *   145 Effect Monsters
+    *   52 Fusion Monsters
+    *   15 Ritual Monsters
+*   3 unplayable Tickets (`The Monarchy`, `Set Sail for the Kingdom` and `Glory of the King's Hand`)
+*   3 unplayable Divine Monsters (`Obelisk the Tormenter`, `Slifer the Sky Dragon` and `The Winged Dragon of Ra`)
+*   1 Token Monster (`Insect Monster Token`) -- this token will not appear in the trunk/deck, but will be played automatically when the right conditions are met
+
+### How can I unlock the Nth stage?
+
+To unlock the duelists present in the Nth stage, you must defeat every duelist in the previous stage N times.  
+E.g. to unlock the 2nd stage, you must defeat every duelist in the 1st stage twice.
+
+### How can I unlock Maximillion Pegasus?
+
+Make sure you have the card "Toon World" in either your trunk, your main deck or your side deck.
+
+### How can I unlock Simon?
+
+Make sure you have won the National Championship held in November at least twice.
+
+### How can I unlock Trusdale / Grandpa?
+
+Make sure you have at least one copy of every card in either your trunk, your main deck or your side deck.  
+**Due to a programming error in the game, this also includes the following unplayable cards:**
+
+*   #814 - The Monarchy
+*   #815 - Set Sail for the Kingdom
+*   #816 - Glory of the King's Hand
+*   #817 - Obelisk the Tormenter
+*   #818 - Slifer the Sky Dragon
+*   #819 - The Winged Dragon of Ra
+*   #820 - Insect Monster Token
+
+If you defeat Simon **the very first time you face him**, he will make sure you have at least one copy of every card in your trunk.
+**Note:** Simon will not give you this reward if your first duel against him ended with your loss or a draw and you defeat him afterwards, sobe extra careful againt him.
+
+Because `Insect Monster Token` cannot be obtained through Booster Packs, defeating Simon on your very fist encounter is the only way to get every card and unlock Trusdale legitimately.
 
