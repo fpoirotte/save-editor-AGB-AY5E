@@ -884,7 +884,7 @@ class Application(Gtk.Application):
                 simon = duelists[SpecialDuelist.SIMON]
                 simon.won = max(simon.won, 1)
                 for card in cards:
-                    if card.card.ID > 1 and not int(card):
+                    if card.card.ID > 0 and not int(card):
                         card.copiesTrunk = 1
         self.update_unsaved(True)
         self.update_ui()
