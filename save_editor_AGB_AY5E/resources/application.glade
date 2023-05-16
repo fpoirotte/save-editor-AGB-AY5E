@@ -1012,6 +1012,7 @@ last publication:</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
+                    <property name="tooltip-text" translatable="yes">Moves all the cards in your possession to the trunk.</property>
                     <signal name="clicked" handler="deck_move_to_trunk" swapped="no"/>
                   </object>
                   <packing>
@@ -1026,6 +1027,7 @@ last publication:</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
+                    <property name="tooltip-text" translatable="yes">Creates a new deck from scratch as if the Black deck had been selected at the start of the game.</property>
                     <signal name="clicked" handler="deck_new_black" swapped="no"/>
                     <style>
                       <class name="deck_black"/>
@@ -1043,6 +1045,7 @@ last publication:</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
+                    <property name="tooltip-text" translatable="yes">Creates a new deck from scratch as if the Red deck had been selected at the start of the game.</property>
                     <signal name="clicked" handler="deck_new_red" swapped="no"/>
                     <style>
                       <class name="deck_red"/>
@@ -1060,6 +1063,7 @@ last publication:</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
+                    <property name="tooltip-text" translatable="yes">Creates a new deck from scratch as if the Green deck had been selected at the start of the game.</property>
                     <signal name="clicked" handler="deck_new_green" swapped="no"/>
                     <style>
                       <class name="deck_green"/>
@@ -1254,6 +1258,7 @@ last publication:</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
+                    <property name="tooltip-text" translatable="yes">Resets the number of duels won/drawn/lost for every duelist back to zero.</property>
                     <signal name="clicked" handler="duels_reset" swapped="no"/>
                   </object>
                   <packing>
@@ -1268,6 +1273,7 @@ last publication:</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
+                    <property name="tooltip-text" translatable="yes">Unlocks every duelist present in the game.</property>
                     <signal name="clicked" handler="duels_unlock_duelists" swapped="no"/>
                   </object>
                   <packing>
@@ -1282,6 +1288,7 @@ last publication:</property>
                     <property name="visible">True</property>
                     <property name="can-focus">True</property>
                     <property name="receives-default">False</property>
+                    <property name="tooltip-text" translatable="yes">Unlocks every booster pack present in the game.</property>
                     <signal name="clicked" handler="duels_unlock_packs" swapped="no"/>
                   </object>
                   <packing>
