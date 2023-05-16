@@ -16,7 +16,7 @@ class Save():
     # In-game date when the game starts.
     STARTING_DATE = date(2001, 1, 1)
 
-    # Because the game stored the number of in-game days since `STARTING_DATE` as a 16-bit value,
+    # Because the game stores the number of in-game days since `STARTING_DATE` as a 16-bit value,
     # the maximum theoretical date that can be stored is June 6th, 2180 (=0xFFFF).
     # After that, the date would simply roll back to January 1st, 2001 due to integer overflow.
     # Indeed, this can be seen when trying to look for events past June 2180 in the game's calendar.
@@ -57,11 +57,11 @@ class Save():
 
             self.validate(data, mainDeck, extraDeck, sideDeck, nbTrunkCards, nbMainCards, nbSideCards, nbExtraCards)
 
-    def dump(self, fp):
+    def dump(self, fp) -> None:
         fp.write(self.dumps())
         self.filename = fp.name
 
-    def dumps(self):
+    def dumps(self) -> bytes:
         main, extra, side = self.cardsStats.as_decks()
         nbMain = len(main)
         nbExtra = len(extra)
@@ -147,7 +147,7 @@ class Save():
         chk = (chk ^ 0xFFFF) + 1
         return chk
 
-    def validate(self, data, mainDeck, extraDeck, sideDeck, nbTrunkCards, nbMainCards, nbSideCards, nbExtraCards):
+    def validate(self, data, mainDeck, extraDeck, sideDeck, nbTrunkCards, nbMainCards, nbSideCards, nbExtraCards) -> None:
         # Make sure the save data has the proper length
         assert len(data) == Offsets.EOF
 
