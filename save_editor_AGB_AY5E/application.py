@@ -59,26 +59,24 @@ class Application(Gtk.Application):
     # Some duelists will gift you with a special booster pack
     # if you duel them in a match format on special occasions.
     # Most of the dates are the same as for the holidays above.
-    # See also https://tcrf.net/Yu-Gi-Oh!_The_Eternal_Duelist_Soul#Special_Matches
     # Key format:       (month, day) or (month, -Nth monday)
     # Value format:     (pack, (character1, ...))
-    # The list of characters will be False if a random opponent is selected by the game
-    # and True if any opponent will do
+    # The list of characters will be True if any opponent (except the Duel Computer) will do
     SPECIAL_MATCHES = {
         (1, 1):     ("Yellow Millennium Puzzle",    ("Yami Yugi", )),
         (1, -2):    ("Cyber Harpie Lady",           ("Mai Valentine", )),
         (2, 11):    ("Gate Guardian",               ("Rex Raptor", )),
         (2, 14):    ("Blue Millennium Puzzle",      ("Tea Gardner", "Mai Valentine")),
+        (2, 24):    ("Eye of Wdjat",                True),
         (3, 14):    ("Blue Millennium Puzzle",      ("Yugi Muto", "Joey Wheeler", "Tristan Taylor", "Bakura Ryou")),
-        (3, 21):    ("Eye of Wdjat",                False),
         (4, 29):    ("Yellow Millennium Puzzle",    ("Weevil Underwood", )),
         (5, 3):     ("Relinquished",                ("Bakura Ryou", )),
         (5, 4):     ("Blue-Eyes White Dragon",      ("Tristan Taylor", )),
         (5, 5):     ("Green Millennium Puzzle",     ("Yugi Muto", )),
         (6, 28):    ("Yellow Millennium Puzzle",    ("Simon", )),
+        (7, 7):     ("Eye of Wdjat",                True),
         (7, 20):    ("Exodia the Forbidden One",    ("Mako Tsunami", )),
         (9, 15):    ("Blue-Eyes Toon Dragon",       ("Arkana", )),
-        (9, 23):    ("Eye of Wdjat",                False),
         (10, -2):   ("Green Millennium Puzzle",     ("Joey Wheeler", )),
         (10, 31):   ("Eye of Wdjat",                ("Rare Hunter", )),
         (11, 3):    ("Buster Blader",               ("Espa Roba", )),
@@ -323,16 +321,14 @@ class Application(Gtk.Application):
                 if special_match:
                     pack, duelists = special_match
                     if isinstance(duelists, tuple):
-                        msg = "Defeat {} to win a {} booster pack"
+                        msg = "Defeat {} in a match to receive one {} booster pack"
                         events.append(msg.format(" or ".join(duelists), pack))
                     elif duelists:
-                        events.append("Defeat any duelist in the game to win a {} booster pack".format(pack))
-                    else:
-                        events.append("A random duelist will give you a {} booster pack if defeated".format(pack))
+                        events.append("Defeat anyone (except Duel Computer) in a match to receive one {} booster pack".format(pack))
 
-                # Every 60 days after the very first day, a Rare Hunter will challenge the player.
+                # Every 60 days after the very first day, the Ghouls will challenge the player.
                 if (date - starting_date).days % 60 == 0 and date != starting_date:
-                    events.append(Event.RARE_HUNTER.value)
+                    events.append("Ghouls attack (receive one Eye of Wdjat booster pack or lose a rare card)")
         return month_events
 
     def get_details_for_date(self, widget, year, month, day):

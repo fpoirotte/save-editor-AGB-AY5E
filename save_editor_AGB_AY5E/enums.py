@@ -144,7 +144,6 @@ class Event(Enum):
     NATIONALS_ROUND_2       = "National Championship - 2nd Round (if qualified)"
     NATIONALS_SEMI_FINAL    = "National Championship - Semi Final (if qualified)"
     NATIONALS_FINAL         = "National Championship - Final (if qualified)"
-    RARE_HUNTER             = "Rare Hunter encounter"
 
 
 class SpecialDuelist(IntEnum):
