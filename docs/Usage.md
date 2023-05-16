@@ -103,7 +103,7 @@ This view can be used to:
 
 **Note:** the editor applies the same limitations as the game. Therefore you may not have more than 3 copies of a card in your deck (including side deck).
 In addition, some cards may be further limited. In some cases, a card may be completely forbidden and cannot be added to the main deck/extra deck or side deck at all.
-The `Limit` column shows how many copies of a card may be added to your main deck/extra deck and side deck (combined) and how many are present.
+The `Deck usage` column shows how many copies of a card are present in your main deck/extra deck and side deck (combined) and how many may be present at most.
 
 In addition, several buttons at the bottom of the view can be used to edit the deck "en masse":
 
