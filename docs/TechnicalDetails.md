@@ -14,6 +14,7 @@ The following events cause the savegame to be written back to the gamepak's flas
 ## Savegame layout
 
 For convenience, the following table lists offsets relative to the start of the savegame (first column) and the absolute address to their counterpart in the on-board work RAM (second column).
+Similarly, a type with an equavalent size in the [C language](https://en.wikipedia.org/wiki/C_(programming_language)) is provided for convenience (fourth column).
 
 **Notes:**
 
@@ -21,7 +22,6 @@ For convenience, the following table lists offsets relative to the start of the 
 *   Sizes are expressed in bytes
 *   Integer values are stored in [Little-Endian](https://en.wikipedia.org/wiki/Endianness) byte order
 *   All values are represented in [Most Significant Bit first](https://en.wikipedia.org/wiki/Bit_numbering) order
-*   A type with an equavalent size in the [C language](https://en.wikipedia.org/wiki/C_(programming_language)) is provided for convenience
 
 <table>
 <thead>
@@ -81,10 +81,10 @@ Language and alphabet selection
 <td>0x02011C28</td>
 <td>3284</td>
 <td>u32[821]</td>
-<td>`stats_cards`</td>
+<td><tt>stats_cards</tt></td>
 <td>
 Statistics about each card.
-See the section about <a href="#cards-statistics">cards statistics</a> for more information on what each entry contains.
+See the section about <a href="#card-statistics">card statistics</a> for more information on what each entry contains.
 The cards are stored in the order of their ID, starting with card #000 (a dummy card) and ending with card #820 (Insect Monster Token).
 See <tt>cards.csv</tt> in the editor's resource files for the full list of cards.
 </td>
@@ -104,7 +104,7 @@ See <tt>cards.csv</tt> in the editor's resource files for the full list of cards
 <td>0x02013C28</td>
 <td>120</td>
 <td>u16[60]</td>
-<td>`deck_main`</td>
+<td><tt>deck_main</tt></td>
 <td>
 List of cards in the player's Main Deck.
 Unused
@@ -116,7 +116,7 @@ Unused
 <td>0x02013CA0</td>
 <td>30</td>
 <td>u16[15]</td>
-<td>`deck_side`</td>
+<td><tt>deck_side</tt></td>
 <td>List of cards in the player's Side Deck.</td>
 </tr>
 
@@ -125,7 +125,7 @@ Unused
 <td>0x02013CBE</td>
 <td>40</td>
 <td>u16[20]</td>
-<td>`deck_extra`</td>
+<td><tt>deck_extra</tt></td>
 <td>List of cards in the player's Extra Deck.</td>
 </tr>
 
@@ -134,7 +134,7 @@ Unused
 <td>0x02013CE6</td>
 <td>2</td>
 <td>u16</td>
-<td>`nb_trunk`</td>
+<td><tt>nb_trunk</tt></td>
 <td>Number of cards in the player's Trunk.</td>
 </tr>
 
@@ -143,7 +143,7 @@ Unused
 <td>0x02013CE8</td>
 <td>2</td>
 <td>u16</td>
-<td>`nb_main`</td>
+<td><tt>nb_main</tt></td>
 <td>Number of cards in the player's Main Deck.</td>
 </tr>
 
@@ -152,7 +152,7 @@ Unused
 <td>0x02013CEA</td>
 <td>2</td>
 <td>u16</td>
-<td>`nb_side`</td>
+<td><tt>nb_side</tt></td>
 <td>Number of cards in the player's Side Deck.</td>
 </tr>
 
@@ -161,7 +161,7 @@ Unused
 <td>0x02013CEC</td>
 <td>2</td>
 <td>u16</td>
-<td>`nb_extra`</td>
+<td><tt>nb_extra</tt></td>
 <td>Number of cards in the player's Extra Deck.</td>
 </tr>
 
@@ -179,12 +179,12 @@ Unused
 <td>0x02013CF0</td>
 <td>200</td>
 <td>u32[25]</td>
-<td>`stats_duelists`</td>
+<td><tt>stats_duelists</tt></td>
 <td>
 Statistics about each duelist.
-See the section about [duelists statistics](#duelists-statistics) for more information on what each entry contains.
+See the section about <a href="#duelist-statistics">duelist statistics</a> for more information on what each entry contains.
 The duelists are stored in the order of their ID, starting with duelist #00 (a dummy dummy) and ending with duelist #24 (Trusdale).
-See `duelists.csv` in the editor's resource files for the full list of duelists.
+See <tt>duelists.csv</tt> in the editor's resource files for the full list of duelists.
 </td>
 </tr>
 
@@ -203,7 +203,7 @@ See `duelists.csv` in the editor's resource files for the full list of duelists.
 <td>0x02013D70</td>
 <td>2</td>
 <td>u16</td>
-<td>`days_elapsed`</td>
+<td><tt>days_elapsed</tt></td>
 <td>
 How many in-game days have passed since the beginning of the game (2001-01-01).
 Time inside the game when 2100-12-32 is reached.
@@ -215,7 +215,7 @@ Time inside the game when 2100-12-32 is reached.
 <td>0x02013D72</td>
 <td>2</td>
 <td>u16</td>
-<td>`static_value`</td>
+<td><tt>static_value</tt></td>
 <td>
 This value is a bitfield with the following flags:
 
@@ -233,11 +233,11 @@ These flags are never used by the game.
 <td>0x02013D74</td>
 <td>2</td>
 <td>u16</td>
-<td>`last_pack`</td>
+<td><tt>last_pack</tt></td>
 <td>
 ID of the last booster pack received by the player.
-See `packs.csv` in the editor's resource files for the full list of booster packs.
-See also `publication_victories` below for reasons why this value may be significant.
+See <tt>packs.csv</tt> in the editor's resource files for the full list of booster packs.
+See also <tt>publication_victories</tt> below for reasons why this value may be significant.
 </td>
 </tr>
 
@@ -246,7 +246,7 @@ See also `publication_victories` below for reasons why this value may be signifi
 <td>0x02013D76</td>
 <td>2</td>
 <td>u16</td>
-<td>`publication_victories`</td>
+<td><tt<publication_victories</tt></td>
 <td>
 How many duels have been won since the last Weekly Yu-Gi-Oh! or Yu-Gi-Oh! Magazine was received.
 The booster pack in the next Weekly Yu-Gi-Oh! or Yu-Gi-Oh! Magazine issue will always container a Normal Rare, Secret Rare or Ultra Rare card if either of the following conditions is met:
@@ -254,7 +254,7 @@ The booster pack in the next Weekly Yu-Gi-Oh! or Yu-Gi-Oh! Magazine issue will a
 *   The player has won more than 6 duels and the next booster pack to be received is different from the last booster pack received
 *   The player has won more than 10 duels and the next booster pack to be received is the same as the last booster pack received
 
-The last booster pack received in indicated by the `last_pack` field above.
+The last booster pack received in indicated by the <tt>last_pack</tt> field above.
 </td>
 </tr>
 
@@ -263,10 +263,10 @@ The last booster pack received in indicated by the `last_pack` field above.
 <td>0x02013D78</td>
 <td>2</td>
 <td>u16</td>
-<td>last_duelist</td>
+<td><tt>last_duelist</tt></td>
 <td>
 ID of the last duelist the player has defeated.
-See `duelists.csv` in the editor's resource files for the full list of duelists.
+See <tt>duelists.csv</tt> in the editor's resource files for the full list of duelists.
 
 This field has no real significance in the game.
 If the player challenges the same duelist they just defeated, the game will change the dialogs to make it look like the opponent wants a rematch.
@@ -287,7 +287,7 @@ If the player challenges the same duelist they just defeated, the game will chan
 <td>0x02013D7E</td>
 <td>2</td>
 <td>u16</td>
-<td>qualification_nationals</td>
+<td><tt>qualification_nationals</tt></td>
 <td>
 The National Championship is held every year in November.
 This field indicates what round the the player has qualified for in this tournament:
@@ -304,7 +304,7 @@ This field indicates what round the the player has qualified for in this tournam
 <td>0x02013D80</td>
 <td>2</td>
 <td>u16</td>
-<td>qualification_grandpa_cup</td>
+<td><tt>qualification_grandpa_cup</tt></td>
 <td>
 The Grandpa Cup is held every year in June.
 This field indicates what round the the player has qualified for in this tournament:
@@ -319,7 +319,7 @@ This field indicates what round the the player has qualified for in this tournam
 <td>0x02013D82</td>
 <td>1</td>
 <td>s8</td>
-<td>`nationals_victories`</td>
+<td><tt>nationals_victories</tt></td>
 <td>
 How many times the player won the National Championship.
 Because times stops in the game once 2100-12-31 is reached, the maximum possible value here is 100.
@@ -340,7 +340,7 @@ Because times stops in the game once 2100-12-31 is reached, the maximum possible
 <td>0x02013D84</td>
 <td>2</td>
 <td>u16</td>
-<td>`announcements`</td>
+<td><tt>announcements</tt></td>
 <td>
 This bitfield controls some in-game announcements:
 
@@ -355,9 +355,9 @@ This bitfield controls some in-game announcements:
 <td>0x02013D86</td>
 <td>8</td>
 <td>u8[8]</td>
-<td>`game_id`</td>
+<td><tt>game_id</tt></td>
 <td>
-This field contains the static string `DMEX1INT`.
+This field contains the static string <tt>DMEX1INT</tt>.
 It is used when loading a savegame to make sure it is meant for this video game.
 </td>
 </tr>
@@ -367,7 +367,7 @@ It is used when loading a savegame to make sure it is meant for this video game.
 <td>0x02013D8E</td>
 <td>2</td>
 <td>u16</td>
-<td>`checksum`</td>
+<td><tt>checksum</tt></td>
 <td>
 A checksum over the whole savegame to make sure it is valid.
 This is used to protect the game against data corruption.
@@ -381,14 +381,38 @@ See the section entitled [checksum](#checksum) for more information on how to co
 <td></td>
 <td></td>
 <td></td>
-<td>This marks the end of the savegame.</td>
+<td>End of the savegame.</td>
 </tr>
 </tbody>
 </table>
 
-## Cards statistics
+## Card statistics
 
-## Duelists statistics
+Statistics about each card are stored as a series of 32-bit values where the bits are used as follows:
+
+* bits 0-9: number of copies of the card in the Trunk
+* bits 10-11: number of copies of the card in the Main Deck
+* bits 12-13: number of copies of the card in the Side Deck
+* bits 14-15: number of copies of the card in the Extra Deck
+* bit 16: unused
+* bit 17: set if a password was used to receiving this card
+* bits 18-31: unused
+
+## Duelist statistics
+
+Statistics about each duelist are stored as a series of 32-bit values where the bits are used as follows:
+
+* bits 0-10: number of duels won against that duelist
+* bits 11-21: number of duels drawn against that duelist
+* bits 22-31: number of duels lost against that duelist
 
 ## Checksum
+
+The game uses a simple [sum complement checksum](https://en.wikipedia.org/wiki/Checksum#Sum_complement) to detect data corruption.
+To compute the checksum:
+
+*   Divide the savegame into 16-bits words
+*   Sum all words together (discarding any overflow bits)
+*   Flip all the bits in the resulting value (i.e. apply a XOR operation between this value and 0xFFFF)
+*   Add 1 to this result and discard any overflow bit to get the final value
 
