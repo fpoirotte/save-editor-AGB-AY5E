@@ -193,52 +193,52 @@ The following keyboard shortcuts can also be used while on this view:
 ## Glossary and basic concepts
 
 <dl>
-    <dt>Duelist</dt>
-    <dd>
+<dt>Duelist</dt>
+<dd>
 Someone who plays the Yu-Gi-Oh! card game. Can be either a human player or a computer.
-    </dd>
+</dd>
 
-    <dt>Duel</dt>
-    <dd>
+<dt>Duel</dt>
+<dd>
 The name given to a fight between two duelists using the Yu-Gi-Oh! card game.
-    </dd>
+</dd>
 
-    <dt>Match</dt>
-    <dd>
+<dt>Match</dt>
+<dd>
 A special type of game where two duelists fight in a best of three duels format.
-    </dd>
+</dd>
 
-    <dt>Trunk</dt>
-    <dd>
+<dt>Trunk</dt>
+<dd>
 The list of cards the player has obtained through the game which are not currently in use by any of the decks.
 It is possible for a card to appear in both the Trunk and in a deck at the same time if somes copies of the card are used and others are not.
-    </dd>
+</dd>
 
-    <dt>Main Deck</dt>
-    <dd>
+<dt>Main Deck</dt>
+<dd>
 The Main Deck represents the pile of cards that the player will be able to draw from during the game.
 It must contain a minimum of 40 cards to be able to compete against other duelists and cannot contain more than 60 cards.
-    </dd>
+</dd>
 
-    <dt>Extra Deck</dt>
-    <dd>
+<dt>Extra Deck</dt>
+<dd>
 The Extra Deck represents a pile of cards distinct from the Main Deck.
 It contains cards that cannot be drawn but can nonetheless be played (by picking up the card directly from the Extra Deck) when specific requirements are met.
 E.g. "Blue-Eyes Ultimate Dragon" can be Fusion Summoned from the Extra Deck when 3 copies of "Blue-Eyes White Dragon" are present on the player's field and the player activates the effect of "Polymerization".
 The Extra Deck can contain up to 20 cards.
-    </dd>
+</dd>
 
-    <dt>Fusion Deck</dt>
-    <dd>
+<dt>Fusion Deck</dt>
+<dd>
 "Fusion Deck" is the former name for "Extra Deck". It was used back when the Extra Deck could only contain Fusion Monsters, as is the case in the game Yu-Gi-Oh! - The Eternal Duelist Soul.
 It was later renamed when additional types of monsters were added to the card game (XYZ Monsters, Synchro Monsters, Link Monsters, etc.).
-    </dd>
+</dd>
 
-    <dt>Side Deck</dt>
-    <dd>
+<dt>Side Deck</dt>
+<dd>
 The Side Deck is used in matches, between duels, to alter the contents of the Main Deck/Extra Deck.
 The Side Deck can contain up to 15 cards.
-    </dd>
+</dd>
 </dl>
 
 Please note that it is not possible to have more than 3 copies of a given card in your Main Deck, Extra Deck and Side Deck combined.
