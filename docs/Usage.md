@@ -308,7 +308,7 @@ Make sure you have the card "Toon World" in either your trunk, your main deck or
 
 Make sure you have won the National Championship held in November at least twice.
 
-### How can I unlock Trusdale / Grandpa?
+### How can I unlock Trusdale / Salomon Muto?
 
 Make sure you have at least one copy of every card in either your trunk, your main deck or your side deck.  
 **Due to a programming error in the game, this also includes the following unplayable cards:**

@@ -23,7 +23,7 @@ Using this tool, you can:
 *   Display various pieces of information about the cards present in the game
 
 
-## Installation
+## Installation / Uninstallation
 
 ### Prerequisites
 
@@ -33,7 +33,7 @@ This program requires the following dependencies:
 *   [GObject Introspection (GI) framework](https://gi.readthedocs.io/en/latest/)
 *   [GTK version 3.24 or later](https://www.gtk.org/) -- Please note that GTK 4.x **IS NOT SUPPORTED**
 *   GObject Introspection Repository (GIR) for [GTK version 3](https://www.gtk.org/)
-*   [pip](https://pip.pypa.io/en/stable/) (used only during the installation)
+*   [pip](https://pip.pypa.io/en/stable/) (used only during installation/uninstallation)
 
 On Linux, the following commands can be used to install all of the dependencies listed above:
 
@@ -51,9 +51,9 @@ On Linux, the following commands can be used to install all of the dependencies 
             python3-gobject \
             python3-pip
 
-**Note:** support for Microsoft Windows has not been tested.
+**Note:** support for Microsoft Windows has not been tested and is not expected to work.
 
-### Installation / Uninstallation
+### Installation
 
 To install this program:
 
@@ -64,11 +64,14 @@ To install this program:
 pip install --user ./
 ```
 
+### Uninstallation
+
 If you ever wish to uninstall this program completely from your computer, simply run:
 
 ```
 pip uninstall -y save-editor-agb-ay5e
 ```
+
 
 ## Usage
 
@@ -91,10 +94,13 @@ https://projectpokemon.org/home/tutorials/save-editing/managing-gba-saves/using-
 This program should only be used by people who legally own a copy of the original game.
 I do not condone nor encourage software/video game piracy.
 
-If you do not own a legitimate copy of the game, please uninstall this program from your computer immediately.
+If you do not own a legitimate copy of the game, please [uninstall this program](#uninstallation) from your computer immediately.
+
+I recommend that you do not use this program if you want to benefit from the full original gaming experience intended by the game's developpers.
+Nonetheless, this tool may be particularly useful for people who could not [unlock Trusdale (Salomon Muto)(./docs/Usage.md#how-can-i-unlock-trusdale--salomon-muto)] and do not want to start over.
 
 
 ## License
 
 This program is released under the MIT license.
-See https://github.com/fpoirotte/save-editor-AGB-AY5E/blob/main/LICENSE for more information.
+See the [LICENSE](./LICENSE) file for more information.
