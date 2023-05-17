@@ -17,9 +17,11 @@ For convenience, the following table lists offsets relative to the start of the 
 
 **Notes:**
 
-*   Offsets and addresses are expressed in hexadecimal notation
+*   Offsets and addresses are expressed in [hexadecimal notation](https://en.wikipedia.org/wiki/Hexadecimal), indicated by the `0x` prefix
 *   Sizes are expressed in bytes
-*   Integer values are stored in Little Endian byte order
+*   Integer values are stored in [Little-Endian](https://en.wikipedia.org/wiki/Endianness) byte order
+*   All values are represented in [Most Significant Bit first](https://en.wikipedia.org/wiki/Bit_numbering) order
+*   A type with an equavalent size in the [C language](https://en.wikipedia.org/wiki/C_(programming_language)) is provided for convenience
 
 <table>
 <thead>
@@ -48,7 +50,7 @@ For convenience, the following table lists offsets relative to the start of the 
 <td>0x02011C24</td>
 <td>1</td>
 <td>u8</td>
-<td>`language`</td>
+<td><tt>language</tt></td>
 <td>
 Language and alphabet selection
 
@@ -82,9 +84,9 @@ Language and alphabet selection
 <td>`stats_cards`</td>
 <td>
 Statistics about each card.
-See the section about [cards statistics](#cards-statistics) for more information on what each entry contains.
+See the section about <a href="#cards-statistics">cards statistics</a> for more information on what each entry contains.
 The cards are stored in the order of their ID, starting with card #000 (a dummy card) and ending with card #820 (Insect Monster Token).
-See `cards.csv` in the editor's resource files for the full list of cards.
+See <tt>cards.csv</tt> in the editor's resource files for the full list of cards.
 </td>
 </tr>
 
