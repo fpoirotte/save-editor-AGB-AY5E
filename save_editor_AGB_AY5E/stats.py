@@ -22,20 +22,24 @@ class CardStats():
         value = self.PACKER.unpack(data)[0] if data else 0
         self.password = bool(value & 0x20000)
         self.copiesTrunk = value & 0x3FF
-        self.copiesMainExtra = (value >> 10) & 0x3
+        self.copiesMain = (value >> 10) & 0x3
         self.copiesSide = (value >> 12) & 0x3
+        self.copiesExtra = (value >> 14) & 0x3
         self.validate()
 
+    @property
+    def usage(self):
+        return self.copiesMain + self.copiesExtra + self.copiesSide
+
     def validate(self):
-        used = self.copiesMainExtra + self.copiesSide
-        assert used <= self.card.Limit.value
+        assert self.usage <= self.card.Limit.value
 
     def __int__(self):
-        return self.copiesTrunk + self.copiesMainExtra + self.copiesSide
+        return self.copiesTrunk + self.copiesMain + self.copiesExtra + self.copiesSide
 
     def __repr__(self):
-        fmt = "<CardStats<{}> (Trunk: {}, Main: {}, Side: {})"
-        return fmt.format(self.card, self.copiesTrunk, self.copiesMainExtra, self.copiesSide)
+        fmt = "<CardStats<{}> (Trunk: {}, Main: {}, Extra: {}, Side: {})"
+        return fmt.format(self.card, self.copiesTrunk, self.copiesMain, self.copiesExtra, self.copiesSide)
 
     def __str__(self):
         return str(self.card)
@@ -43,15 +47,17 @@ class CardStats():
     def __bytes__(self):
         # (u32) counts + flags1
         #     0-9 = # of copies in the trunk
-        #     10-11 = # of copies in main deck/extra deck
+        #     10-11 = # of copies in main deck
         #     12-13 = # of copies in side deck
-        #     14-16 = ?
+        #     14-15 = # of copies in extra deck
+        #     16 = ?
         #     17 = 1 if password has been used already, 0 otherwise
         #     18-31 = ?
         return self.PACKER.pack(
             (self.copiesTrunk & 0x3FF) |
-            ((self.copiesMainExtra & 0x3) << 10) |
+            ((self.copiesMain & 0x3) << 10) |
             ((self.copiesSide & 0x3) << 12) |
+            ((self.copiesExtra & 0x3) << 14) |
             (int(bool(self.password)) << 17)
         )
 
@@ -64,13 +70,16 @@ class CardsStats():
     def reset_deck(self, deck: Deck):
         self.cards = [CardStats(card) for card in CARDS.values()]
         for card in deck:
-            self.cards[card.ID].copiesMainExtra += 1
+            target = "copiesExtra" if card.card.MonsterType == MonsterType.FUSION else "copiesMain"
+            copies = getattr(self.cards[card.ID], target)
+            setattr(self.cards[card.ID], target, copies + 1)
 
     def move_to_trunk(self):
         moved = 0
         for card in self.cards:
-            copies = card.copiesMainExtra
-            card.copiesMainExtra = 0
+            copies = card.copiesMain + card.copiesExtra
+            card.copiesMain = 0
+            card.copiesExtra = 0
             card.copiesTrunk += copies
             moved += copies
 
@@ -95,9 +104,10 @@ class CardsStats():
         side = SideDeck()
 
         for card in self.cards:
-            target = extra if card.card.MonsterType == MonsterType.FUSION else main
-            for i in range(card.copiesMainExtra):
-                target.append(card.card)
+            for i in range(card.copiesMain):
+                main.append(card.card)
+            for i in range(card.copiesExtra):
+                extra.append(card.card)
             for i in range(card.copiesSide):
                 side.append(card.card)
         return main, extra, side

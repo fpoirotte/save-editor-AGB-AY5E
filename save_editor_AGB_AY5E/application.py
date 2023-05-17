@@ -588,10 +588,10 @@ class Application(Gtk.Application):
         for row in self.data_cards:
             card = stats[row[CardColumn.ID]]
             row[CardColumn.TRUNK] = card.copiesTrunk
-            row[CardColumn.MAIN_EXTRA] = card.copiesMainExtra
+            row[CardColumn.MAIN_EXTRA] = card.copiesMain + card.copiesExtra
             row[CardColumn.SIDE] = card.copiesSide
             row[CardColumn.PASSWORD] = card.password
-            used = card.copiesMainExtra + card.copiesSide
+            used = card.usage
             limit = card.card.Limit
             row[CardColumn.USED] = compute_card_usage(used, limit)
             row[CardColumn.LIMIT] = "{}/{}".format(used, limit)
@@ -668,7 +668,6 @@ class Application(Gtk.Application):
         card = self.save.get_detailed_cards_stats()[row[CardColumn.ID]]
         stats = self.save.get_cards_stats()
         value = row[column.value]
-        used = card.copiesMainExtra + card.copiesSide
         limits = [
             # There must still be enough room in the trunk to accomodate for all the copies
             # currently in use, in case they were transferred there later on.
@@ -677,7 +676,7 @@ class Application(Gtk.Application):
 
         if column != CardColumn.TRUNK:
             # The number of copies in use must not exceed the restriction set by in-game limitations.
-            limits.append(card.card.Limit - used)
+            limits.append(card.card.Limit - card.usage)
 
         if column == CardColumn.TRUNK:
             target = "trunk"
@@ -710,15 +709,18 @@ class Application(Gtk.Application):
             self.update_unsaved(value != card.copiesTrunk)
             card.copiesTrunk = value
         elif column == CardColumn.MAIN_EXTRA:
-            self.update_unsaved(value != card.copiesMainExtra)
-            card.copiesMainExtra = value
+            self.update_unsaved(value != (card.copiesMain + card.copiesExtra))
+            if card.card.MonsterType == MonsterType.FUSION:
+                card.copiesExtra = value
+            else:
+                card.copiesMain = value
         elif column == CardColumn.SIDE:
             self.update_unsaved(value != card.copiesSide)
             card.copiesSide = value
         else:
             raise RuntimeError()
 
-        used = card.copiesMainExtra + card.copiesSide
+        used = card.usage
         row[column.value] = value
         row[CardColumn.USED] = compute_card_usage(used, limit)
         row[CardColumn.LIMIT] = "{}/{}".format(used, limit)

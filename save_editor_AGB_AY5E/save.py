@@ -44,7 +44,7 @@ class Save():
             nbTrunkCards, nbMainCards, nbSideCards, nbExtraCards = struct.unpack('<4H', data[Offsets.NB_CARDS_TOTAL:Offsets.PADDING_2])
             mainDeck.extend(struct.unpack_from('<{}H'.format(nbMainCards), data[Offsets.CARDS_MAIN:Offsets.CARDS_MAIN + 2*nbMainCards]))
             sideDeck.extend(struct.unpack_from('<{}H'.format(nbSideCards), data[Offsets.CARDS_SIDE:Offsets.CARDS_SIDE + 2*nbSideCards]))
-            extraDeck.extend(struct.unpack_from('<{}H'.format(nbExtraCards), data[Offsets.CARDS_MAIN:Offsets.CARDS_EXTRA + 2*nbExtraCards]))
+            extraDeck.extend(struct.unpack_from('<{}H'.format(nbExtraCards), data[Offsets.CARDS_EXTRA:Offsets.CARDS_EXTRA + 2*nbExtraCards]))
 
             daysElapsed = struct.unpack('<H', data[Offsets.DAYS_ELAPSED:Offsets.STATIC])[0]
             self.ingameDate += timedelta(days=daysElapsed)
@@ -229,13 +229,14 @@ class Save():
             "side_max": SideDeck.LIMIT,
         }
         for card in self.cardsStats:
-            target = "extra" if card.card.MonsterType == MonsterType.FUSION else "main"
             copies = int(card)
+            if not copies:
+                continue
             res["total"] += copies
-            if copies:
-                res["unique"] += 1
+            res["unique"] += 1
             res["trunk"] += card.copiesTrunk
-            res[target] += card.copiesMainExtra
+            res["main"] += card.copiesMain
+            res["extra"] += card.copiesExtra
             res["side"] += card.copiesSide
         return res
 
