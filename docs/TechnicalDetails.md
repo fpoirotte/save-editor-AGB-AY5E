@@ -8,7 +8,7 @@ The following events cause the savegame to be written back to the gamepak's flas
 
 *   A duel/match ends (in case of a victory, this happens after the player has received a booster pack and left the screen where the pack's content is displayed)
 *   The player leaves the deck editor
-*   A successful card trade
+*   A card has been successfully traded with another player using the cable link
 *   A password has been successfully used to receive a card
 
 ## Savegame layout
@@ -388,9 +388,9 @@ See the section entitled [checksum](#checksum) for more information on how to co
 
 ## Card statistics
 
-Statistics about each card are stored as a series of 32-bit values where the bits are used as follows:
+Statistics about each card are stored as a series of 32-bit values where the bits for each value are used as follows:
 
-* bits 0-9: number of copies of the card in the Trunk
+s* bits 0-9: number of copies of the card in the Trunk
 * bits 10-11: number of copies of the card in the Main Deck
 * bits 12-13: number of copies of the card in the Side Deck
 * bits 14-15: number of copies of the card in the Extra Deck
@@ -400,7 +400,7 @@ Statistics about each card are stored as a series of 32-bit values where the bit
 
 ## Duelist statistics
 
-Statistics about each duelist are stored as a series of 32-bit values where the bits are used as follows:
+Statistics about each duelist are stored as a series of 32-bit values where the bits for each value are used as follows:
 
 * bits 0-10: number of duels won against that duelist
 * bits 11-21: number of duels drawn against that duelist
