@@ -28,6 +28,19 @@ def compute_card_usage(used, limit):
 class Application(Gtk.Application):
     CALENDAR = calendar.Calendar(calendar.SUNDAY)
 
+    # Cards that also exist with an alternative artwork in the game.
+    ALTERNATIVE_ARTWORKS = (
+        "Blue-Eyes White Dragon",
+        "Flame Swordsman",
+        "Dark Magician",
+        "Gaia The Fierce Knight",
+        "Celtic Guardian",
+        "Tiger Axe",
+        "Thousand Dragon",
+        "Pendulum Machine",
+        "Launcher Spider",
+    )
+
     # The in-game deliveries of "Weekly Yu-Gi-Oh!" & "Yu-Gi-Oh! Magazine" follow japanese holidays,
     # AS THEY WERE when "Yu-Gi-Oh! Duel Monsters 5: Expert 1" was released (~July 2001).
     # When a delivery falls on a holiday, it will happen on the previous working day instead.
@@ -665,19 +678,33 @@ class Application(Gtk.Application):
 
     def on_card_spin_editing_started(self, widget, button, path: str, column: CardColumn):
         row = self.data_cards[path]
-        card = self.save.get_detailed_cards_stats()[row[CardColumn.ID]]
+        detailed_stats = self.save.get_detailed_cards_stats()
+        card = detailed_stats[row[CardColumn.ID]]
         stats = self.save.get_cards_stats()
         value = row[column.value]
-        limits = [
+        limits = []
+
+        # This takes care of finding variants (alternative artworks) for a card.
+        name = str(card.card).replace(" (alternate artwork)", "")
+        if name in self.ALTERNATIVE_ARTWORKS:
+            cards = [detailed_stats[name], detailed_stats[name + " (alternate artwork)"]]
+        else:
+            cards = [card]
+
+        # For cards with alternative artworks, card usage of every variant must be summed up
+        # to determine if it respects the game's restrictions regarding the card.
+        usage = 0
+        for c in cards:
             # There must still be enough room in the trunk to accomodate for all the copies
             # currently in use, in case they were transferred there later on.
-            MAX_TRUNK_COPIES - int(card),
-        ]
+            limits.append(MAX_TRUNK_COPIES - c.usage)
+            usage += c.usage
 
         if column != CardColumn.TRUNK:
             # The number of copies in use must not exceed the restriction set by in-game limitations.
-            limits.append(card.card.Limit - card.usage)
+            limits.append(card.card.Limit - usage)
 
+        # There must still be room left in the target deck
         if column == CardColumn.TRUNK:
             target = "trunk"
         elif column == CardColumn.SIDE:
@@ -688,9 +715,9 @@ class Application(Gtk.Application):
             target = "extra"
         else:
             target = "main"
-
-        # There must still be room left in the selected storage (deck)
         limits.append(stats[target + "_max"] - stats[target])
+
+        # Take into account the most restrictive limit
         upper = value + min(limits)
         self.dyn_adjustment.configure(value=value, lower=0, upper=upper, step_increment=1, page_increment=10, page_size=0)
 
