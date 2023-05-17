@@ -321,8 +321,8 @@ Make sure you have at least one copy of every card in either your trunk, your ma
 *   #819 - The Winged Dragon of Ra
 *   #820 - Insect Monster Token
 
-If you defeat Simon **the very first time you face him**, he will make sure you have at least one copy of every card in your trunk.
-**Note:** Simon will not give you this reward if your first duel against him ended with your loss or a draw and you defeat him afterwards, sobe extra careful againt him.
+If you defeat Simon **the very first time you face him**, he will make sure you have at least one copy of every card in your trunk as a reward.  
+**Note:** Simon will not give you this reward if your first duel against him ended with your loss or a draw and you defeat him afterwards, so be extra careful when fighting him.
 
 Because `Insect Monster Token` cannot be obtained through Booster Packs, defeating Simon on your very fist encounter is the only way to get every card and unlock Trusdale legitimately.
 
