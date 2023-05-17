@@ -70,7 +70,7 @@ class Deck():
             self.append(value)
 
     def __repr__(self):
-        return '<{}: {}>'.format(self.__class__.__name__, self.cards)
+        return '<{}({}): {}>'.format(self.__class__.__name__, len(self.cards), self.cards)
 
 
 class MainDeck(Deck):
