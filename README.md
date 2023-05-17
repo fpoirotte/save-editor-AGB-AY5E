@@ -64,10 +64,11 @@ The editor can be started by executing `poetry run save-editor-AGB-AY5E` from a 
 
 Information about how to use the editor can be found in the dedicated [documentation](./docs/Usage.md).
 
+More information about the savegame's contents and layout can be found in the page dedicated to [technical details](./docs/TechnicalDetails.md).
 
 ## Transferring savegames from/to the game's cartridge
 
-There are several methods and tools that can be used to exchange savegames between an actual GameBoy Advance cartridge and a computer.
+There are several methods and tools that can be used to transfer savegames between an actual GameBoy Advance cartridge and a computer.
 
 If you've never done that before, the following post may be a good starting point:
 https://projectpokemon.org/home/tutorials/save-editing/managing-gba-saves/using-gba-backup-tool-r55/
