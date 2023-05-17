@@ -41,26 +41,26 @@ On Linux, the following commands can be used to install all of the dependencies 
         sudo apt install \
             libgirepository1.0-dev \
             gir1.2-gtk-3.0 \
-            python3-poetry`
+            python3-pip`
 
 *   Fedora:
 
         sudo dnf install \
             gobject-introspection-devel \
             gtk3 \
-            poetry
+            python3-pip
 
 **Note:** support for Microsoft Windows has not been tested.
 
 ### Installation steps
 
 1.  Grab and uncompress the [latest archive](https://github.com/fpoirotte/save-editor-AGB-AY5E/archive/refs/heads/main.tar.gz) for this program.
-2.  Inside a shell, go to the folder where you extracted the files and run `poetry install`
+2.  Inside a shell, go to the folder where you extracted the files and run `pip install --user ./`
 
 
 ## Usage
 
-The editor can be started by executing `poetry run save-editor-AGB-AY5E` from a shell running inside the folder where the sources were extracted.
+To start the editor, run `~/.local/bin/save-editor-AGB-AY5E` inside a shell.
 
 Information about how to use the editor can be found in the dedicated [documentation](./docs/Usage.md).
 
