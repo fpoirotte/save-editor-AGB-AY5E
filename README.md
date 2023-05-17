@@ -97,7 +97,7 @@ I do not condone nor encourage software/video game piracy.
 If you do not own a legitimate copy of the game, please [uninstall this program](#uninstallation) from your computer immediately.
 
 I recommend that you do not use this program if you want to benefit from the full original gaming experience intended by the game's developpers.
-Nonetheless, this tool may be particularly useful for people who could not [unlock Trusdale (Salomon Muto)(./docs/Usage.md#how-can-i-unlock-trusdale--salomon-muto)] and do not want to start over.
+Nonetheless, this tool may be particularly useful for people who could not [unlock Trusdale (Salomon Muto)](./docs/Usage.md#how-can-i-unlock-trusdale--salomon-muto) and do not want to start over.
 
 
 ## License
