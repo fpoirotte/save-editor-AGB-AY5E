@@ -293,7 +293,7 @@ There are 820 cards in the game:
     *   15 Ritual Monsters
 *   3 unplayable Tickets (`The Monarchy`, `Set Sail for the Kingdom` and `Glory of the King's Hand`)
 *   3 unplayable Divine Monsters (`Obelisk the Tormenter`, `Slifer the Sky Dragon` and `The Winged Dragon of Ra`)
-*   1 Token Monster (`Insect Monster Token`) -- this token will not appear in the trunk/deck, but will be played automatically when the right conditions are met
+*   1 Monster Token (`Insect Monster Token`) -- this token will not appear in the trunk or in any deck, but will be played automatically when the right conditions are met (see the effect of `Insect Queen` for more information)
 
 ### How can I unlock the Nth stage?
 
