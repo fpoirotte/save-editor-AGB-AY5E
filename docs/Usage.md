@@ -27,6 +27,7 @@ The following global keyboard shortcuts are also supported:
 *   `Alt+F`: open/close the `File` menu
 *   `Ctrl+N`: create a new savegame
 *   `Ctrl+O`: load an existing savegame file
+*   `Ctrl+R`: reload the currently-loaded savegame
 *   `Ctrl+S`: save the current savegame
 *   `Ctrl+Shift+S`: save the current savegame under a new name
 *   `Ctrl+Q` or `Alt+F4`: quit the editor
