@@ -4,7 +4,7 @@
 
 This document explains how to use the savegame editor for the GameBoy Advance video game "Yu-Gi-Oh! - The Eternal Duelist Soul" (international edition) to create a new savegame from scratch or edit an existing one.
 
-It also contains a glossary for novice players, as well as an FAQ about specific subjects related to this video game.
+It also contains a [glossary](#glossary-and-basic-concepts) for novice players, as well as an [FAQ](#frequently-asked-questions) about specific subjects related to this video game.
 
 ## Interface Overview
 
@@ -245,7 +245,7 @@ Please note that it is not possible to have more than 3 copies of a given card i
 In addition, some cards may be further limited and some may be unplayable altogether (i.e. you cannot add a copy of that card to any of your decks).
 
 
-## FAQ
+## Frequently Asked Questions
 
 ### How many duelists are available in the game?
 
