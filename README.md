@@ -10,16 +10,17 @@ The program's name refers to the game's unique identifier inside the GBA cartrid
 
 The editor can be used to:
 
-*   Load and edit an existing savegame.
-*   Create a new savegame from scratch.
+*   Load and edit an existing savegame
+*   Create a new savegame from scratch
 
 Using this tool, you can:
 
-*   Change the in-game date.
-*   Change your qualification status for the in-game National Championship.
-*   Edit the number of copies of any card present in the game in your trunk, main deck/fusion deck or side deck.
-*   Display various pieces of information about the cards present in the game.
-*   Edit the number of duels won/drawn/lost against each duelist you can face in the game.
+*   Edit the number of copies of any card present in the game in your trunk, main deck/extra deck or side deck
+*   Edit the number of duels won/drawn/lost against each duelist you can face in the game
+*   Unlock every duelist / Booster Pack present in the game
+*   Change your qualification status for the in-game tournaments (Grandpa Cup and National Championship)
+*   Change the in-game date and several other minor parameters
+*   Display various pieces of information about the cards present in the game
 
 
 ## Installation
@@ -29,34 +30,45 @@ Using this tool, you can:
 This program requires the following dependencies:
 
 *   [Python 3.6 or later](https://www.python.org/downloads/)
-*   [GTK version 3.24 or later](https://www.gtk.org/) -- Please note that GTK 4.x **IS NOT SUPPORTED**
 *   [GObject Introspection (GI) framework](https://gi.readthedocs.io/en/latest/)
+*   [GTK version 3.24 or later](https://www.gtk.org/) -- Please note that GTK 4.x **IS NOT SUPPORTED**
 *   GObject Introspection Repository (GIR) for [GTK version 3](https://www.gtk.org/)
-*   [Poetry](https://python-poetry.org/docs/#installation)
+*   [pip](https://pip.pypa.io/en/stable/) (used only during the installation)
 
 On Linux, the following commands can be used to install all of the dependencies listed above:
 
 *   Debian/Ubuntu:
 
         sudo apt install \
-            libgirepository1.0-dev \
             gir1.2-gtk-3.0 \
+            python3-gi \
             python3-pip`
 
 *   Fedora:
 
         sudo dnf install \
-            gobject-introspection-devel \
             gtk3 \
+            python3-gobject \
             python3-pip
 
 **Note:** support for Microsoft Windows has not been tested.
 
-### Installation steps
+### Installation / Uninstallation
 
-1.  Grab and uncompress the [latest archive](https://github.com/fpoirotte/save-editor-AGB-AY5E/archive/refs/heads/main.tar.gz) for this program.
-2.  Inside a shell, go to the folder where you extracted the files and run `pip install --user ./`
+To install this program:
 
+1.  Grab the archive for the [latest release](https://github.com/fpoirotte/save-editor-AGB-AY5E/releases/latest/) and uncompress it somewhere on your computer
+2.  Inside a shell, go to the folder where you extracted the files and run:
+
+```
+pip install --user ./
+```
+
+If you ever wish to uninstall this program completely from your computer, simply run:
+
+```
+pip uninstall -y save-editor-agb-ay5e
+```
 
 ## Usage
 
