@@ -262,6 +262,7 @@ There are 24 duelists available in the game, grouped in 5 stages:
     *   Mako Tsunami
     *   Rex Raptor
     *   Weevil Underwood
+    *   Mai Valentine
 *   Stage 3:
     *   Umbra & Lumis
     *   Arkana
@@ -321,8 +322,9 @@ Make sure you have at least one copy of every card in either your trunk, your ma
 *   #819 - The Winged Dragon of Ra
 *   #820 - Insect Monster Token
 
-If you defeat Simon **the very first time you face him**, he will make sure you have at least one copy of every card in your trunk as a reward.  
-**Note:** Simon will not give you this reward if your first duel against him ended with your loss or a draw and you defeat him afterwards, so be extra careful when fighting him.
+If you defeat Simon **the very first time you face him (and only then!)**, he will make sure you have at least one copy of every card in your trunk as a reward.  
 
-Because `Insect Monster Token` cannot be obtained through Booster Packs, defeating Simon on your very fist encounter is the only way to get every card and unlock Trusdale legitimately.
-
+**Notes:**
+* Simon will not give you this reward if your first duel against him ended with your loss or a draw and you defeat him afterwards.
+* Because `Insect Monster Token` cannot be obtained through any Booster Pack, defeating Simon on your very first encounter is the only way to get every card and unlock Trusdale legitimately.
+* After the National Championship held in November, the 3 tickets (`The Monarchy`, `Set Sail for the Kingdom` and `Glory of the King's Hand`) will be removed from your trunk automatically, thus locking Trusdale until you reach the championship's finals again the following year.
