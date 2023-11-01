@@ -1,5 +1,5 @@
 "ID","InternalID","Name","CardType","MonsterType","Attribute","Type","Level","ATK","DEF","Password","Limit","Description"
-0,0,"---","Ticket",,,,,,,,0,
+0,0,"---","Ticket",,,,,,,,0,"(dummy card used internally to represent an invalid card)"
 1,439,"7 Colored Fish","Monster","Normal","WATER","Fish",4,1800,800,"23771716",3,"A rare rainbow fish that has never been caught by mortal man."
 2,962,"7 Completed","Magic",,,,,,,"86198326",3,"A Machine-type monster equipped with this card increases its ATK and DEF by 700 points."
 3,639,"Acid Crawler","Monster","Normal","EARTH","Insect",3,900,700,"77568553",3,"A giant caterpillar that secretes an acid mist that melts anything."
